@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "pdp-hero": {
+      "type": "pdp-hero",
+      "blocks": {
+        "14e0999d-1129-4234-89cf-c4fd33d19c26": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/base.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "14e0999d-1129-4234-89cf-c4fd33d19c26"
+      ],
+      "settings": {
+        "header": "",
+        "copy": "",
+        "button_text": "",
+        "button_url": ""
+      }
+    }
+  },
+  "order": [
+    "pdp-hero"
+  ]
+}

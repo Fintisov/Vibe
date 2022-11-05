@@ -1,0 +1,67 @@
+<img class="bg preload-critical"{% if section.settings.image.alt %} alt="{{ section.settings.image.alt }}"{% endif %} data-preload-desktop="https:{{ section.settings.image | image_url }}" data-preload-mobile="https:{{ section.settings.image_mobile | image_url }}">
+<div class="content">
+    <h1 class="hero-header header-404">{{ section.settings.header }}</h1>
+    <h2 class="header-m">{{ section.settings.subheader }}</h2>
+    <p class="subtitle">{{ section.settings.subtitle }}</p>
+    <div class="btn-wrapper">
+        <a class="btn caps black" href="{{ section.settings.button_url_1 }}">{{ section.settings.button_text_1 }}</a>
+        <a class="btn caps white" href="{{ section.settings.button_url_2 }}">{{ section.settings.button_text_2 }}</a>
+    </div>
+</div>
+
+
+
+{% schema %}
+{
+"name": "Main 404",
+"tag": "section",
+"class": "main-404",
+"settings": [
+{
+"id": "image",
+"type": "image_picker",
+"label": "Image"
+},
+{
+"id": "image_mobile",
+"type": "image_picker",
+"label": "Image Mobile"
+},
+{
+"id": "header",
+"type": "text",
+"label": "Header"
+},
+{
+"id": "subheader",
+"type": "text",
+"label": "Subheader"
+},
+{
+"id": "subtitle",
+"type": "text",
+"label": "Subtitle"
+},
+{
+"id": "button_text_1",
+"type": "text",
+"label": "Button Text 1"
+},
+{
+"id": "button_url_1",
+"type": "text",
+"label": "Button URL 1"
+},
+{
+"id": "button_text_2",
+"type": "text",
+"label": "Button Text 2"
+},
+{
+"id": "button_url_2",
+"type": "text",
+"label": "Button URL 2"
+}
+]
+}
+{% endschema %}

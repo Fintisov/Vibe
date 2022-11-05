@@ -1,0 +1,91 @@
+{% comment %} {%- paginate blog.articles by 6 -%}
+
+  <div class="main-blog page-width">
+    <h1 class="title--primary ">{{ blog.title | escape }}</h1>
+
+    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+      {%- for article in blog.articles -%}
+        <div class="blog-articles__article article">
+          {%- render 'article-card', article: article, image_height: section.settings.image_height, show_image: section.settings.show_image, show_date: section.settings.show_date, show_author: section.settings.show_author -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if paginate.pages > 1 -%}
+      {%- render 'pagination', paginate: paginate -%}
+    {%- endif -%}
+  </div>
+{%- endpaginate -%} {% endcomment %}
+
+<div class="blog-grid c-50 tabs-inside">
+  <div class="top tab-triggers">
+    {% for block in section.blocks %}
+      <button class="title trigger{% if forloop.first %} active{% endif %}">{{ block.settings.blog.title }}</button>
+    {% endfor %}
+  </div>
+  <div class="bottom">
+    {% for block in section.blocks %}
+      {% assign thisBlog = block.settings.blog %}
+      {% for article in thisBlog.articles %}
+        <a class="blog-tile{% if forloop.index0 > 2 %} mw{% endif %}" href="/blogs/{{ article.handle }}">
+          <img class="preload{% if forloop.index0 < 3 %}-critical{% endif %}" data-preload-desktop="{{ article.metafields.accentuate.tile_image[0].src }}" data-preload-mobile="{{ article.metafields.accentuate.tile_image[0].src }}">
+          <div class="blog-info">
+            <span class="caps">{% for tag in article.tags limit: 3 %}{{ tag }}{% if forloop.last %}{% else %} / {% endif %}{% endfor %}</span>
+            <h5 class="header-m">{{ article.title }}</h5>
+            <div class="inner">
+              <span class="date eyebrow">
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.998 22.9166H11.9982C14.6894 22.9139 17.2697 21.8438 19.1729 19.941C21.0762 18.0381 22.1468 15.458 22.15 12.7668V12.7666C22.15 10.7592 21.5548 8.79689 20.4396 7.12778C19.3243 5.45866 17.7393 4.15771 15.8847 3.38942C14.0302 2.62113 11.9894 2.42001 10.0206 2.81149C8.05172 3.20297 6.24316 4.16946 4.82358 5.58876C3.404 7.00806 2.43715 8.81643 2.04528 10.7852C1.65341 12.754 1.85413 14.7947 2.62205 16.6494C3.38997 18.5042 4.69061 20.0895 6.3595 21.205C8.0284 22.3206 9.9906 22.9162 11.998 22.9166ZM15.3725 16.1957L15.5047 16.2667L15.5757 16.1346L16.3266 14.7377L16.3977 14.6056L16.2655 14.5346L12.7424 12.6412V7.1236V6.9736H12.5924H11.0073H10.8573V7.1236V13.678V13.7676L10.9362 13.8101L15.3725 16.1957ZM7.40686 5.89554C8.76572 4.98717 10.3634 4.50212 11.9979 4.50171C14.1895 4.50378 16.2907 5.37516 17.8406 6.92465C19.3904 8.47415 20.2623 10.5752 20.2649 12.7668C20.2649 14.4013 19.7802 15.9991 18.8721 17.3581C17.9641 18.7172 16.6734 19.7766 15.1633 20.4022C13.6532 21.0278 11.9915 21.1916 10.3883 20.8728C8.78514 20.5541 7.31247 19.7671 6.15653 18.6115C5.00058 17.4558 4.21327 15.9833 3.89415 14.3802C3.57503 12.7771 3.73842 11.1154 4.36367 9.60511C4.98893 8.09487 6.04796 6.80393 7.40686 5.89554Z" fill="#121212" stroke="#121212" stroke-width="0.3"/>
+                  </svg>
+               {{ article.published_at | time_tag: format: 'date' }}
+              </span>
+              <span class="mobile-only text">
+                Read more
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.97131 12.4425L8.02881 13.5L12.5288 9L8.02881 4.5L6.97131 5.5575L10.4063 9L6.97131 12.4425Z" fill="#D00D29"/>
+                  </svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+    {% endfor %}
+    <div class="blog-tile filler"></div>
+  </div>
+  {% comment %}<div class="pagination">{% endcomment %}
+  {% comment %}<div class="arrows prev">{% endcomment %}
+  {% comment %}<button>{% include 'icon-arrow-page' %}</button>{% endcomment %}
+  {% comment %}<button>{% include 'icon-arrow-pages' %}</button>{% endcomment %}
+  {% comment %}</div>{% endcomment %}
+  {% comment %}<div class="pages">{% endcomment %}
+  {% comment %}<button class="page text-m">1</button>{% endcomment %}
+  {% comment %}<button class="page text-m">2</button>{% endcomment %}
+  {% comment %}<button class="page text-m">3</button>{% endcomment %}
+  {% comment %}</div>{% endcomment %}
+  {% comment %}<div class="arrows">{% endcomment %}
+  {% comment %}<button>{% include 'icon-arrow-page' %}</button>{% endcomment %}
+  {% comment %}<button>{% include 'icon-arrow-pages' %}</button>{% endcomment %}
+  {% comment %}</div>{% endcomment %}
+  {% comment %}</div>{% endcomment %}
+</div>
+
+{% schema %}
+{
+"name": "Blog main",
+"tag": "section",
+"class": "blog-main",
+"blocks": [
+{
+"name": "Blog chooser",
+"type": "blog_chooser",
+"settings": [
+{
+"type": "blog",
+"id": "blog",
+"label": "Blog"
+}
+]
+}
+]
+}
+{% endschema %}

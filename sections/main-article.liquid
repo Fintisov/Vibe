@@ -1,0 +1,104 @@
+<img class="top-image preload-critical" data-preload-desktop="https:{{ article.image | image_url }}" data-preload-mobile="https:{{ article.image | image_url }}">
+<div class="content">
+    <div class="button-wrapper">
+        {% for tag in article.tags %}<p>{{ tag }}</p>{% endfor %}
+    </div>
+    <div class="article">
+        <div class="left rich-text">
+            <h1>{{ article.title }}</h1>
+            <div class="date eyebrow">
+                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.498 22.5504H12.4982C15.1894 22.5477 17.7697 21.4776 19.6729 19.5748C21.5762 17.6719 22.6468 15.0918 22.65 12.4006V12.4004C22.65 10.393 22.0548 8.43068 20.9396 6.76157C19.8243 5.09245 18.2393 3.7915 16.3847 3.02321C14.5302 2.25492 12.4894 2.0538 10.5206 2.44528C8.55172 2.83675 6.74316 3.80325 5.32358 5.22255C3.904 6.64185 2.93715 8.45022 2.54528 10.419C2.15341 12.3878 2.35413 14.4285 3.12205 16.2832C3.88997 18.1379 5.19061 19.7233 6.8595 20.8388C8.5284 21.9544 10.4906 22.55 12.498 22.5504ZM15.8725 15.8295L16.0047 15.9005L16.0757 15.7684L16.8266 14.3715L16.8977 14.2394L16.7655 14.1684L13.2424 12.275V6.75739V6.60739H13.0924H11.5073H11.3573V6.75739V13.3118V13.4014L11.4362 13.4439L15.8725 15.8295ZM7.90686 5.52933C9.26572 4.62096 10.8634 4.13591 12.4979 4.13549C14.6895 4.13756 16.7907 5.00894 18.3406 6.55844C19.8904 8.10794 20.7623 10.209 20.7649 12.4006C20.7649 14.0351 20.2802 15.6329 19.3721 16.9919C18.4641 18.351 17.1734 19.4104 15.6633 20.036C14.1532 20.6616 12.4915 20.8254 10.8883 20.5066C9.28514 20.1879 7.81247 19.4009 6.65653 18.2452C5.50058 17.0896 4.71327 15.6171 4.39415 14.014C4.07503 12.4109 4.23842 10.7491 4.86367 9.2389C5.48893 7.72865 6.54796 6.43772 7.90686 5.52933Z" fill="#121212" stroke="#121212" stroke-width="0.3"/>
+                </svg>
+                {{ article.updated_at | date: '%B %d, %Y' }}
+            </div>
+            {{ article.content }}
+        </div>
+        <div class="right block-grid">
+            {% assign parentHandle = article.handle | split: "/" %}
+            {% assign parentHandle = parentHandle.first %}
+            {% assign parentBlog = blogs[parentHandle] %}
+            {% assign parentArticlesCount = parentBlog.articles | size %}
+            {% if parentArticlesCount > 1 %}
+                <h2 class="header-l">{{ section.setting.related_header }}</h2>
+                {% for relatedArticle in parentBlog.articles limit: 5 %}
+                    {% if relatedArticle.title == article.title %}{% continue %}{% endif %}
+
+                    <a class="blog-tile mw" href="/blogs/{{ relatedArticle.handle }}">
+                        <img class="preload" data-preload-desktop="{{ relatedArticle.metafields.accentuate.tile_image[0].src }}" data-preload-mobile="{{ relatedArticle.metafields.accentuate.tile_image[0].src }}">
+                        <div class="blog-info">
+                            <span class="caps">{% for tag in relatedArticle.tags limit: 3 %}{{ tag }}{% if forloop.last %}{% else %} / {% endif %}{% endfor %}</span>
+                            <h5 class="header-m">{{ relatedArticle.title }}</h5>
+                            <div class="inner">
+                          <span class="date eyebrow">
+                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M11.998 22.9166H11.9982C14.6894 22.9139 17.2697 21.8438 19.1729 19.941C21.0762 18.0381 22.1468 15.458 22.15 12.7668V12.7666C22.15 10.7592 21.5548 8.79689 20.4396 7.12778C19.3243 5.45866 17.7393 4.15771 15.8847 3.38942C14.0302 2.62113 11.9894 2.42001 10.0206 2.81149C8.05172 3.20297 6.24316 4.16946 4.82358 5.58876C3.404 7.00806 2.43715 8.81643 2.04528 10.7852C1.65341 12.754 1.85413 14.7947 2.62205 16.6494C3.38997 18.5042 4.69061 20.0895 6.3595 21.205C8.0284 22.3206 9.9906 22.9162 11.998 22.9166ZM15.3725 16.1957L15.5047 16.2667L15.5757 16.1346L16.3266 14.7377L16.3977 14.6056L16.2655 14.5346L12.7424 12.6412V7.1236V6.9736H12.5924H11.0073H10.8573V7.1236V13.678V13.7676L10.9362 13.8101L15.3725 16.1957ZM7.40686 5.89554C8.76572 4.98717 10.3634 4.50212 11.9979 4.50171C14.1895 4.50378 16.2907 5.37516 17.8406 6.92465C19.3904 8.47415 20.2623 10.5752 20.2649 12.7668C20.2649 14.4013 19.7802 15.9991 18.8721 17.3581C17.9641 18.7172 16.6734 19.7766 15.1633 20.4022C13.6532 21.0278 11.9915 21.1916 10.3883 20.8728C8.78514 20.5541 7.31247 19.7671 6.15653 18.6115C5.00058 17.4558 4.21327 15.9833 3.89415 14.3802C3.57503 12.7771 3.73842 11.1154 4.36367 9.60511C4.98893 8.09487 6.04796 6.80393 7.40686 5.89554Z" fill="#121212" stroke="#121212" stroke-width="0.3"/>
+                              </svg>
+                           {{ relatedArticle.published_at | time_tag: format: 'date' }}
+                          </span>
+                                <span class="mobile-only text">
+                            Read more
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6.97131 12.4425L8.02881 13.5L12.5288 9L8.02881 4.5L6.97131 5.5575L10.4063 9L6.97131 12.4425Z" fill="#D00D29"/>
+                              </svg>
+                          </span>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+{% assign relatedProductCount = article.metafields.accentuate.related_products | size %}
+{% if relatedProductCount > 0  %}
+    <div class="related-products">
+        <div class="c-60">
+            <h3 class="header-l">{{ section.settings.related_products_header }}</h3>
+            <div class="slider blocks mw" data-at="767" data-align="start">
+                <div class="slides">
+                    <div class="inner">
+                        {% for product in article.metafields.accentuate.related_products %}
+                            {% assign thisProduct = all_products[product] %}
+                            <a href="/products/{{ thisProduct.handle }}" class="block slide">
+                                <div class="image-wrapper">
+                                    <img class="product-image preload"{% if thisProduct.featured_image.alt %} alt="{{ thisProduct.featured_image.alt }}"{% endif %} data-preload-desktop="https:{{ thisProduct.featured_image | image_url }}" data-preload-mobile="https:{{ thisProduct.featured_image | image_url }}">
+                                </div>
+                                <p class="caps brand">{{ thisProduct.vendor }}</p>
+                                <h6 class="title product-name">{{ thisProduct.title }}</h6>
+                                {% comment %}<p class="text-m product-info">Beauty • 3 Sizes</p>{% endcomment %}
+                                <div class="reviews subtitle">{% include 'icon-reviews-temp' %}(234)</div>
+                                <p class="title price">{{ thisProduct.price | money_without_trailing_zeros }}</p>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+
+{% schema %}
+{
+"name": "Main article",
+"tag": "article",
+"class": "main-article",
+"settings": [
+{
+"id": "related_header",
+"type": "text",
+"label": "Related articles header"
+},
+{
+"id": "related_products_header",
+"type": "text",
+"label": "Related products header"
+}
+],
+"blocks": [
+
+]
+}
+{% endschema %}

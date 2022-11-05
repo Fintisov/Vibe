@@ -1,0 +1,65 @@
+<div class="c-112">
+    <div class="top">
+        <div class="header-l">{{ section.settings.header }}</div>
+        <p class="text">{{ section.settings.copy }}</p>
+    </div>
+    <div class="slider blocks mw" data-at="767" data-align="start">
+        <div class="slides">
+            <div class="inner">
+                {% for block in section.blocks %}
+                    {% case block.type %}
+                        {% when 'tile' %}
+                            <a href="{{ block.settings.button_url }}" class="block slide">
+                                <img class="image preload"{% if block.settings.image.alt %} alt="{{ block.settings.image.alt }}"{% endif %} data-preload-desktop="https:{{ block.settings.image | image_url }}" data-preload-mobile="https:{{ block.settings.image | image_url }}">
+                                <p class="header-tile">{{ block.settings.tile_header }}</p>
+                            </a>
+                    {% endcase %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Product Tile Trio",
+        "tag": "section",
+        "class": "product-tile-trio",
+        "settings": [
+            {
+                "id": "header",
+                "type": "richtext",
+                "label": "Header"
+            },
+            {
+                "id": "copy",
+                "type": "text",
+                "label": "Copy"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Tile",
+                "type": "tile",
+                "limit": 3,
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "tile_header",
+                        "label": "Tile Header"
+                    },
+                    {
+                        "id": "button_url",
+                        "type": "text",
+                        "label": "Button URL"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

@@ -1,0 +1,36 @@
+<img class="image preload"{% if section.settings.image.alt %} alt="{{ section.settings.image.alt }}"{% endif %} data-preload-desktop="https:{{ section.settings.image | image_url }}" data-preload-mobile="https:{{ section.settings.image | image_url }}">
+<div class="content">
+    <p class="header-l">{{ section.settings.text }}</p>
+    <p class="header one">{{ section.settings.large_text }}</p>
+    <p class="header">{{ section.settings.large_text_two }}</p>
+</div>
+
+{% schema %}
+    {
+        "name": "Full Bleed Text",
+        "tag": "section",
+        "class": "full-bleed-text mw",
+        "settings": [
+            {
+                "id": "image",
+                "type": "image_picker",
+                "label": "Image"
+            },
+            {
+                "id": "text",
+                "type": "text",
+                "label": "Text"
+            },
+            {
+                "id": "large_text",
+                "type": "text",
+                "label": "Large Text"
+            },
+            {
+                "id": "large_text_two",
+                "type": "text",
+                "label": "Large Text Two"
+            }
+        ]
+    }
+{% endschema %}

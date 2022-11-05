@@ -1,0 +1,341 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Vybe custom theme",
+    "theme_version": "1.0",
+    "theme_author": "Josh Kirk",
+    "theme_documentation_url": "https:\/\/shopify.dev\/themes\/tools\/cli",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
+  },
+  {
+    "name": "t:settings_schema.favicon.name",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "t:settings_schema.favicon.settings.favicon.label",
+        "info": "t:settings_schema.favicon.settings.favicon.info"
+      }
+    ]
+  },
+  {
+    "name": "Pencil Bar",
+    "settings": [
+      {
+        "type": "text",
+        "id": "pencil_bar_text",
+        "label": "Pencil Bar Text"
+      },
+      {
+        "type": "text",
+        "id": "pencil_bar_url",
+        "label": "Pencil Bar URL"
+      }
+    ]
+  },
+  {
+    "name": "Mega nav content",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "shop_nav_img",
+        "label": "Shop Mega Nav Image"
+      },
+      {
+        "type": "text",
+        "id": "shop_menu_header",
+        "label": "Shop Menu Header"
+      },
+      {
+        "type": "text",
+        "id": "shop_menu_button_url",
+        "label": "Shop Menu Button URL"
+      },
+      {
+        "type": "text",
+        "id": "shop_menu_button_text",
+        "label": "Shop Menu Button Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "brand_nav_img",
+        "label": "Brand Mega Nav Image"
+      },
+      {
+        "type": "text",
+        "id": "brand_menu_header",
+        "label": "Brand Menu Header"
+      },
+      {
+        "type": "text",
+        "id": "brand_menu_button_url",
+        "label": "Brand Menu Button URL"
+      },
+      {
+        "type": "text",
+        "id": "brand_menu_button_text",
+        "label": "Brand Menu Button Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "learn_nav_img",
+        "label": "Learn Mega Nav Image"
+      },
+      {
+        "type": "text",
+        "id": "learn_menu_header",
+        "label": "Learn Menu Header"
+      },
+      {
+        "type": "text",
+        "id": "learn_menu_button_url",
+        "label": "Learn Menu Button URL"
+      },
+      {
+        "type": "text",
+        "id": "learn_menu_button_text",
+        "label": "Learn Menu Button Text"
+      }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "text",
+        "id": "empty_cart_text",
+        "label": "Empty cart text"
+      }
+    ]
+  },
+  {
+    "name": "Global reviews header",
+    "settings": [
+      {
+        "id": "reviews_header",
+        "type": "text",
+        "label": "Header"
+      }
+    ]
+  },
+  {
+    "name": "Global review one",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "review_image",
+        "label": "Image"
+      },
+      {
+        "id": "review_title",
+        "type": "text",
+        "label": "Review title"
+      },
+      {
+        "id": "review_text",
+        "type": "textarea",
+        "label": "Review text"
+      },
+      {
+        "id": "review_author",
+        "type": "text",
+        "label": "Review author"
+      },
+      {
+        "id": "review_author_title",
+        "type": "text",
+        "label": "Review author title"
+      }
+    ]
+  },
+  {
+    "name": "Global review two",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "review_two_image",
+        "label": "Image"
+      },
+      {
+        "id": "review_two_title",
+        "type": "text",
+        "label": "Review title"
+      },
+      {
+        "id": "review_two_text",
+        "type": "textarea",
+        "label": "Review text"
+      },
+      {
+        "id": "review_two_author",
+        "type": "text",
+        "label": "Review author"
+      },
+      {
+        "id": "review_two_author_title",
+        "type": "text",
+        "label": "Review author title"
+      }
+    ]
+  },
+  {
+    "name": "Global review three",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "review_three_image",
+        "label": "Image"
+      },
+      {
+        "id": "review_three_title",
+        "type": "text",
+        "label": "Review title"
+      },
+      {
+        "id": "review_three_text",
+        "type": "textarea",
+        "label": "Review text"
+      },
+      {
+        "id": "review_three_author",
+        "type": "text",
+        "label": "Review author"
+      },
+      {
+        "id": "review_three_author_title",
+        "type": "text",
+        "label": "Review author title"
+      }
+    ]
+  },
+  {
+    "name": "Global review four",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "review_four_image",
+        "label": "Image"
+      },
+      {
+        "id": "review_four_title",
+        "type": "text",
+        "label": "Review title"
+      },
+      {
+        "id": "review_four_text",
+        "type": "textarea",
+        "label": "Review text"
+      },
+      {
+        "id": "review_four_author",
+        "type": "text",
+        "label": "Review author"
+      },
+      {
+        "id": "review_four_author_title",
+        "type": "text",
+        "label": "Review author title"
+      }
+    ]
+  },
+  {
+    "name": "Global review five",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "review_five_image",
+        "label": "Image"
+      },
+      {
+        "id": "review_five_title",
+        "type": "text",
+        "label": "Review title"
+      },
+      {
+        "id": "review_five_text",
+        "type": "textarea",
+        "label": "Review text"
+      },
+      {
+        "id": "review_five_author",
+        "type": "text",
+        "label": "Review author"
+      },
+      {
+        "id": "review_five_author_title",
+        "type": "text",
+        "label": "Review author title"
+      }
+    ]
+  },
+  {
+    "name": "Global review six",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "review_six_image",
+        "label": "Image"
+      },
+      {
+        "id": "review_six_title",
+        "type": "text",
+        "label": "Review title"
+      },
+      {
+        "id": "review_six_text",
+        "type": "textarea",
+        "label": "Review text"
+      },
+      {
+        "id": "review_six_author",
+        "type": "text",
+        "label": "Review author"
+      },
+      {
+        "id": "review_six_author_title",
+        "type": "text",
+        "label": "Review author title"
+      }
+    ]
+  },
+  {
+    "name": "Social share image",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "share_image",
+        "label": "Social share image"
+      }
+    ]
+  },
+  {
+    "name": "Copyright text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "copyright_text",
+        "label": "Text"
+      }
+    ]
+  },
+  {
+    "name": "Social links",
+    "settings": [
+      {
+        "id": "instagram_url",
+        "type": "text",
+        "label": "Instagram URL"
+      },
+      {
+        "id": "facebook_url",
+        "type": "text",
+        "label": "Facebook URL"
+      },
+      {
+        "id": "twitter_url",
+        "type": "text",
+        "label": "Twitter URL"
+      }
+    ]
+  }
+]

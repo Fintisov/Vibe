@@ -1,0 +1,24 @@
+<div>
+    <img class="preload-critical" data-preload-desktop="https:{{ section.settings.image | image_url }}" data-preload-mobile="https:{{ section.settings.image_mobile | image_url }}">
+</div>
+
+
+{% schema %}
+{
+"name": "Hero Image",
+"tag": "section",
+"class": "hero-image c-50",
+"settings": [
+{
+"id": "image",
+"type": "image_picker",
+"label": "Image"
+},
+{
+"id": "image_mobile",
+"type": "image_picker",
+"label": "Image Mobile"
+}
+]
+}
+{% endschema %}

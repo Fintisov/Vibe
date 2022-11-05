@@ -1,0 +1,50 @@
+<div class="c-50 mw">
+    <div class="left">
+        <h4 class="header-l">{{ section.settings.header }}</h4>
+        <p class="text">{{ section.settings.text }}</p>
+        <a href="{{ section.settings.button_url }}" class="btn black caps">{{ section.settings.button_text }}</a>
+    </div>
+    <div class="right">
+        <img class="image preload"{% if section.settings.image.alt %} alt="{{ section.settings.image.alt }}"{% endif %} data-preload-desktop="https:{{ section.settings.image | image_url }}" data-preload-mobile="https:{{ section.settings.image_mobile | image_url }}">
+    </div>
+</div>
+
+{% schema %}
+{
+"name": "Fifty Fifty Affiliate",
+"tag": "section",
+"class": "fifty-fifty-affiliate",
+"settings": [
+{
+"id": "image",
+"type": "image_picker",
+"label": "Image"
+},
+{
+"id": "image_mobile",
+"type": "image_picker",
+"label": "Image Mobile"
+},
+{
+"id": "header",
+"type": "text",
+"label": "Header"
+},
+{
+"id": "text",
+"type": "text",
+"label": "Text"
+},
+{
+"id": "button_text",
+"type": "text",
+"label": "Button Text"
+},
+{
+"id": "button_url",
+"type": "text",
+"label": "Button URL"
+}
+]
+}
+{% endschema %}

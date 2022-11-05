@@ -1,0 +1,74 @@
+
+<div class="c-50">
+    <div class="top" id="facets-src" data-facets-src="{{ 'facets.js' | asset_url }}">
+        <h1 class="header-l">Health & Fitness</h1>
+        <p class="copy" id="fake-product-count"><span class="current-count">{{ collection.products | size }}</span> Products</p>
+    </div>
+    <div class="tile-wrapper">
+        <div id="mobile-filters-trigger">
+            <button class="btn">{% render 'icon-filter' %}<span class="open">Filters</span><span class="close">Close</span></button>
+        </div>
+        <div id="mobile-filters-backdrop"></div>
+        <div class="left">
+            <h2 class="subtitle">Filter By</h2>
+            {% render 'facets', results: collection, enable_filtering: true, enable_sorting: true, filter_type: "vertical" %}
+        </div>
+        <div class="right">
+            <div class="top-inner">
+                <div class="sorts drawer replace-label">
+                    <p class="caps">Sort by: <span class="current-label"></span> {% include "icon-arrow-down" %}</p>
+                        <div class="drawer-items" id="FakeSortBy">
+
+                        </div>
+                </div>
+            </div>
+            <div id="ProductGridContainer">
+                <div class="product-grid" id="product-grid" data-id="{{ section.id }}">
+                    {% for product in collection.products %}
+                        <a class="block{% if forloop.index > 2 %} mw{% endif %}" href="/products/{{ product.handle }}">
+                            <div class="image-wrapper">
+                                <img class="product-image preload{% if forloop.index < 3 %}-critical{% endif %}"{% if product.featured_image.alt %} alt="{{ product.featured_image.alt }}"{% endif %} data-preload-desktop="https:{{ product.featured_image | image_url }}" data-preload-mobile="https:{{ product.featured_image | image_url }}">
+                            </div>
+                            <p class="caps brand">{{ product.vendor }}</p>
+                            <h6 class="title product-name">{{ product.title }}</h6>
+                            {% comment %}<p class="text-m product-info">Beauty • 3 Sizes</p>{% endcomment %}
+                            <div class="reviews subtitle">{% include 'icon-reviews-temp' %}(234)</div>
+                            <p class="price">{{ product.price | money_without_trailing_zeros }}</p>
+                        </a>
+                    {% endfor %}
+
+
+                    <div class="block filler">
+                    </div>
+                    <div class="block filler">
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading-overlay gradient"></div>
+            {% comment %}<div class="pagination">{% endcomment %}
+                {% comment %}<div class="pages">{% endcomment %}
+                    {% comment %}<button class="page text-m">1</button>{% endcomment %}
+                    {% comment %}<button class="page text-m">2</button>{% endcomment %}
+                    {% comment %}<button class="page text-m">3</button>{% endcomment %}
+                {% comment %}</div>{% endcomment %}
+                {% comment %}<div class="arrows">{% endcomment %}
+                    {% comment %}<button>{% include 'icon-arrow-page' %}</button>{% endcomment %}
+                    {% comment %}<button>{% include 'icon-arrow-pages' %}</button>{% endcomment %}
+                {% comment %}</div>{% endcomment %}
+            {% comment %}</div>{% endcomment %}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% schema %}
+{
+"name": "Product Grid Collection",
+"tag": "section",
+"class": "product-grid-collection"
+}
+{% endschema %}

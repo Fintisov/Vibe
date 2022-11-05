@@ -1,0 +1,66 @@
+<div class="c-60">
+    <h3 class="header-l">{{ section.settings.header }}</h3>
+    <div class="slider blocks" data-at="767" data-align="start">
+        <div class="slides">
+            <div class="inner mw">
+                {% assign vendorHandle = product.vendor | remove: "'" | replace: ' ', '-' | downcase %}
+                {% assign relatedLength = collections[vendorHandle].products | size | minus: 1 %}
+                {% if relatedLength > 0 %}
+                    {% for relatedProduct in collections[vendorHandle].products limit: 5 %}
+                        {% if relatedProduct.title == product.title %}
+                            {% continue %}
+                        {% endif %}
+                        <a href="/products/{{ relatedProduct.handle }}" class="block slide">
+                            <div class="image-wrapper">
+                                <img class="product-image preload" data-preload-desktop="https:{{ relatedProduct.images[0] | image_url }}" data-preload-mobile="https:{{ relatedProduct.images[0] | image_url }}">
+                            </div>
+                            <p class="caps brand">{{ relatedProduct.vendor }}</p>
+                            <h6 class="title product-name">{{ relatedProduct.title }}</h6>
+                            {% comment %}<p class="text-m product-info">Beauty • 3 Sizes</p>{% endcomment %}
+                            <div class="reviews subtitle">{% include 'icon-reviews-temp' %}(234)</div>
+                            <p class="text-m price">{{ relatedProduct.price | money }}</p>
+                        </a>
+                    {% endfor %}
+                {% endif %}
+
+                {% if relatedLength < 4 %}
+                    {% assign diff = 4 | minus: relatedLength %}
+                    {% for relatedProduct in collections["all"].products %}
+                        {% if relatedProduct.title == product.title %}
+                            {% continue %}
+                        {% endif %}
+                        <a href="/products/{{ relatedProduct.handle }}" class="block slide">
+                            <div class="image-wrapper">
+                                <img class="product-image preload" data-preload-desktop="https:{{ relatedProduct.images[0] | image_url }}" data-preload-mobile="https:{{ relatedProduct.images[0] | image_url }}">
+                            </div>
+                            <p class="caps brand">{{ relatedProduct.vendor }}</p>
+                            <h6 class="title product-name">{{ relatedProduct.title }}</h6>
+                            {% comment %}<p class="text-m product-info">Beauty • 3 Sizes</p>{% endcomment %}
+                            <div class="reviews subtitle">{% include 'icon-reviews-temp' %}(234)</div>
+                            <p class="text-m price">{{ relatedProduct.price | money }}</p>
+                        </a>
+                        {% assign diff = diff | minus: 1 %}
+                        {% if diff == 0 %}
+                            {% break %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Related products",
+    "tag": "section",
+    "class": "related-products",
+    "settings": [
+        {
+            "id": "header",
+            "type": "text",
+            "label": "Header"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,77 @@
+<div class="list-wrapper">
+    <ul>
+        {% for block in section.blocks %}
+            {% case block.type %}
+                {% when 'icon_header_copy' %}
+                    <li>
+                        {% assign thisIcon = "icon-" | append: block.settings.icon_name %}
+                        {% include thisIcon  %}
+                        <h5 class="title">{{ block.settings.header }}</h5>
+                        <p class="text">{{ block.settings.copy }}</p>
+                    </li>
+            {% endcase %}
+        {% endfor %}
+    </ul>
+</div>
+<div class="media-wrapper">
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {% when 'image' %}
+                {% assign width_as_float = block.settings.image.width | times: 1.0 %}
+                {% assign arDesktop = block.settings.image.height | divided_by: width_as_float | times: 100 | append: "%" %}
+                <div class="ar-wrapper patch-portal" style="--ar: {{ arDesktop }}; --mar: {{ arDesktop }}">
+                    {{ block.settings.image | image_url: width: 850 | image_tag: class: 'bg', loading: 'lazy' }}
+                    <svg viewBox="0 0 528 648" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><!-- patch mask -->
+                        <clipPath id="patchBorder-listimage" clipPathUnits="objectBoundingBox" transform="scale(0.001893939393939, 0.001543209876543)">
+                            <path vector-effect="non-scaling-stroke" d="M54.4623 106.973L54.4624 106.973C73.4486 69.6038 105.447 40.393 144.484 24.799C221.368 -5.60007 307.011 -5.59963 383.895 24.8003C422.927 40.3997 454.923 69.6085 473.913 106.973C508.081 174.214 525.884 248.515 525.884 323.874C525.884 399.232 508.081 473.534 473.913 540.774C454.918 578.134 422.924 607.342 383.896 622.946C307.012 653.347 221.369 653.347 144.484 622.948C105.451 607.349 73.4534 578.14 54.4623 540.774C20.2875 473.535 2.48047 399.233 2.48047 323.874C2.48047 248.514 20.2875 174.212 54.4623 106.973Z" stroke="#D9E6FB" stroke-width="4"/>
+                        </clipPath>
+                        <path vector-effect="non-scaling-stroke" d="M54.4623 106.973L54.4624 106.973C73.4486 69.6038 105.447 40.393 144.484 24.799C221.368 -5.60007 307.011 -5.59963 383.895 24.8003C422.927 40.3997 454.923 69.6085 473.913 106.973C508.081 174.214 525.884 248.515 525.884 323.874C525.884 399.232 508.081 473.534 473.913 540.774C454.918 578.134 422.924 607.342 383.896 622.946C307.012 653.347 221.369 653.347 144.484 622.948C105.451 607.349 73.4534 578.14 54.4623 540.774C20.2875 473.535 2.48047 399.233 2.48047 323.874C2.48047 248.514 20.2875 174.212 54.4623 106.973Z" stroke="#D9E6FB" stroke-width="4"/>
+                    </svg>
+                </div>
+        {% endcase %}
+    {% endfor %}
+</div>
+
+{% schema %}
+{
+    "name": "Vertical list/patch image",
+    "tag": "section",
+    "class": "list-image c-60",
+    "blocks": [
+        {
+            "name": "Icon header copy",
+            "type": "icon_header_copy",
+            "limit": 3,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "icon_name",
+                    "label": "Icon name"
+                },
+                {
+                    "type": "text",
+                    "id": "header",
+                    "label": "Header"
+                },
+                {
+                    "type": "text",
+                    "id": "copy",
+                    "label": "Copy"
+                }
+            ]
+        },
+        {
+            "name": "Image",
+            "type": "image",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

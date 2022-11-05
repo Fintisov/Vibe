@@ -1,0 +1,77 @@
+<div class="c-112">
+    <div class="top">
+        <h2 class="header-l">{{ section.settings.header }}</h2>
+        <p class="subtitle">{{ section.settings.subheader }}</p>
+    </div>
+
+    <div class="slider mw" data-at="767" data-align="center">
+        <div class="slides">
+            <div class="inner athletes">
+                {% for block in section.blocks %}
+                    <div class="athlete">
+                        <div class="tile-top">
+                            <img class="image preload"{% if block.settings.image.alt %} alt="{{ block.settings.image.alt }}"{% endif %} data-preload-desktop="https:{{ block.settings.image | image_url }}" data-preload-mobile="https:{{ block.settings.image | image_url }}">
+                            <div class="content float">
+                                <h6 class="title name">{{ block.settings.name }}</h6>
+                                <p class="subtitle sport">{{ block.settings.sport }}</p>
+                            </div>
+                            <div class="linear-bg"></div>
+                        </div>
+                        <p class="copy">{{ block.settings.copy }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+        {% schema %}
+        {
+        "name": "Athletes Section",
+        "tag": "section",
+        "class": "athletes-section",
+        "settings": [
+        {
+        "id": "header",
+        "type": "text",
+        "label": "Header"
+        },
+        {
+        "id": "subheader",
+        "type": "text",
+        "label": "Sub Header"
+        }
+        ],
+        "blocks": [
+        {
+        "name": "Athlete",
+        "type": "Tile",
+        "limit": 3,
+        "settings": [
+        {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+        },
+        {
+        "type": "text",
+        "id": "name",
+        "label": "Name"
+        },
+        {
+        "type": "text",
+        "id": "sport",
+        "label": "Sport"
+        },
+        {
+        "type": "text",
+        "id": "copy",
+        "label": "Copy"
+        }
+        ]
+        }
+        ]
+        }
+{% endschema %}

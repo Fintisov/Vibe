@@ -1,0 +1,55 @@
+<div class="c-60">
+
+    <h3 class="header-l">{{ section.settings.header }}</h3>
+
+    <div class="slider product-slider mw blocks" data-at="767" data-align="start">
+        <div class="slides">
+            <div class="inner">
+                {% for block in section.blocks %}
+                    {% assign thisProduct = block.settings.product %}
+                    <a href="/products/{{ thisProduct.handle }}" class="block slide">
+                        <div class="image-wrapper">
+                            <img class="product-image preload"{% if thisProduct.featured_image.alt %} alt="{{ thisProduct.featured_image.alt }}"{% endif %} data-preload-desktop="https:{{ thisProduct.featured_image | image_url }}" data-preload-mobile="https:{{ thisProduct.featured_image | image_url }}">
+                        </div>
+                        <p class="caps brand">{{ thisProduct.vendor }}</p>
+                        <h6 class="title product-name">{{ thisProduct.title }}</h6>
+                        {% comment %}<p class="text-m product-info">Beauty • 3 Sizes</p>{% endcomment %}
+                        <div class="reviews subtitle">{% include 'icon-reviews-temp' %}(234)</div>
+                        <p class="title price">{{ thisProduct.price | money_without_trailing_zeros }}</p>
+                    </a>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% schema %}
+{
+"name": "Products 404",
+"tag": "section",
+"class": "featured-collection products-404",
+"settings": [
+{
+"id": "header",
+"type": "text",
+"label": "Header"
+}
+],
+"blocks": [
+{
+"name": "Block Slide",
+"type": "block",
+"settings": [
+{
+"type": "product",
+"id": "product",
+"label": "Product"
+}
+]
+}
+]
+}
+{% endschema %}

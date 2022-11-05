@@ -1,0 +1,47 @@
+<div class="c-50">
+    <div class="left">
+        <h4 class="header-l one">{{ section.settings.header_one }}</h4>
+        <h4 class="header-l two">{{ section.settings.header_two }}</h4>
+        <div class="text">{{ section.settings.text }}</div>
+    </div>
+    <div class="right mw">
+        <img class="preload"{% if section.settings.image.alt %} alt="{{ section.settings.image.alt }}"{% endif %} data-preload-desktop="https:{{ section.settings.image | image_url }}" data-preload-mobile="https:{{ section.settings.image_mobile | image_url }}">
+    </div>
+</div>
+
+
+
+{% schema %}
+    {
+        "name": "Fifty Fifty Balance",
+        "tag": "section",
+        "class": "fifty-fifty-affiliate balance",
+        "settings": [
+            {
+                "id": "image",
+                "type": "image_picker",
+                "label": "Image"
+            },
+            {
+                "id": "image_mobile",
+                "type": "image_picker",
+                "label": "Image Mobile"
+            },
+            {
+                "id": "header_one",
+                "type": "text",
+                "label": "Header One"
+            },
+            {
+                "id": "header_two",
+                "type": "text",
+                "label": "Header Two"
+            },
+            {
+                "id": "text",
+                "type": "richtext",
+                "label": "Text"
+            }
+        ]
+    }
+{% endschema %}

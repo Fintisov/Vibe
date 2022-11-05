@@ -1,0 +1,53 @@
+{
+  "sections": {
+    "pdp-hero": {
+      "type": "pdp-hero",
+      "blocks": {
+        "fbb965da-68dc-49b6-8df5-81529bc7491d": {
+          "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/star-rating\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "fbb965da-68dc-49b6-8df5-81529bc7491d"
+      ],
+      "settings": {
+      }
+    },
+    "pdp-main": {
+      "type": "pdp-main",
+      "settings": {
+      }
+    },
+    "166386874117c1bf17": {
+      "type": "apps",
+      "blocks": {
+        "6fdf9672-3486-4bea-8ed3-01f3e8e7918e": {
+          "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "6fdf9672-3486-4bea-8ed3-01f3e8e7918e"
+      ],
+      "settings": {
+      }
+    },
+    "recirc-products": {
+      "type": "recirc-products",
+      "settings": {
+        "header": "You may be interested in"
+      }
+    }
+  },
+  "order": [
+    "pdp-hero",
+    "pdp-main",
+    "166386874117c1bf17",
+    "recirc-products"
+  ]
+}

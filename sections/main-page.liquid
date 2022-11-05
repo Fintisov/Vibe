@@ -1,0 +1,33 @@
+<img class="preload-critical" data-preload-desktop="{{ page.metafields.accentuate.hero_image[0].src }}" data-preload-mobile="{{ page.metafields.accentuate.hero_image[0].src }}">
+<div class="c-245">
+  <div class="utility-rich-text utility-content">
+    <h1>{{ page.title | escape }}</h1>
+    {{ page.content }}
+  </div>
+</div>
+
+
+{% schema %}
+{
+"name": "Utility Page",
+"tag": "section",
+"class": "utility-page",
+"settings": [
+{
+"id": "image",
+"type": "image_picker",
+"label": "Image"
+},
+{
+"id": "image_mobile",
+"type": "image_picker",
+"label": "Image Mobile"
+},
+{
+"id": "rich_text",
+"type": "text",
+"label": "Rich Text"
+}
+]
+}
+{% endschema %}

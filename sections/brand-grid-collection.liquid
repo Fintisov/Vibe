@@ -1,0 +1,130 @@
+<div class="c-50">
+    <div class="top">
+        <h1 class="header-l">Brands you’ll love</h1>
+        <p class="copy"></p>
+    </div>
+    <div class="tile-wrapper">
+        <div class="left">
+            <h2 class="subtitle">Filter By</h2>
+            <div class="col drawer allow-click">
+                <h6 class="eyebrow">FILTER BY{% include "icon-plus" %}</h6>
+                <div class="drawer-items">
+                    <div class="input-block">
+                        <input  type="checkbox" id="product" name="product"><label class="subtitle dw-item">Health & Nutrition</label>
+                    </div>
+                    <div class="input-block">
+                        <input class="subtitle dw-item" type="checkbox" id="product" name="product"><label class="subtitle dw-item">Skincare</label>
+                    </div>
+                    <div class="input-block">
+                        <input class="subtitle dw-item" type="checkbox" id="product" name="product"><label class="subtitle dw-item">Some Category</label>
+                    </div>
+                    <div class="input-block">
+                        <input class="subtitle dw-item" type="checkbox" id="product" name="product"><label class="subtitle dw-item">Skincare</label>
+                    </div>
+                    <div class="input-block">
+                        <input class="subtitle dw-item" type="checkbox" id="product" name="product"><label class="subtitle dw-item">Some Category</label>
+                    </div>
+                    <button class="see-more">See more (10 flavors){% include 'icon-arrow-red' %}</button>
+                </div>
+            </div>
+            <div class="col drawer allow-click">
+                <h6 class="eyebrow">PRODUCT TYPE{% include "icon-plus" %}</h6>
+                <div class="drawer-items">
+                    <div class="input-block">
+                        <input  type="checkbox" id="product" name="product"><label class="subtitle dw-item">Berry Blast</label>
+                    </div>
+                    <div class="input-block">
+                        <input class="subtitle dw-item" type="checkbox" id="product" name="product"><label class="subtitle dw-item">Candy Punch</label>
+                    </div>
+                    <div class="input-block">
+                        <input class="subtitle dw-item" type="checkbox" id="product" name="product"><label class="subtitle dw-item">Chocolate Cake</label>
+                    </div>
+                    <div class="input-block">
+                        <input class="subtitle dw-item" type="checkbox" id="product" name="product"><label class="subtitle dw-item">Chocolate Cake</label>
+                    </div>
+                    <div class="input-block">
+                        <input class="subtitle dw-item" type="checkbox" id="product" name="product"><label class="subtitle dw-item">Fruit Smoothie</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col drawer allow-click">
+                <h6 class="eyebrow">SUPPLEMENT FORM{% include "icon-plus" %}</h6>
+                <div class="drawer-items">
+                    <div class="input-block">
+                        <input  type="checkbox" id="product" name="product"><label class="subtitle dw-item">Berry Blast</label>
+                    </div>
+                    <div class="input-block">
+                        <input class="subtitle dw-item" type="checkbox" id="product" name="product"><label class="subtitle dw-item">Candy Punch</label>
+                    </div>
+                    <div class="input-block">
+                        <input class="subtitle dw-item" type="checkbox" id="product" name="product"><label class="subtitle dw-item">Chocolate Cake</label>
+                    </div>
+                    <div class="input-block">
+                        <input class="subtitle dw-item" type="checkbox" id="product" name="product"><label class="subtitle dw-item">Chocolate Cake</label>
+                    </div>
+                    <div class="input-block">
+                        <input class="subtitle dw-item" type="checkbox" id="product" name="product"><label class="subtitle dw-item">Fruit Smoothie</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="top-inner">
+                <div class="sorts drawer">
+                    <p class="caps">Sort by: best sellers {% include "icon-arrow-down" %}</p>
+                    <div class="drawer-items">
+                        <p class="caps">Option 1</p>
+                        <p class="caps">Option 1</p>
+                        <p class="caps">Option 1</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="brand-grid">
+                {%- for block in section.blocks -%}
+                    {%- case block.type -%}
+                    {%- when 'collection_grid' -%}
+                        {% assign thisCollection = block.settings.collection %}
+                        <a class="brand-logo" href="/collections/{{ thisCollection.handle }}" title="{{ thisCollection.title }}">
+                            <img class="image" src="{{ thisCollection.image | image_url }}">
+                            {% if thisCollection.metafields.accentuate.collection_category %}
+                                <span class="caps category">{{ thisCollection.metafields.accentuate.collection_category }}</span>
+                            {% endif %}
+                        </a>
+                    {% endcase %}
+                {% endfor %}
+                <a class="brand-logo">
+                    <div class="filler"></div>
+                </a>
+                <a class="brand-logo">
+                    <div class="filler"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% schema %}
+{
+    "name": "Brand Grid Collection",
+    "tag": "section",
+    "class": "brand-grid-collection",
+    "blocks": [
+        {
+            "name": "Collections grid",
+            "type": "collection_grid",
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Collection"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

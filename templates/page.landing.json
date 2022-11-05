@@ -1,0 +1,38 @@
+{
+  "sections": {
+    "landing-page": {
+      "type": "landing-page",
+      "blocks": {
+        "ea324eb2-1785-4576-8234-059a5bd52eaa": {
+          "type": "brand_logos",
+          "settings": {
+            "brands_desktop": "shopify:\/\/shop_images\/logos-horizontal.png",
+            "brands_mobile": "shopify:\/\/shop_images\/vertical-logos.png"
+          }
+        },
+        "cc89477c-08c4-4e82-8855-30add094257e": {
+          "type": "brand_logos",
+          "settings": {
+            "brands_desktop": "shopify:\/\/shop_images\/Smilz_Logo_sm_gradient_whiteBg.png"
+          }
+        }
+      },
+      "block_order": [
+        "ea324eb2-1785-4576-8234-059a5bd52eaa",
+        "cc89477c-08c4-4e82-8855-30add094257e"
+      ],
+      "settings": {
+        "header": "Stock Symbol: VYBE",
+        "copy": "Join our community to stay updated on exciting news, discounts, exclusive offers and more.  Visualize yourself better everyday.",
+        "brand_section_header": "Our Brands",
+        "placeholder": "Your email, please",
+        "success_text": "Thank you!",
+        "copyright_text": "2022 VYBE, LLC",
+        "list_id": "TgMuaB"
+      }
+    }
+  },
+  "order": [
+    "landing-page"
+  ]
+}

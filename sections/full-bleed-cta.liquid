@@ -1,0 +1,48 @@
+<img class="image preload"{% if section.settings.image.alt %} alt="{{ section.settings.image.alt }}"{% endif %} data-preload-desktop="https:{{ section.settings.image | image_url }}" data-preload-mobile="https:{{ section.settings.image | image_url }}">
+<div class="content c-112">
+    <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+    <div class="hero-header">{{ section.settings.header }}</div>
+    <p class="subtitle">{{ section.settings.text }}</p>
+    <a href="{{ section.settings.button_url }}" class="btn white caps">{{ section.settings.button_text }}</a>
+</div>
+<div class="linear-gradient mobile-only"></div>
+
+{% schema %}
+    {
+        "name": "Full Bleed CTA",
+        "tag": "section",
+        "class": "full-bleed-cta mw",
+        "settings": [
+            {
+                "id": "image",
+                "type": "image_picker",
+                "label": "Image"
+            },
+            {
+                "id": "eyebrow",
+                "type": "text",
+                "label": "Eyebrow"
+            },
+            {
+                "id": "header",
+                "type": "richtext",
+                "label": "Header"
+            },
+            {
+                "id": "text",
+                "type": "text",
+                "label": "Text"
+            },
+            {
+                "id": "button_text",
+                "type": "text",
+                "label": "Button Text"
+            },
+            {
+                "id": "button_url",
+                "type": "text",
+                "label": "Button URL"
+            }
+        ]
+    }
+{% endschema %}

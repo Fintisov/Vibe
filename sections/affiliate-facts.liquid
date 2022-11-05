@@ -1,0 +1,64 @@
+<div class="c-112">
+    <div class="top">
+        <h2 class="header-l">{{ section.settings.header }}</h2>
+        <p class="text-m subheader  ">{{ section.settings.subheader }}</p>
+    </div>
+    <div class="inner facts mw">
+        {% for block in section.blocks %}
+            <div class="fact">
+                <div class="left">
+                    <p class="header-l">{{ block.settings.title }}</p>
+                    <p class="subtitle tile-copy">{{ block.settings.copy }}</p>
+                </div>
+                <img class="preload"{% if block.settings.image.alt %} alt="{{ block.settings.image.alt }}"{% endif %} data-preload-desktop="https:{{ block.settings.image | image_url }}" data-preload-mobile="https:{{ block.settings.image | image_url }}">
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+{% schema %}
+{
+"name": "Affiliate Facts",
+"tag": "section",
+"class": "affiliate-facts",
+"settings": [
+{
+"id": "header",
+"type": "text",
+"label": "Header"
+},
+{
+"id": "subheader",
+"type": "text",
+"label": "Sub Header"
+}
+],
+"blocks": [
+{
+"name": "Facts Fifty-Fifty",
+"type": "Tile",
+"limit": 2,
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": "Title"
+},
+{
+"type": "text",
+"id": "copy",
+"label": "Copy"
+},
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image"
+}
+]
+}
+]
+}
+{% endschema %}

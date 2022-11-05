@@ -1,0 +1,42 @@
+<div class="c-50 mw">
+    <h2 class="header-l">{{ section.settings.header }}</h2>
+    <div class="inner media desktop-only">
+        {% for block in section.blocks %}
+            <div class="media-tile">
+                <img class="preload"{% if block.settings.image.alt %} alt="{{ block.settings.image.alt }}"{% endif %} data-preload-desktop="https:{{ block.settings.image | image_url }}" data-preload-mobile="https:{{ block.settings.image | image_url }}">
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+{% schema %}
+{
+"name": "Media Section",
+"tag": "section",
+"class": "media-section",
+"settings": [
+{
+"id": "header",
+"type": "text",
+"label": "Header"
+}
+],
+"blocks": [
+{
+"name": "Media Tile",
+"type": "Tile",
+"limit": 10,
+"settings": [
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image"
+}
+]
+}
+]
+}
+{% endschema %}

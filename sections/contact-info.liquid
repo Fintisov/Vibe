@@ -1,0 +1,98 @@
+<div class="c-200">
+    <div class="left">
+        <img class="desktop-only bg" src="{{ section.settings.image | image_url }}">
+        <img class="mobile-only bg" src="{{ section.settings.image_mobile | image_url }}">
+        <div class="content">
+            <h1 class="header-l">{{ section.settings.header }}</h1>
+            <p class="subtitle">{{ section.settings.copy }}</p>
+            <div class="contact-field text-m">{% include 'icon-telephone' %} <a href="tel:{{ section.settings.telephone }}">{{ section.settings.telephone }}</a></div>
+            <div class="contact-field text-m">{% include 'icon-time' %}<div>{{ section.settings.business_hours }}</div></div>
+            <div class="contact-field text-m">{% include 'icon-address' %} <a target="_blank" href="{{ section.settings.business_address_link }}">{{ section.settings.business_address }}</a></div>
+        </div>
+        <div class="bg-gradient"></div>
+    </div>
+    <div class="right">
+        <h2 class="subtitle form-header">{{ section.settings.form_header }}</h2>
+        <form>
+            <div class="input-block">
+                <label class="copy">Name</label>
+                <input class="subtitle non-account" type="text" id="name" name="name">
+            </div>
+            <div class="input-block">
+                <label class="copy">Email</label>
+                <input class="subtitle non-account" type="email" id="email" name="email">
+            </div>
+            <div class="input-block dropdown">
+                <div class="drawer">
+                    <p class="subtitle subject">Subject {% include "icon-arrow-down" %}</p>
+                    <div class="drawer-items">
+                        <p class="subtitle">Option 1</p>
+                        <p class="subtitle">Option 1</p>
+                        <p class="subtitle">Option 1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="input-block text-area">
+                <textarea placeholder="Label" id="textarea" name="textarea" type="text"></textarea>
+            </div>
+            <button class="btn black caps">
+                Send
+            </button>
+        </form>
+    </div>
+</div>
+
+{% schema %}
+{
+"name": "Contact Info",
+"tag": "section",
+"class": "contact-info",
+"settings": [
+{
+"id": "image",
+"type": "image_picker",
+"label": "Image"
+},
+{
+"id": "image_mobile",
+"type": "image_picker",
+"label": "Image Mobile"
+},
+{
+"id": "header",
+"type": "text",
+"label": "Header"
+},
+{
+"id": "copy",
+"type": "text",
+"label": "Copy"
+},
+{
+"id": "telephone",
+"type": "text",
+"label": "Telephone"
+},
+{
+"id": "business_hours",
+"type": "richtext",
+"label": "Business Hours"
+},
+{
+"id": "business_address",
+"type": "richtext",
+"label": "Business Address"
+},
+{
+"id": "business_address_link",
+"type": "text",
+"label": "Business Address Link"
+},
+{
+"id": "form_header",
+"type": "text",
+"label": "Form Header"
+}
+]
+}
+{% endschema %}

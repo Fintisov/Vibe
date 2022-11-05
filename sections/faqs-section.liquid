@@ -1,0 +1,101 @@
+<img class="bg preload-critical" data-preload-desktop="https:{{ section.settings.image | image_url }}" data-preload-mobile="https:{{ section.settings.image_mobile | image_url }}">
+<div class="c-245">
+    <div class="faq-inner tabs-inside">
+        <div class="category-tabs tab-triggers">
+            {% assign faqCats = "" %}
+            {% for block in section.blocks %}
+                {%- case block.type -%}
+                    {%- when 'faq-group-titles' -%}
+                        {% assign faqCats = faqCats | append: block.settings.group_id | append: "|||"  %}
+                        <button class="title trigger faq-tab{% if forloop.first %} active{% endif %}">{{ block.settings.title }}</button>
+                {% endcase %}
+            {% endfor %}
+            {% assign faqCats = faqCats | split: "|||" %}
+        </div>
+        <div class="faq-content tab-wrapper">
+            {% for block in section.blocks %}
+                {%- case block.type -%}
+                    {%- when 'faq-group-titles' -%}
+                    <div class="faq tab{% if forloop.first %} active{% endif %}">
+                        <h1 class="hero-header">{{ block.settings.title }}</h1>
+                        {% for innerBlock in section.blocks %}
+                            {%- case innerBlock.type -%}
+                            {%- when 'faq-group' -%}
+                                {% if block.settings.group_id == innerBlock.settings.group_id %}
+                                    <div class="faq-block drawer allow-click">
+                                        <div class="text-m question">{{ innerBlock.settings.question }}<span>{% include 'icon-plus' %}</span></div>
+                                        <div class="drawer-items subtitle answer">
+                                            {{ innerBlock.settings.answer }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endcase %}
+                        {% endfor %}
+                    </div>
+                {% endcase %}
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+"name": "FAQs",
+"tag": "section",
+"class": "faqs-section",
+"settings": [
+    {
+    "id": "image",
+    "type": "image_picker",
+    "label": "Image"
+    },
+    {
+    "id": "image_mobile",
+    "type": "image_picker",
+    "label": "Image Mobile"
+    }
+],
+    "blocks": [
+        {
+            "name": "FAQ group titles",
+            "type": "faq-group-titles",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                },
+                {
+                    "type": "text",
+                    "id": "group_id",
+                    "label": "Group ID"
+                }
+            ]
+        },
+        {
+            "name": "FAQ Block",
+            "type": "faq-group",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "question",
+                    "label": "Question"
+                },
+                {
+                    "type": "richtext",
+                    "id": "answer",
+                    "label": "Answer"
+                },
+                {
+                    "type": "text",
+                    "id": "group_id",
+                    "label": "Group ID"
+                }
+            ]
+        }
+
+    ]
+}
+{% endschema %}

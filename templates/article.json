@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main-article": {
+      "type": "main-article",
+      "settings": {
+        "related_header": "Further reading",
+        "related_products_header": "You may be interested in"
+      }
+    }
+  },
+  "order": [
+    "main-article"
+  ]
+}

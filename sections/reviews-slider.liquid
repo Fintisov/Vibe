@@ -1,0 +1,69 @@
+<div class="c-60">
+    <h3 class="header-l">{{ settings.reviews_header }}</h3>
+
+    <div class="slider blocks mw">
+        <div class="slides">
+            <div class="inner">
+                <div class="block slide">
+                    <img class="product-image preload"{% if settings.review_image.alt %} alt="{{ settings.review_image.alt }}"{% endif %} data-preload-desktop="https:{{ settings.review_image | image_url }}" data-preload-mobile="https:{{ settings.review_image | image_url }}">
+                    <div class="reviews">{% include 'icon-reviews-temp' %}</div>
+                    <p class="title review-title">{{ settings.review_title }}</p>
+                    <p class="subtitle review-copy">{{ settings.review_text }}</p>
+                    <p class="title username">{{ settings.review_author }}</p>
+                    <p class="subtitle">{{ settings.review_author_title }}</p>
+                </div>
+                <div class="block slide">
+                    <img class="product-image preload"{% if settings.review_two_image.alt %} alt="{{ settings.review_two_image.alt }}"{% endif %} data-preload-desktop="https:{{ settings.review_two_image | image_url }}" data-preload-mobile="https:{{ settings.review_two_image | image_url }}">
+                    <div class="reviews">{% include 'icon-reviews-temp' %}</div>
+                    <p class="title review-title">{{ settings.review_two_title }}</p>
+                    <p class="subtitle review-copy">{{ settings.review_two_text }}</p>
+                    <p class="title username">{{ settings.review_two_author }}</p>
+                    <p class="subtitle">{{ settings.review_two_author_title }}</p>
+                </div>
+                <div class="block slide">
+                    <img class="product-image preload"{% if settings.review_three_image.alt %} alt="{{ settings.review_three_image.alt }}"{% endif %} data-preload-desktop="https:{{ settings.review_three_image | image_url }}" data-preload-mobile="https:{{ settings.review_three_image | image_url }}">
+                    <div class="reviews">{% include 'icon-reviews-temp' %}</div>
+                    <p class="title review-title">{{ settings.review_three_title }}</p>
+                    <p class="subtitle review-copy">{{ settings.review_three_text }}</p>
+                    <p class="title username">{{ settings.review_three_author }}</p>
+                    <p class="subtitle">{{ settings.review_three_author_title }}</p>
+                </div>
+                <div class="block slide">
+                    <img class="product-image preload"{% if settings.review_four_image.alt %} alt="{{ settings.review_four_image.alt }}"{% endif %} data-preload-desktop="https:{{ settings.review_four_image | image_url }}" data-preload-mobile="https:{{ settings.review_four_image | image_url }}">
+                    <div class="reviews">{% include 'icon-reviews-temp' %}</div>
+                    <p class="title review-title">{{ settings.review_four_title }}</p>
+                    <p class="subtitle review-copy">{{ settings.review_four_text }}</p>
+                    <p class="title username">{{ settings.review_four_author }}</p>
+                    <p class="subtitle">{{ settings.review_four_author_title }}</p>
+                </div>
+                <div class="block slide">
+                    <img class="product-image preload"{% if settings.review_five_image.alt %} alt="{{ settings.review_five_image.alt }}"{% endif %} data-preload-desktop="https:{{ settings.review_five_image | image_url }}" data-preload-mobile="https:{{ settings.review_five_image | image_url }}">
+                    <div class="reviews">{% include 'icon-reviews-temp' %}</div>
+                    <p class="title review-title">{{ settings.review_five_title }}</p>
+                    <p class="subtitle review-copy">{{ settings.review_five_text }}</p>
+                    <p class="title username">{{ settings.review_five_author }}</p>
+                    <p class="subtitle">{{ settings.review_five_author_title }}</p>
+                </div>
+                <div class="block slide">
+                    <img class="product-image preload"{% if settings.review_six_image.alt %} alt="{{ settings.review_six_image.alt }}"{% endif %} data-preload-desktop="https:{{ settings.review_six_image | image_url }}" data-preload-mobile="https:{{ settings.review_six_image | image_url }}">
+                    <div class="reviews">{% include 'icon-reviews-temp' %}</div>
+                    <p class="title review-title">{{ settings.review_six_title }}</p>
+                    <p class="subtitle review-copy">{{ settings.review_six_text }}</p>
+                    <p class="title username">{{ settings.review_six_author }}</p>
+                    <p class="subtitle">{{ settings.review_six_author_title }}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% schema %}
+{
+"name": "Reviews Slider",
+"tag": "section",
+"class": "reviews-slider"
+}
+{% endschema %}

@@ -1,0 +1,73 @@
+<img class="preload-critical bg" aria-hidden="true" data-preload-desktop="https:{{ section.settings.banner_pattern | image_url }}" data-preload-mobile="https:{{ section.settings.banner_pattern_mobile | image_url }}">
+<div class="c-112">
+    <div class="hero-content">
+        <p class="eyebrow e-el-up">{{ section.settings.hero_eyebrow }}</p>
+        <h1 class="hero-header e-el-up">{{ section.settings.hero_header }}</h1>
+        <p class="subtitle e-el-up">{{ section.settings.hero_subtitle }}</p>
+        {% if section.settings.hero_button_url != blank %}
+            <div class="e-el-up">
+                <a class="btn red caps" href="{{ section.settings.hero_button_url }}">{{ section.settings.hero_button_text }}</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+<div class="image-wrapper">
+    <img class="preload-critical"{% if section.settings.hero_image.alt %} alt="{{ section.settings.hero_image.alt }}"{% endif %} data-preload-desktop="https:{{ section.settings.hero_image | image_url }}" data-preload-mobile="https:{{ section.settings.hero_image_mobile | image_url }}">
+</div>
+
+
+
+{% schema %}
+{
+    "name": "Hero section",
+    "tag": "section",
+    "class": "hero-section",
+    "settings": [
+        {
+            "id": "banner_pattern",
+            "type": "image_picker",
+            "label": "Banner Pattern"
+        },
+        {
+            "id": "banner_pattern_mobile",
+            "type": "image_picker",
+            "label": "Banner Pattern Mobile"
+        },
+        {
+            "id": "hero_image",
+            "type": "image_picker",
+            "label": "Hero Image"
+        },
+        {
+            "id": "hero_image_mobile",
+            "type": "image_picker",
+            "label": "Hero Image Mobile"
+        },
+        {
+            "id": "hero_eyebrow",
+            "type": "text",
+            "label": "Hero Eyebrow"
+        },
+        {
+            "id": "hero_header",
+            "type": "text",
+            "label": "Hero Header"
+        },
+        {
+            "id": "hero_subtitle",
+            "type": "text",
+            "label": "Hero Subtitle"
+        },
+        {
+            "id": "hero_button_text",
+            "type": "text",
+            "label": "Hero Button Text"
+        },
+        {
+            "id": "hero_button_url",
+            "type": "text",
+            "label": "Hero Button URL"
+        }
+    ]
+}
+{% endschema %}

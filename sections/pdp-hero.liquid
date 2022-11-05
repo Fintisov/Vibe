@@ -1,0 +1,133 @@
+{% assign vendorHandle = product.vendor | remove: "'" | replace: ' ', '-' | downcase %}
+<div class="breadcrumbs c-50">
+    <a href="/collections/all">Shop</a>
+    {% assign vendorHandle = product.vendor | remove: "'" | replace: ' ', '-' | downcase %}
+    {% if collections[vendorHandle] != empty %}
+        <span>/</span>
+        <a href="/collections/{{ vendorHandle }}">Divatrim</a>
+    {% endif %}
+    <span>/</span>
+    <p>{{ product.title }}</p>
+</div>
+<div class="product c-90">
+    <div class="left">
+        {% assign imageCount = product.images | size %}
+        <div class="{% if imageCount > 1 %}slider {% endif %}thumbnail-wrapper mw{% if imageCount == 1 %} mobile-only{% endif %}" data-at="767">
+            <div class="slides">
+                <div class="inner mw">
+                    {% for image in product.images %}
+                        <img class="image-mobile preload{% if forloop.first %}-critical{% endif %}" data-preload-desktop="https:{{ image | image_url }}" data-preload-mobile="https:{{ image | image_url }}">
+                    {% endfor %}
+                </div>
+            </div>
+            {% if imageCount > 1 %}
+                <div class="dots">
+                    {% for image in product.images %}
+                        <button class="dot{% if forloop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="image-wrapper desktop-only">
+            <img class="preload-critical" data-preload-desktop="https:{{ product.images[0] | image_url }}">
+        </div>
+    </div>
+    <div class="right">
+        <div class="vendor-eyebrow">
+            {% if product.type != blank %}
+                <p class="caps">{{ product.type }}</p>
+                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="3.5" cy="3.5" r="3.5" fill="#383838"/>
+                </svg>
+            {% endif %}
+            <p class="caps">{{ product.vendor }}</p>
+        </div>
+        <div class="header-wrapper">
+            <h1 class="header-l">{{ product.title }}</h1>
+        </div>
+        <div class="rating-wrapper">
+            {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                    {%- when '@app' -%}
+                        {% render block %}
+                {% endcase %}
+            {% endfor %}
+        </div>
+        <div class="price-row">
+            <p class="compare-at-price with-strike">{% if product.first_available_variant.compare_at_price %}{{ product.first_available_variant.compare_at_price | money }}{% endif %}</p>
+            <p class="price">{{ product.first_available_variant.price | money }}</p>
+        </div>
+        {% assign optionsSize = product.options | size %}
+        {% if product.has_only_default_variant == false %}
+            <div class="all-options">
+                {% for option in product.options_with_values %}
+                    {% assign valueSize = option.values | size %}
+                    {% if option.name != "Title" and valueSize > 1 %}
+                        <div class="option-wrapper">
+                            <p>{{ option.name }}</p>
+                            <div class="drawer replace-label">
+                                <button class="label">
+                                    <span class="current-label">{{ option.values[0] }}</span>
+                                    <svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11 1.40446L5.5 6.5L-2.22733e-07 1.40446L0.97625 0.5L5.5 4.69108L10.0238 0.5L11 1.40446Z" fill="#848484"/>
+                                    </svg>
+                                </button>
+                                <div class="drawer-items select-one">
+                                    {% for value in option.values %}
+                                        {% if forloop.first %}
+                                            <p class="non-color-option button option copy active" data-value="{{ value }}">{{ value }}</p>
+                                        {% else %}
+                                            <p class="non-color-option button option copy" data-value="{{ value }}">{{ value }}</p>
+                                        {% endif %}
+                                    {%- endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {%- endfor %}
+            </div>
+        {%- endif %}
+        <div class="subscription-wrapper">
+            <label class="subscription">
+                <input type="radio" checked>
+                <span class="subs-price">
+                    <p>$59.99</p>
+                    <p>$89.99</p>
+                </span>
+                <div class="inner">
+                    <div>
+                        <p>subscribe & save<span>save 10%</span></p>
+                    </div>
+                    <p class="context">A 1-Month Supply each month. Pause or Cancel Anytime</p>
+                </div>
+            </label>
+            <label class="one-time">
+                <input type="radio">
+                <p>{{ product.first_available_variant.price | money }}</p>
+                <p>One Time Purchase</p>
+            </label>
+        </div>
+        <form class="atc-form">
+            {% if product.has_only_default_variant %}
+                <button class="button add-to-cart header-m{% if product.available %}{% else %} disabled{% endif %}" type="submit" data-id="{{ product.variants[0].id }}">Add To Cart</button>
+            {% else %}
+                <button data-variants="{% for variant in product.variants %}{% if forloop.last == true %}{{ variant.id }}||{{ variant.title }}||{{ variant.price }}||{% if variant.compare_at_price != blank %}{{ variant.compare_at_price }}{% else %}false{% endif %}||{% if variant.image != blank %}{{ variant.image |  image_url }}||{{ variant.available }}{% else %}false{% endif %}{% else %}{{ variant.id }}||{{ variant.title }}||{{ variant.price }}||{% if variant.compare_at_price != blank %}{{ variant.compare_at_price }}{% else %}false{% endif %}||{% if variant.image != blank %}{{ variant.image |  image_url }}{% else %}false{% endif %}||{{ variant.available }}|||{% endif %}{% endfor %}" class="button add-to-cart header-m{% if product.available %}{% else %} disabled{% endif %}" type="submit" data-id="{{ product.first_available_variant.id }}">Add To Cart</button>
+            {% endif %}
+        </form>
+    </div>
+</div>
+
+
+
+{% schema %}
+{
+"name": "PDP Hero",
+"tag": "section",
+"class": "pdp-hero",
+"blocks": [
+{
+"type": "@app"
+}
+]
+}
+{% endschema %}

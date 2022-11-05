@@ -1,0 +1,40 @@
+<div class="c-50 mw">
+    <img class="image preload"{% if section.settings.image.alt %} alt="{{ section.settings.image.alt }}"{% endif %} data-preload-desktop="https:{{ section.settings.image | image_url }}" data-preload-mobile="https:{{ section.settings.image | image_url }}">
+    <div class="content">
+        <div class="svg-wrapper">
+            {% include 'icon-logo' %}
+        </div>
+        <p class="text">{{ section.settings.text }}</p>
+        <a href="{{ section.settings.button_url }}" class="btn black caps">{{ section.settings.button_text }}</a>
+    </div>
+</div>
+
+{% schema %}
+{
+"name": "About Us",
+"tag": "section",
+"class": "about-us",
+"settings": [
+{
+"id": "image",
+"type": "image_picker",
+"label": "Image"
+},
+{
+"id": "text",
+"type": "text",
+"label": "Text"
+},
+{
+"id": "button_text",
+"type": "text",
+"label": "Button Text"
+},
+{
+"id": "button_url",
+"type": "text",
+"label": "Button URL"
+}
+]
+}
+{% endschema %}

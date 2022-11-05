@@ -1,0 +1,62 @@
+<div class="c-190">
+    <div class="top">
+        <h2 class="header-l">{{ section.settings.header }}</h2>
+        <p class="text-m subheader">{{ section.settings.subheader }}</p>
+    </div>
+    <div class="inner benefits mw">
+        {% for block in section.blocks %}
+            <div class="benefits-tile">
+                <img class="preload"{% if block.settings.image.alt %} alt="{{ block.settings.image.alt }}"{% endif %} data-preload-desktop="https:{{ block.settings.image | image_url }}" data-preload-mobile="https:{{ block.settings.image | image_url }}">
+                <p class="header-m">{{ block.settings.title }}</p>
+                <p class="subtitle">{{ block.settings.copy }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+{% schema %}
+{
+"name": "Affiliate Benefits",
+"tag": "section",
+"class": "affiliate-benefits",
+"settings": [
+{
+"id": "header",
+"type": "text",
+"label": "Header"
+},
+{
+"id": "subheader",
+"type": "text",
+"label": "Sub Header"
+}
+],
+"blocks": [
+{
+"name": "Benefits Tiles",
+"type": "Tile",
+"limit": 3,
+"settings": [
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Title"
+},
+{
+"type": "text",
+"id": "copy",
+"label": "Copy"
+}
+]
+}
+]
+}
+{% endschema %}

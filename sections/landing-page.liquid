@@ -1,0 +1,107 @@
+<style>
+    #header {
+        display: none;
+    }
+    #footer {
+        display: none;
+    }
+    main {
+        padding-top: 0;
+    }
+    @media (max-width: 959px) {
+        main {
+            padding-top: 0;
+        }
+    }
+</style>
+
+<div class="landing-header">
+    {% include "logo" %}
+</div>
+
+<div class="landing-content">
+    <h1>{{ section.settings.header }}</h1>
+    <p class="rich-text">{{ section.settings.copy }}</p>
+
+    <div class="form-wrapper">
+        <form class="form-wrapper bind-form" data-id="{{ section.settings.list_id }}">
+            <input class="password" type="password" name="password" id="password" placeholder="Password">
+            <input type="email" name="email" id="email" placeholder="{{ section.settings.placeholder }}">
+            <button type="submit" class="btn black">Get Notified</button>
+        </form>
+        <p class="success-message">{{ section.settings.success_text }}</p>
+    </div>
+</div>
+
+<div class="brands mw-critical c-120">
+    <h2>{{ section.settings.brand_section_header }}</h2>
+    <img class="desktop-only" src="{{ section.blocks[0].settings.brands_desktop | image_url }}">
+    <img class="mobile-only" src="{{ section.blocks[0].settings.brands_mobile | image_url }}">
+</div>
+
+<div class="landing-footer">
+    {% include "logo" %}<p>{{ section.settings.copyright_text }}</p>
+</div>
+
+{% schema %}
+{
+    "name": "Landing page",
+    "tag": "section",
+    "class": "landing-page",
+    "settings": [
+        {
+            "id": "header",
+            "type": "text",
+            "label": "Header"
+        },
+        {
+            "id": "copy",
+            "type": "text",
+            "label": "Copy"
+        },
+        {
+            "id": "brand_section_header",
+            "type": "text",
+            "label": "Brand section header"
+        },
+        {
+            "id": "placeholder",
+            "type": "text",
+            "label": "Email field placeholder"
+        },
+        {
+            "id": "success_text",
+            "type": "text",
+            "label": "Success text"
+        },
+        {
+            "id": "copyright_text",
+            "type": "text",
+            "label": "Copyright text"
+        },
+        {
+            "id": "list_id",
+            "type": "text",
+            "label": "Klaviyo list ID"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Brand logos",
+            "type": "brand_logos",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "brands_desktop",
+                    "label": "Desktop logos"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "brands_mobile",
+                    "label": "Mobile logos"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

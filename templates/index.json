@@ -1,0 +1,157 @@
+{
+  "sections": {
+    "hero-section": {
+      "type": "hero-section",
+      "settings": {
+        "banner_pattern": "shopify:\/\/shop_images\/pattern-bg_73a24b70-4f0e-4fec-b77d-e94af5ce8aaa.png",
+        "banner_pattern_mobile": "shopify:\/\/shop_images\/Mobile_Content_Vector__X.png",
+        "hero_image": "shopify:\/\/shop_images\/pattern-pic.png",
+        "hero_image_mobile": "shopify:\/\/shop_images\/Mobile_Group_Images_Banner.png",
+        "hero_eyebrow": "",
+        "hero_header": "Visualize Yourself  Better Everyday",
+        "hero_subtitle": "VYBE is the source you can trust to revitalize your mind, body, and spirit. Our best-in-class ingredients and lifelong commitment to health and wellness jumpstart your pursuit of a happier, healthier you.",
+        "hero_button_text": "Shop all",
+        "hero_button_url": "\/collections\/all"
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "blocks": {
+        "30b60d0f-9c1c-40f4-94c7-1c685ad50cf9": {
+          "type": "block",
+          "settings": {
+            "product": "divatrim-fit-firm"
+          }
+        },
+        "cf65b1c8-9f24-4aee-b084-fa45b9486525": {
+          "type": "block",
+          "settings": {
+            "product": "oneshot-pinapple-mango"
+          }
+        },
+        "8312aec8-6d6c-48a0-abde-bf09895e45a6": {
+          "type": "block",
+          "settings": {
+            "product": "oneshot-candy-punch"
+          }
+        },
+        "966672a4-e837-4a3a-822f-4bd1b8b0c71b": {
+          "type": "block",
+          "settings": {
+            "product": "divatrim-iso-lean-100-whey-isolate-protein"
+          }
+        }
+      },
+      "block_order": [
+        "30b60d0f-9c1c-40f4-94c7-1c685ad50cf9",
+        "cf65b1c8-9f24-4aee-b084-fa45b9486525",
+        "8312aec8-6d6c-48a0-abde-bf09895e45a6",
+        "966672a4-e837-4a3a-822f-4bd1b8b0c71b"
+      ],
+      "settings": {
+        "header": "New Arrivals",
+        "subheader": "<p>These products <em>just<\/em> hit the shelves.<\/p>"
+      }
+    },
+    "reviews-slider": {
+      "type": "reviews-slider",
+      "settings": {
+      }
+    },
+    "fifty-fifty-cta": {
+      "type": "fifty-fifty-cta",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Frame_116046274_6ed4f0c5-17f2-4c95-9db5-658ff60ac348.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/Frame_116046274.jpg",
+        "header": "Time to shine sale with BOGO 50% OFF!",
+        "text": "It’s time to propel yourself toward a happier, healthier you.",
+        "button_text": "Reserve Yours Now",
+        "button_url": "\/collections\/all"
+      }
+    },
+    "about-us": {
+      "type": "about-us",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Vybe_e9a01488-6a9d-4c7b-b22a-55206f0de48a.jpg",
+        "text": "Our mission is to help you live your best life, from the inside out. Our products are specifically engineered to optimize your mind, body, and spirit.",
+        "button_text": "The Vybe Story",
+        "button_url": "\/pages\/about-us"
+      }
+    },
+    "fifty-fifty-affiliate": {
+      "type": "fifty-fifty-affiliate",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/pointing.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/Frame_116046274_5cc0d392-7410-4ad1-904d-b4f86c07ea04.jpg",
+        "header": "Earn with VYBE",
+        "text": "Stack rewards while you get your reps in.   VYBE’s affiliate program is designed to reward VYBE loyalists who can’t get enough of our products.",
+        "button_text": "Get started",
+        "button_url": "\/pages\/affiliates"
+      }
+    },
+    "email-cta": {
+      "type": "email-cta",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Subscribe_to_the_newsletter.jpg",
+        "header": "Join the Community",
+        "text": "Get the news and offers before anyone else",
+        "disclaimer": "<p>By registering you agree to our <a href=\"\/pages\/privacy-policy\" title=\"Privacy Policy\">Privacy and Cookie Policy<\/a> and <a href=\"\/pages\/terms-and-conditions\" title=\"Terms and Conditions\">Terms & Conditions<\/a>.<\/p>",
+        "success_message": "Success!",
+        "list_id": "TgMuaB"
+      }
+    },
+    "content-tile-trio": {
+      "type": "content-tile-trio",
+      "blocks": {
+        "453c1ae8-21b8-4a94-beee-167ac340f5c6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_116046266.jpg",
+            "tile_title": "Keto explained",
+            "tile_copy": "Ut enim ad minima veniam, quis nostrum exercitationem ullam ad minima veniam",
+            "button_text": "Read more",
+            "tile_url": "\/blogs\/lifestyle\/keto-explained"
+          }
+        },
+        "01378f20-f973-4397-a3f6-7509812303ef": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/food.jpg",
+            "tile_title": "Articles & Advice",
+            "tile_copy": "Ut enim ad minima veniam, quis nostrum exercitationem ullam ad minima veniam",
+            "button_text": "Read more",
+            "tile_url": "\/blogs\/lifestyle\/keto-explained"
+          }
+        },
+        "23a5c888-e030-4448-913e-11e966e00dbe": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/row.jpg",
+            "tile_title": "Top Rated & Reviewed",
+            "tile_copy": "Ut enim ad minima veniam, quis nostrum exercitationem ullam ad minima veniam",
+            "button_text": "Read more",
+            "tile_url": "\/blogs\/lifestyle\/keto-explained"
+          }
+        }
+      },
+      "block_order": [
+        "453c1ae8-21b8-4a94-beee-167ac340f5c6",
+        "01378f20-f973-4397-a3f6-7509812303ef",
+        "23a5c888-e030-4448-913e-11e966e00dbe"
+      ],
+      "settings": {
+        "header": "THE VYBE LIFESTYLE"
+      }
+    }
+  },
+  "order": [
+    "hero-section",
+    "featured-collection",
+    "reviews-slider",
+    "fifty-fifty-cta",
+    "about-us",
+    "fifty-fifty-affiliate",
+    "email-cta",
+    "content-tile-trio"
+  ]
+}

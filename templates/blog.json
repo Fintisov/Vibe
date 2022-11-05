@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "blocks": {
+        "39e8c56f-8975-41c6-8f0a-5aecc58a109c": {
+          "type": "blog_chooser",
+          "settings": {
+            "blog": "beauty-skincare"
+          }
+        },
+        "7ffcb2bc-5fe2-4fd4-8de2-77bb104bdd01": {
+          "type": "blog_chooser",
+          "settings": {
+            "blog": "health-fitness"
+          }
+        },
+        "c90b96a5-3d4b-4e92-8b33-767d4875448f": {
+          "type": "blog_chooser",
+          "settings": {
+            "blog": "workout"
+          }
+        }
+      },
+      "block_order": [
+        "39e8c56f-8975-41c6-8f0a-5aecc58a109c",
+        "7ffcb2bc-5fe2-4fd4-8de2-77bb104bdd01",
+        "c90b96a5-3d4b-4e92-8b33-767d4875448f"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,49 @@
+<div class="header-l">{{ section.settings.header }}</div>
+<div class="bottom">
+    <div class="inner">
+        {% for block in section.blocks %}
+            {% case block.type %}
+                {% when 'logo' %}
+                    {% assign thisIcon = "icon-" | append: block.settings.brand %}
+                    <a href="{{ block.settings.button_url }}" class="logo">
+                        {% include thisIcon %}
+                    </a>
+            {% endcase %}
+        {% endfor %} 
+    </div>
+</div>
+
+
+{% schema %}
+    {
+        "name": "Brand Logos",
+        "tag": "section",
+        "class": "brand-logos",
+        "settings": [
+            {
+                "id": "header",
+                "type": "richtext",
+                "label": "Header"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Logo",
+                "type": "logo",
+                "limit": 13,
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "brand",
+                        "label": "Brand"
+                    },
+                    {
+                        "type": "text",
+                        "id": "button_url",
+                        "label": "Button URL"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

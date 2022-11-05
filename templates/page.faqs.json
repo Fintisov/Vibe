@@ -1,0 +1,302 @@
+{
+  "sections": {
+    "faqs-section": {
+      "type": "faqs-section",
+      "blocks": {
+        "c90f60da-9977-45b3-a532-f1fe2c2dc9fa": {
+          "type": "faq-group-titles",
+          "settings": {
+            "title": "Account",
+            "group_id": "account"
+          }
+        },
+        "08799f2d-16d3-413c-99ad-1006a921c66b": {
+          "type": "faq-group-titles",
+          "settings": {
+            "title": "Shipping",
+            "group_id": "shipping"
+          }
+        },
+        "1a1d1a80-d659-4bb5-885c-45d8286b3967": {
+          "type": "faq-group-titles",
+          "settings": {
+            "title": "Orders & payments",
+            "group_id": "orders-payments"
+          }
+        },
+        "1eda6eaa-1aee-4439-9f1b-86318fd5debb": {
+          "type": "faq-group-titles",
+          "settings": {
+            "title": "Integrity",
+            "group_id": "integrity"
+          }
+        },
+        "6ac572fa-1bf5-46a2-8a52-8a603af8fcea": {
+          "type": "faq-group",
+          "settings": {
+            "question": "How do I create an account?",
+            "answer": "<p>You can create an account by visiting <a href=\"\/account\" title=\"Account\">this page<\/a>.<\/p>",
+            "group_id": "account"
+          }
+        },
+        "6a0602ec-5e38-4773-9757-f82b8bd3f857": {
+          "type": "faq-group",
+          "settings": {
+            "question": "Do I have to set up an account to place an order?",
+            "answer": "<p>No. You do not have to have an account to place an order.<\/p>",
+            "group_id": "account"
+          }
+        },
+        "6e19d533-9ee8-438d-bdf4-98e2a4146729": {
+          "type": "faq-group",
+          "settings": {
+            "question": "How do I subscribe or cancel my email subscription?",
+            "answer": "<p>You can easily subscribe to emails by visiting<strong> <\/strong><a href=\"https:\/\/manage.kmail-lists.com\/subscriptions\/subscribe?a=Y5mVHR&g=TgMuaB\" target=\"_blank\" title=\"https:\/\/manage.kmail-lists.com\/subscriptions\/subscribe?a=Y5mVHR&g=TgMuaB\">this link<\/a>. If you want to cancel\/unsubscribe, simply click unsubscribe by locating the \"Unsubscribe\" link within the email subscription.<\/p>",
+            "group_id": "account"
+          }
+        },
+        "9744ce5c-e235-49e9-909f-d510ea4c2527": {
+          "type": "faq-group",
+          "settings": {
+            "question": "I forgot my password. What can I do?",
+            "answer": "<p>To reset your password, go to the <a href=\"\/accounts\" title=\"Accounts\">account login page<\/a> and click on “Forgot your password?” above the sign-in button. Enter the email address used to create your account. After you submit, check your email for a notification message with a link to reset your password. Once you’ve done this, simply log in with your new password.<\/p>",
+            "group_id": "account"
+          }
+        },
+        "b5d71e2d-6f69-4284-8879-43bd1969e8fc": {
+          "type": "faq-group",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "<p>We are happy to offer shipping in the United States and Canada.<\/p>",
+            "group_id": "shipping"
+          }
+        },
+        "273bedb3-89d0-43cf-ac27-41ec75623d03": {
+          "type": "faq-group",
+          "settings": {
+            "question": "How much is shipping?",
+            "answer": "<p>Standard Shipping to any location in the United States is <strong>FREE. <\/strong>Expedited Shipping costs will be determined at checkout based on your location and the fulfillment center your product is shipping from.<\/p><p><strong>Free <\/strong>Domestic Shipping<\/p><p><strong>$14.95<\/strong> flat fee for Canada<\/p>",
+            "group_id": "shipping"
+          }
+        },
+        "50deb139-5628-4de5-ad59-310891ddbe1f": {
+          "type": "faq-group",
+          "settings": {
+            "question": "How long before I receive my order?",
+            "answer": "<p>The processing time for orders is typically 48 hours. After your order has shipped, delivery time within the United States is 4-7 business days, and 7-14 business days internationally. These estimated windows will vary depending on inclement weather, holidays, and heavy volume during promotional events.<\/p><p>VYBE is not responsible for any shipping deliveries that may be affected by customs, natural occurrences, air and\/or ground transportation strikes or delays; nor any extra fees, customs, or back-end charges once the package has exited the United States.<\/p>",
+            "group_id": "shipping"
+          }
+        },
+        "fd3370a6-e200-4468-a6bb-d6d006546391": {
+          "type": "faq-group",
+          "settings": {
+            "question": "What carrier do you use?",
+            "answer": "<p>Orders are shipped and delivered via USPS and CanadaPost (in Canada).<\/p>",
+            "group_id": "shipping"
+          }
+        },
+        "8f689549-c1c0-47f0-895e-7f57b00f9f59": {
+          "type": "faq-group",
+          "settings": {
+            "question": "Do you ship to P.O.\/APO\/FPO addresses?",
+            "answer": "<p>Yes. Shipping may take longer than usual depending on where it is being shipped to.<\/p>",
+            "group_id": "shipping"
+          }
+        },
+        "f9cde528-09f4-4636-9484-d9a492e49804": {
+          "type": "faq-group",
+          "settings": {
+            "question": "Can I make changes to my order?",
+            "answer": "<p>Please contact <strong>[VYBE Customer Service Email] <\/strong>as soon as possible. We will do our best to accommodate your request, however, there is no guarantee that any changes can be made once an order is placed. Be sure to include your order number.<\/p>",
+            "group_id": "orders-payments"
+          }
+        },
+        "360e83c7-74f3-43a6-89f7-8d1498bd9244": {
+          "type": "faq-group",
+          "settings": {
+            "question": "Can I cancel my order?",
+            "answer": "<p>Yes. You can, as long as the order has not shipped.<\/p>",
+            "group_id": "orders-payments"
+          }
+        },
+        "d1601b08-3feb-4c7c-b299-28b2a4d6bc52": {
+          "type": "faq-group",
+          "settings": {
+            "question": "Can I return my order?",
+            "answer": "<p>Yes. If you are not 100% satisfied, we will gladly exchange or refund your purchase within 30-days of placing your order. <\/p>",
+            "group_id": "orders-payments"
+          }
+        },
+        "2814a035-57f0-4675-baca-00d63541646d": {
+          "type": "faq-group",
+          "settings": {
+            "question": "Can I exchange my product?",
+            "answer": "<p>Yes, within 30-days of purchase, as long as the product has not been opened or used.<\/p>",
+            "group_id": "orders-payments"
+          }
+        },
+        "2aa05e15-d69a-43bd-b152-a6a1fba2d394": {
+          "type": "faq-group",
+          "settings": {
+            "question": "",
+            "answer": "",
+            "group_id": ""
+          }
+        },
+        "eb067ae6-eb5b-45a1-ad40-2946bee02d85": {
+          "type": "faq-group",
+          "settings": {
+            "question": "How can I check the status of my order?",
+            "answer": "<p>You can check your order status on your account page<strong>. <\/strong>If you do not have an account, please refer to your shipping confirmation email to track your order. <\/p>",
+            "group_id": "orders-payments"
+          }
+        },
+        "8d31f756-4a52-468d-ab6a-c0d527b38103": {
+          "type": "faq-group",
+          "settings": {
+            "question": "Why was I charged twice?",
+            "answer": "<p>If you see duplicate charges on your account, please allow 3-5 business days, and the issue should resolve automatically. If the duplicate charge is still there, send us an email at <strong>[VYBECustomer Service Email]<\/strong>with a screenshot of the duplicate charges and your order number and we will be more than happy to help. <\/p>",
+            "group_id": "orders-payments"
+          }
+        },
+        "142c70ab-fb5e-4afb-8681-34a4e3b7a7f4": {
+          "type": "faq-group",
+          "settings": {
+            "question": "What forms of payment do you accept?",
+            "answer": "<p>We accept online payments through Visa, Mastercard, Discover, American Express, and PayPal<\/p>",
+            "group_id": "orders-payments"
+          }
+        },
+        "df102f99-191e-49ae-b3fc-8fbe7ebc9a3a": {
+          "type": "faq-group",
+          "settings": {
+            "question": "My items arrived damaged, what should I do?",
+            "answer": "<p>Please contact us immediately at <strong>[VYBECustomer Service Email]<\/strong>. Be sure to include photos of the damage and your order number.<\/p>",
+            "group_id": "orders-payments"
+          }
+        },
+        "1be8e3c3-ad5e-4e7c-95a2-036929d41dcb": {
+          "type": "faq-group",
+          "settings": {
+            "question": "I received the wrong item\/s. What should I do?",
+            "answer": "<p>Immediately contact <strong>[VYBECustomer Service Email]<\/strong> so that we can take care of this for you. Be sure to include your order number along with a photo of the incorrect item(s) you received.<\/p>",
+            "group_id": "orders-payments"
+          }
+        },
+        "af3f7865-4b1a-4f28-9557-23f6926fe523": {
+          "type": "faq-group",
+          "settings": {
+            "question": "My package is stuck and tracking shows no movement. What should I do?",
+            "answer": "<p>For domestic orders, a package can only be considered lost if there has been no movement for 10 business days from the day it was shipped. If the package has not moved in 10 business days, send an email to <strong>[VYBECustomer Service Email]<\/strong> and include your order number. We will be happy to look into it for you.<\/p>",
+            "group_id": "orders-payments"
+          }
+        },
+        "0c29b7ba-9d38-44c4-9524-5306f72698fd": {
+          "type": "faq-group",
+          "settings": {
+            "question": "I put the wrong address on my order. Please help!",
+            "answer": "<p>Please be careful when entering your shipping address, VYBE will not be responsible for orders sent to an incorrectly entered delivery address. If your order has not shipped, send us a message at <strong>[VYBE Customer Service Email]<\/strong>.<\/p>",
+            "group_id": "orders-payments"
+          }
+        },
+        "40f2c8ac-01c0-4042-9ed8-4144cfa942a2": {
+          "type": "faq-group",
+          "settings": {
+            "question": "How can I find out more information about a product?",
+            "answer": "<p>Product details can be found on the product page directly, but if you have additional questions, feel free to email us at <strong>[VYBECustomer Service Email]<\/strong>.<\/p>",
+            "group_id": "integrity"
+          }
+        },
+        "c9ff1f4b-e712-49ac-ae6a-66877e5b25ba": {
+          "type": "faq-group",
+          "settings": {
+            "question": "Where are your products manufactured?",
+            "answer": "<p>All of our formulas are crafted in the <strong>USA<\/strong> with globally sourced ingredients.<\/p>",
+            "group_id": "integrity"
+          }
+        },
+        "aca7b458-ff33-42eb-b71c-12e44086bca6": {
+          "type": "faq-group",
+          "settings": {
+            "question": "Are your products natural?",
+            "answer": "<p>Whenever possible, we choose naturally derived ingredients over synthetics in all formulations.<\/p>",
+            "group_id": "integrity"
+          }
+        },
+        "32c8771b-16cf-4360-af62-86437a8113b0": {
+          "type": "faq-group",
+          "settings": {
+            "question": "Are your products safe?",
+            "answer": "<p>Yes. Our products are all manufactured in a GMP facility. The ingredients are all FDA Approved.<\/p>",
+            "group_id": "integrity"
+          }
+        },
+        "e1c3dcd4-08b5-4856-90eb-418e36bb6f0a": {
+          "type": "faq-group",
+          "settings": {
+            "question": "Do you test products on animals?",
+            "answer": "<p>We do not test products on animals. All of our products are cruelty-free.<\/p>",
+            "group_id": "integrity"
+          }
+        },
+        "4e18dc1e-3ed5-4738-a56d-7e8e1d975de0": {
+          "type": "faq-group",
+          "settings": {
+            "question": "Do your products contain soy?",
+            "answer": "<p>No<\/p>",
+            "group_id": "integrity"
+          }
+        },
+        "9e62b4b4-4227-4fe2-a47c-b14557f1061e": {
+          "type": "faq-group",
+          "settings": {
+            "question": "What temperature do these products need to be stored?",
+            "answer": "<p>We recommend storing your products in a cool, dry place, away from direct sunlight and excessive heat (unless specified otherwise).<\/p>",
+            "group_id": "integrity"
+          }
+        }
+      },
+      "block_order": [
+        "c90f60da-9977-45b3-a532-f1fe2c2dc9fa",
+        "08799f2d-16d3-413c-99ad-1006a921c66b",
+        "1a1d1a80-d659-4bb5-885c-45d8286b3967",
+        "1eda6eaa-1aee-4439-9f1b-86318fd5debb",
+        "6ac572fa-1bf5-46a2-8a52-8a603af8fcea",
+        "6a0602ec-5e38-4773-9757-f82b8bd3f857",
+        "6e19d533-9ee8-438d-bdf4-98e2a4146729",
+        "9744ce5c-e235-49e9-909f-d510ea4c2527",
+        "b5d71e2d-6f69-4284-8879-43bd1969e8fc",
+        "273bedb3-89d0-43cf-ac27-41ec75623d03",
+        "50deb139-5628-4de5-ad59-310891ddbe1f",
+        "fd3370a6-e200-4468-a6bb-d6d006546391",
+        "8f689549-c1c0-47f0-895e-7f57b00f9f59",
+        "f9cde528-09f4-4636-9484-d9a492e49804",
+        "360e83c7-74f3-43a6-89f7-8d1498bd9244",
+        "d1601b08-3feb-4c7c-b299-28b2a4d6bc52",
+        "2814a035-57f0-4675-baca-00d63541646d",
+        "2aa05e15-d69a-43bd-b152-a6a1fba2d394",
+        "eb067ae6-eb5b-45a1-ad40-2946bee02d85",
+        "8d31f756-4a52-468d-ab6a-c0d527b38103",
+        "142c70ab-fb5e-4afb-8681-34a4e3b7a7f4",
+        "df102f99-191e-49ae-b3fc-8fbe7ebc9a3a",
+        "1be8e3c3-ad5e-4e7c-95a2-036929d41dcb",
+        "af3f7865-4b1a-4f28-9557-23f6926fe523",
+        "0c29b7ba-9d38-44c4-9524-5306f72698fd",
+        "40f2c8ac-01c0-4042-9ed8-4144cfa942a2",
+        "c9ff1f4b-e712-49ac-ae6a-66877e5b25ba",
+        "aca7b458-ff33-42eb-b71c-12e44086bca6",
+        "32c8771b-16cf-4360-af62-86437a8113b0",
+        "e1c3dcd4-08b5-4856-90eb-418e36bb6f0a",
+        "4e18dc1e-3ed5-4738-a56d-7e8e1d975de0",
+        "9e62b4b4-4227-4fe2-a47c-b14557f1061e"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/base-img_320c9fcd-3695-41af-9162-fe4ef68fa285.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/base-img_143ea813-698d-4aab-94da-70d3003cf7cd.jpg"
+      }
+    }
+  },
+  "order": [
+    "faqs-section"
+  ]
+}

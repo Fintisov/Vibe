@@ -1,0 +1,318 @@
+{
+  "sections": {
+    "hero-section": {
+      "type": "hero-section",
+      "settings": {
+        "banner_pattern": "shopify:\/\/shop_images\/pattern-bg_73a24b70-4f0e-4fec-b77d-e94af5ce8aaa.png",
+        "banner_pattern_mobile": "shopify:\/\/shop_images\/Mobile_Content_Vector__X.png",
+        "hero_image": "shopify:\/\/shop_images\/Group_13594_176bf9a2-1239-4807-8866-3142fa0bd4c2.png",
+        "hero_image_mobile": "shopify:\/\/shop_images\/Mobile_Group_Images_Banner_c0560141-edec-4e2a-8d29-dccc5a41ab42.png",
+        "hero_eyebrow": "EARN REAL GAIN",
+        "hero_header": "JOIN OUR COMMUNITY BECOME AN AFFILIATE",
+        "hero_subtitle": "Global brand of high-performance wellness products.",
+        "hero_button_text": "Join Now",
+        "hero_button_url": "\/products"
+      }
+    },
+    "media-section": {
+      "type": "media-section",
+      "blocks": {
+        "6c242101-7109-492f-8192-b94df445628d": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cbc-sports.png"
+          }
+        },
+        "8da73583-e019-492b-bdaa-42fd8d9d57e1": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/espn.png"
+          }
+        },
+        "c6f392a5-1e45-46dd-81bb-609e6b396ca0": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bein-sports.png"
+          }
+        },
+        "d479c7dd-8fa0-479a-8c1e-666b24bd4c5c": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/entrepreneur-2_1.png"
+          }
+        },
+        "2016e873-8191-4e9f-b18c-09d094869fd1": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/life-and-style-logo-vector_1.png"
+          }
+        },
+        "7f5af317-8c07-4489-bf6d-3b4888165e60": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/yahoo-sports_1.png"
+          }
+        },
+        "42c98989-db75-4ea2-a4ac-1bb6396510c6": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mtv-logo-2010-2.png"
+          }
+        },
+        "25a0e4d1-5745-4266-bf9e-46d1654e9e8c": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/forbes-3_1.png"
+          }
+        },
+        "cd429ae0-7465-40d1-8f44-fe3656123acf": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/g10.png"
+          }
+        },
+        "b24f9523-10a4-44c5-8096-8e9af1633933": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FOX_Sports_logo_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "6c242101-7109-492f-8192-b94df445628d",
+        "8da73583-e019-492b-bdaa-42fd8d9d57e1",
+        "c6f392a5-1e45-46dd-81bb-609e6b396ca0",
+        "d479c7dd-8fa0-479a-8c1e-666b24bd4c5c",
+        "2016e873-8191-4e9f-b18c-09d094869fd1",
+        "7f5af317-8c07-4489-bf6d-3b4888165e60",
+        "42c98989-db75-4ea2-a4ac-1bb6396510c6",
+        "25a0e4d1-5745-4266-bf9e-46d1654e9e8c",
+        "cd429ae0-7465-40d1-8f44-fe3656123acf",
+        "b24f9523-10a4-44c5-8096-8e9af1633933"
+      ],
+      "settings": {
+        "header": "Get the products the media is raving about."
+      }
+    },
+    "affiliate-benefits": {
+      "type": "affiliate-benefits",
+      "blocks": {
+        "198552d2-c356-4e7a-82e9-dabb4b605ebc": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icons.png",
+            "title": "Earn XX% Per Sale",
+            "copy": "We pay you a XX% commission on every sale that comes from someone using your unique affiliate link."
+          }
+        },
+        "518d34a3-8580-4059-9b16-90fd9fc71bed": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icons1.png",
+            "title": "90-Day Cookie Period",
+            "copy": "With your personalized affiliate link, if a referral doesn’t buy at first but comes back and purchases within 90 days, you still get paid!"
+          }
+        },
+        "69118125-a27e-4044-8b3f-6fdd87c61564": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icons2.png",
+            "title": "Earn Easy Money",
+            "copy": "Just do what you do best. Get social and share products that help improve lives. What better way to make easy money?"
+          }
+        }
+      },
+      "block_order": [
+        "198552d2-c356-4e7a-82e9-dabb4b605ebc",
+        "518d34a3-8580-4059-9b16-90fd9fc71bed",
+        "69118125-a27e-4044-8b3f-6fdd87c61564"
+      ],
+      "settings": {
+        "header": "See why Vybe stays a step ahead of  other affiliate programs.",
+        "subheader": "Join key players in the health and wellness industry with Founder & Global Entrepreneur Jas Mathur and Boxing Champion Floyd."
+      }
+    },
+    "affiliate-steps": {
+      "type": "affiliate-steps",
+      "blocks": {
+        "fc47357e-d5a7-4592-b208-3726940bb52a": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_116046266_40adc342-d43d-4ffc-a7a6-43cc8465731e.jpg",
+            "eyebrow": "Step 01",
+            "title": "Apply",
+            "copy": "Ut enim ad minima veniam, quis nostrum exercitationem ullam ad minima veniam"
+          }
+        },
+        "f5357937-805c-497a-8631-e79c5567f066": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_1160462661.jpg",
+            "eyebrow": "Step 02",
+            "title": "Promote",
+            "copy": "Use your favorite social media platforms to share your link."
+          }
+        },
+        "ecaddf18-e65c-40da-a002-d54ac2a285df": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_1160462662.jpg",
+            "eyebrow": "Step 03",
+            "title": "Earn!",
+            "copy": "When someone purchases a product, you get paid."
+          }
+        }
+      },
+      "block_order": [
+        "fc47357e-d5a7-4592-b208-3726940bb52a",
+        "f5357937-805c-497a-8631-e79c5567f066",
+        "ecaddf18-e65c-40da-a002-d54ac2a285df"
+      ],
+      "settings": {
+        "header": "How it works?"
+      }
+    },
+    "affiliate-facts": {
+      "type": "affiliate-facts",
+      "blocks": {
+        "6df719a7-ed42-4963-81a2-9ccff152750a": {
+          "type": "Tile",
+          "settings": {
+            "title": "90-Day Cookie  Duration Window",
+            "copy": "Become an affiliate Ut enim ad minima veniam quis nostrum exercitationem ullam  ad minima veniam.",
+            "image": "shopify:\/\/shop_images\/Frame_116046274_4e87dcc9-9db3-4936-89b1-2ce195d917c5.jpg"
+          }
+        },
+        "2fc93d94-cb8f-4a4d-b5f2-fdc3e35b6f18": {
+          "type": "Tile",
+          "settings": {
+            "title": "Great Earnings Per Click Potential",
+            "copy": "You also gain access to our images, creative banners and more. Everytime someone clicks on any of these images, you increase your earning potential.",
+            "image": "shopify:\/\/shop_images\/Frame_1160462741.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "6df719a7-ed42-4963-81a2-9ccff152750a",
+        "2fc93d94-cb8f-4a4d-b5f2-fdc3e35b6f18"
+      ],
+      "settings": {
+        "header": "Fun Affiliate Facts",
+        "subheader": "Get everything you need in one place to share Smilz successfully and make money."
+      }
+    },
+    "full-bleed-labels": {
+      "type": "full-bleed-labels",
+      "blocks": {
+        "de1e5540-86ca-4c5b-a176-d4d837ac77a6": {
+          "type": "Tile",
+          "settings": {
+            "title": "Non-GMO Ingredients",
+            "image": "shopify:\/\/shop_images\/Icons_54ea873d-25c6-4cb4-893c-4a503860cbce.png"
+          }
+        },
+        "95267401-0db0-4804-ba4c-4b8291b19499": {
+          "type": "Tile",
+          "settings": {
+            "title": "Third-Party Lab Tested",
+            "image": "shopify:\/\/shop_images\/Icons1_768a589b-d065-4ff2-9f05-e595712c9f00.png"
+          }
+        },
+        "082013ad-c5b9-4d5b-9519-532ef8856e80": {
+          "type": "Tile",
+          "settings": {
+            "title": "100% Natural, Made in USA",
+            "image": "shopify:\/\/shop_images\/Icons2_fefba155-ae8d-484e-8bba-45521c16e269.png"
+          }
+        },
+        "957843fe-757b-4d44-80e1-f757dcf8d247": {
+          "type": "Tile",
+          "settings": {
+            "title": "Custom CBD Formulation",
+            "image": "shopify:\/\/shop_images\/Icons3.png"
+          }
+        }
+      },
+      "block_order": [
+        "de1e5540-86ca-4c5b-a176-d4d837ac77a6",
+        "95267401-0db0-4804-ba4c-4b8291b19499",
+        "082013ad-c5b9-4d5b-9519-532ef8856e80",
+        "957843fe-757b-4d44-80e1-f757dcf8d247"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Rectangle_37.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/Rectangle_37.jpg",
+        "header": "Committed to deliver only  the highest quality products.",
+        "subheader": "Our personal commitment is to provide you with premium CBD products that you trust to have the highest standards from manufacturing to social enjoyment."
+      }
+    },
+    "athletes-section": {
+      "type": "athletes-section",
+      "blocks": {
+        "b201dfd8-3cb8-4f9d-bc92-52e52449b57c": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_116046266_40adc342-d43d-4ffc-a7a6-43cc8465731e.jpg",
+            "name": "Floyd Mayweather ",
+            "sport": "Boxing Champion",
+            "copy": "Boxing Champion and Smilz ambassador Floyd Mayweather wore the Smilz name on his trunks in his epic fight."
+          }
+        },
+        "9bd7c9e6-24a6-4c53-a536-0ab1518e41ae": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_1160462661.jpg",
+            "name": "Shaquille O'Neal",
+            "sport": "Basquetball Player",
+            "copy": "Boxing Champion Boxing Champion and Smilz ambassador Floyd Mayweather wore the Smilz name on his trunks in his epic fight."
+          }
+        },
+        "0c9125b7-9baf-4e0d-8bad-cfeb2add125a": {
+          "type": "Tile",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_1160462662.jpg",
+            "name": "Ana Clarisa Mendoza",
+            "sport": " Olympic Gymnast",
+            "copy": "Boxing Champion Boxing Champion and Smilz ambassador Floyd Mayweather wore the Smilz name on his trunks in his epic fight."
+          }
+        }
+      },
+      "block_order": [
+        "b201dfd8-3cb8-4f9d-bc92-52e52449b57c",
+        "9bd7c9e6-24a6-4c53-a536-0ab1518e41ae",
+        "0c9125b7-9baf-4e0d-8bad-cfeb2add125a"
+      ],
+      "settings": {
+        "header": "Loved By Influential Athletes",
+        "subheader": "To achieve and maintain peak performance, the most influential athletes depend on our wellness products."
+      }
+    },
+    "reviews-slider": {
+      "type": "reviews-slider",
+      "settings": {
+      }
+    },
+    "full-bleed-cta": {
+      "type": "full-bleed-cta",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Subscribe_to_the_newsletter.jpg",
+        "eyebrow": "JOIN VYBE",
+        "header": "<p>EXPERIENCE THE <em>POWER TODAY!<\/em><\/p>",
+        "text": "Life-Changing Products | Worldwide Community",
+        "button_text": "CREATE ACCOUNT",
+        "button_url": "\/account"
+      }
+    }
+  },
+  "order": [
+    "hero-section",
+    "media-section",
+    "affiliate-benefits",
+    "affiliate-steps",
+    "affiliate-facts",
+    "full-bleed-labels",
+    "athletes-section",
+    "reviews-slider",
+    "full-bleed-cta"
+  ]
+}
