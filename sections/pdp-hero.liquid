@@ -4,7 +4,7 @@
     {% assign vendorHandle = product.vendor | remove: "'" | replace: ' ', '-' | downcase %}
     {% if collections[vendorHandle] != empty %}
         <span>/</span>
-        <a href="/collections/{{ vendorHandle }}">Divatrim</a>
+        <a href="/collections/{{ vendorHandle }}">{{ vendorHandle| replace: '-', ' ' }}</a>
     {% endif %}
     <span>/</span>
     <p>{{ product.title }}</p>
