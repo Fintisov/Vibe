@@ -1,28 +1,30 @@
-# Slate v0 starter
+# amarose-dev
 
-### [Official documentation](https://shopify.github.io/slate.shopify.com/docs/0.14.0/)
+shopify login --store  https://amaroseofficial.myshopify.com/admin
 
-### Basic commands
+откроется браузер нужно будет залогинится, далее в терминале выбрать под каким из партнерских аккаунтов заходим.
 
-**npm install** - Once at the start of the project
+shopify theme pull
 
-**slate start** - Performs a full deploy of your theme and starts the watchers (see slate watch).
+Стягивает тему из стора, в терминале предложит какую именно
 
-**slate watch** - Sets up the watchers for all theme assets and deploys the compiled versions to your specified environment (default is development). Also opens a Browsersync window with live reloading after changing and saving a file.
+shopify theme init
 
-**slate zip** - performs a fresh build of your theme and zips it into a file that’s compatible with Shopify, that you can upload a ZIP-archive to the your store.
+Клонирует Dawn тему с официального репозитория
 
-#### Theme download
+shopify theme serve
 
-Slate by default, not have a command for download themes from Shopify store.
-But, you can use default [Shopify Theme Kit](https://shopify.github.io/themekit/)
+Запускает локальный эмулятор, создает скрытую development theme ссылки на превью темы в браузере и кастомайзер.
+Аналог theme watch с той разницей что файлы не заливаются в стор.
 
-**theme download** - will download the entire theme
+Из плюсов моментально обновляет страницу, без перезагрузки когда сохраняем файл.
+Терминал не показывает какой файл обновился, но если есть ошибка выдаёт её.
 
-#### Options
 
-*-e, --env* - specific environment;
-For example (**theme download -e staging**, **slate watch -e staging**).
+shopify theme push
 
-*-d* - select a folder, when you will download the theme files.
-For example (**theme download -d src**).
+Пушит изменения в стор. Позволяет выбрать в какую тему, есть опции как именно зальёт.
+
+shopify logout
+
+Разлогиниваемся, заканчиваем работу со стором.
