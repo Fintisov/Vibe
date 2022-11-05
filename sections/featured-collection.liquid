@@ -4,6 +4,21 @@
     <div class="slider blocks" data-at="767" data-align="start">
         <div class="slides">
             <div class="inner mw">
+                {%- for thisProduct in section.settings.collection.products limit: 4 -%}
+                    <a href="/products/{{ thisProduct.handle }}" class="block slide">
+                        <div class="image-wrapper">
+                            <img class="product-image preload"{% if thisProduct.featured_image.alt %} alt="{{ thisProduct.featured_image.alt }}"{% endif %} data-preload-desktop="https:{{ thisProduct.featured_image | image_url }}" data-preload-mobile="https:{{ thisProduct.featured_image | image_url }}">
+                        </div>
+
+                        <p class="caps brand">{{ thisProduct.vendor }}</p>
+                        <h6 class="title product-name">{{ thisProduct.title }}</h6>
+                        {% comment %}<p class="text-m product-info">Beauty • 3 Sizes</p>{% endcomment %}
+                        <div class="reviews subtitle">{% include 'icon-reviews-temp' %}(234)</div>
+                        <p class="title price">{{ thisProduct.price | money_without_trailing_zeros }}</p>
+                    </a>
+                {% endfor %}
+
+           {% comment %}
                 {% for block in section.blocks %}
                     {% assign thisProduct = block.settings.product %}
                     <a href="/products/{{ thisProduct.handle }}" class="block slide">
@@ -18,6 +33,7 @@
                         <p class="title price">{{ thisProduct.price | money_without_trailing_zeros }}</p>
                     </a>
                 {% endfor %}
+                {% endcomment %}
             </div>
         </div>
     </div>
@@ -40,19 +56,11 @@
 "id": "subheader",
 "type": "richtext",
 "label": "Sub header"
-}
-],
-"blocks": [
+},
     {
-        "name": "Block Slide",
-        "type": "block",
-        "settings": [
-            {
-                "type": "product",
-                "id": "product",
-                "label": "Product"
-            }
-        ]
+        "type": "collection",
+        "id": "collection",
+        "label": "t:sections.featured-collection.settings.collection.label"
     }
 ]
 }
