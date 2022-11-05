@@ -49,7 +49,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/tile-2.jpg",
             "tile_header": "Health & Wellness",
-            "button_url": "\/collections\/health-wellness"
+            "button_url": "\/collections\/health-fitness"
           }
         },
         "13201ecd-ba2a-4f86-83a5-63473690a13a": {
@@ -57,7 +57,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/tile-3.jpg",
             "tile_header": "Apparel & Accesories",
-            "button_url": "\/collections\/apparel-accessories"
+            "button_url": "\/collections\/featured"
           }
         }
       },
@@ -90,21 +90,21 @@
           "type": "logo",
           "settings": {
             "brand": "xanquil",
-            "button_url": "\/collections\/xanquil"
+            "button_url": "\/collections\/bodycor"
           }
         },
         "acdcf9b6-514b-477a-ae33-2d6f1e723c7b": {
           "type": "logo",
           "settings": {
             "brand": "trim",
-            "button_url": "\/collections\/keto-trim"
+            "button_url": "\/collections\/bodycor"
           }
         },
         "363b4490-920f-4d28-97ca-eb354e4fdcdf": {
           "type": "logo",
           "settings": {
             "brand": "optimum",
-            "button_url": "\/collections\/keto-trim"
+            "button_url": "\/collections\/bodycor"
           }
         },
         "48bc38fc-eb02-4632-ad3d-27f16151cccc": {
@@ -118,14 +118,14 @@
           "type": "logo",
           "settings": {
             "brand": "nzt",
-            "button_url": "\/collections\/nzt"
+            "button_url": "\/collections\/nzt-48"
           }
         },
         "dcf1f296-a697-49ac-8feb-adc790499c69": {
           "type": "logo",
           "settings": {
             "brand": "regal",
-            "button_url": "\/collections\/regal"
+            "button_url": "\/collections\/bodycor"
           }
         },
         "7ab5eca2-81f4-4c02-a127-1eae391edda1": {
@@ -139,14 +139,14 @@
           "type": "logo",
           "settings": {
             "brand": "glucose",
-            "button_url": "\/collections\/glucose"
+            "button_url": "\/collections\/glucose-1"
           }
         },
         "e90d4b2b-397a-4588-9b71-0fd8fefc4302": {
           "type": "logo",
           "settings": {
             "brand": "oneshot",
-            "button_url": "\/collections\/oneshot"
+            "button_url": "\/collections\/one-shot-keto"
           }
         },
         "06f7768c-3f85-4866-90e3-88d0dcb02e53": {
@@ -160,14 +160,14 @@
           "type": "logo",
           "settings": {
             "brand": "bhb",
-            "button_url": "\/collections\/bhb"
+            "button_url": "\/collections\/bodycor"
           }
         },
         "5d145344-0afd-43d3-abe5-8178abc34cfd": {
           "type": "logo",
           "settings": {
             "brand": "pharm",
-            "button_url": "\/collections\/pharm"
+            "button_url": "\/collections\/bodycor"
           }
         }
       },
