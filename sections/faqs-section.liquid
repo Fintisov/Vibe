@@ -1,4 +1,6 @@
+
 <img class="bg preload-critical" data-preload-desktop="https:{{ section.settings.image | image_url }}" data-preload-mobile="https:{{ section.settings.image_mobile | image_url }}">
+
 <style>
     .tabs--section .tab-panel {
         max-height: 0;
@@ -10,6 +12,8 @@
     }
 
 </style>
+
+<script src="{{ 'tabs.js' | asset_url }}" defer="defer"></script>
 
 <div class="c-245">
     <div class="faq-inner tabs-inside tabs--section">
