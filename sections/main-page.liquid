@@ -1,4 +1,13 @@
+{% if page.metafields.accentuate.hero_image[0].src != blank %}
+  <img src="{{ page.metafields.accentuate.hero_image[0].src }}" alt="{{ page.title | escape }}">
+  {% else %}
+    <img src="{{ section.settings.image | image_url }}" alt="{{ page.title | escape }}">
+{% endif %}
+
+
+{% comment %}
 <img class="preload-critical" data-preload-desktop="{{ page.metafields.accentuate.hero_image[0].src }}" data-preload-mobile="{{ page.metafields.accentuate.hero_image[0].src }}">
+{% endcomment %}
 <div class="c-245">
   <div class="utility-rich-text utility-content">
     <h1>{{ page.title | escape }}</h1>

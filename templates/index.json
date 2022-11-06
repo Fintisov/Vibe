@@ -16,41 +16,10 @@
     },
     "featured-collection": {
       "type": "featured-collection",
-      "blocks": {
-        "30b60d0f-9c1c-40f4-94c7-1c685ad50cf9": {
-          "type": "block",
-          "settings": {
-            "product": "divatrim-fit-firm"
-          }
-        },
-        "cf65b1c8-9f24-4aee-b084-fa45b9486525": {
-          "type": "block",
-          "settings": {
-            "product": "oneshot-pinapple-mango"
-          }
-        },
-        "8312aec8-6d6c-48a0-abde-bf09895e45a6": {
-          "type": "block",
-          "settings": {
-            "product": "oneshot-candy-punch"
-          }
-        },
-        "966672a4-e837-4a3a-822f-4bd1b8b0c71b": {
-          "type": "block",
-          "settings": {
-            "product": "divatrim-iso-lean-100-whey-isolate-protein"
-          }
-        }
-      },
-      "block_order": [
-        "30b60d0f-9c1c-40f4-94c7-1c685ad50cf9",
-        "cf65b1c8-9f24-4aee-b084-fa45b9486525",
-        "8312aec8-6d6c-48a0-abde-bf09895e45a6",
-        "966672a4-e837-4a3a-822f-4bd1b8b0c71b"
-      ],
       "settings": {
         "header": "New Arrivals",
-        "subheader": "<p>These products <em>just<\/em> hit the shelves.<\/p>"
+        "subheader": "<p>These products <em>just<\/em> hit the shelves.<\/p>",
+        "collection": "amarose"
       }
     },
     "reviews-slider": {

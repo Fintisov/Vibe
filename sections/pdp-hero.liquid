@@ -87,6 +87,7 @@
                 {%- endfor %}
             </div>
         {%- endif %}
+        {% comment %}
         <div class="subscription-wrapper">
             <label class="subscription">
                 <input type="radio" checked>
@@ -107,6 +108,7 @@
                 <p>One Time Purchase</p>
             </label>
         </div>
+        {% endcomment %}
         <form class="atc-form">
             {% if product.has_only_default_variant %}
                 <button class="button add-to-cart header-m{% if product.available %}{% else %} disabled{% endif %}" type="submit" data-id="{{ product.variants[0].id }}">Add To Cart</button>
