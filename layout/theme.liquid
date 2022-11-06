@@ -8,19 +8,19 @@
     <link rel="canonical" href="{{ canonical_url }}">
 
     <!--- Facebook --->
-    <meta property="og:description" content="{{ page_description }}" />
-    <meta property="og:image" content="{{ settings.share_image | img_url: '1200x600' }}" />
-    <meta property="og:site_name" content="Vybe" />
-    <meta property="og:title" content="{{ page_title }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ canonical_url }}" />
+    <meta property="og:description" content="{{ page_description }}"/>
+    <meta property="og:image" content="{{ settings.share_image | img_url: '1200x600' }}"/>
+    <meta property="og:site_name" content="Vybe"/>
+    <meta property="og:title" content="{{ page_title }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{ canonical_url }}"/>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="" />
-    <meta name="twitter:description" content="{{ page_description }}" />
-    <meta name="twitter:image" content="{{ settings.share_image | img_url: '1200x600' }}" />
-    <meta name="twitter:site" content="{{ canonical_url }}" />
-    <meta name="twitter:title" content="{{ page_title }}" />
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content=""/>
+    <meta name="twitter:description" content="{{ page_description }}"/>
+    <meta name="twitter:image" content="{{ settings.share_image | img_url: '1200x600' }}"/>
+    <meta name="twitter:site" content="{{ canonical_url }}"/>
+    <meta name="twitter:title" content="{{ page_title }}"/>
 
     {%- if request.page_type == 'product' -%}
         <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
@@ -29,35 +29,35 @@
 
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 
-    <link rel="dns-prefetch" href="https://cdn.shopify.com" />
+    <link rel="dns-prefetch" href="https://cdn.shopify.com"/>
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
     {%- if settings.favicon != blank -%}
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ settings.favicon | img_url: '32x32' }}" />
-        <link rel="icon" type="image/png" sizes="57x57" href="{{ settings.favicon | img_url: '57x57' }}" />
-        <link rel="icon" type="image/png" sizes="76x76" href="{{ settings.favicon | img_url: '76x76' }}" />
-        <link rel="icon" type="image/png" sizes="96x96" href="{{ settings.favicon | img_url: '96x96' }}" />
-        <link rel="icon" type="image/png" sizes="128x128" href="{{ settings.favicon | img_url: '128x128' }}" />
-        <link rel="icon" type="image/png" sizes="192x192" href="{{ settings.favicon | img_url: '192x192' }}" />
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ settings.favicon | img_url: '32x32' }}"/>
+        <link rel="icon" type="image/png" sizes="57x57" href="{{ settings.favicon | img_url: '57x57' }}"/>
+        <link rel="icon" type="image/png" sizes="76x76" href="{{ settings.favicon | img_url: '76x76' }}"/>
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ settings.favicon | img_url: '96x96' }}"/>
+        <link rel="icon" type="image/png" sizes="128x128" href="{{ settings.favicon | img_url: '128x128' }}"/>
+        <link rel="icon" type="image/png" sizes="192x192" href="{{ settings.favicon | img_url: '192x192' }}"/>
 
-        <link rel="icon" type="image/png" sizes="196x196" href="{{ settings.favicon | img_url: '196x196' }}" />
+        <link rel="icon" type="image/png" sizes="196x196" href="{{ settings.favicon | img_url: '196x196' }}"/>
 
-        <link rel="apple-touch-icon" sizes="120x120" href="{{ settings.favicon | img_url: '120x120' }}" />
-        <link rel="apple-touch-icon" sizes="152x152" href="{{ settings.favicon | img_url: '152x152' }}" />
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ settings.favicon | img_url: '180x180' }}" />
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ settings.favicon | img_url: '120x120' }}"/>
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ settings.favicon | img_url: '152x152' }}"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ settings.favicon | img_url: '180x180' }}"/>
 
         <meta name="application-name" content="&nbsp;"/>
-        <meta name="msapplication-TileColor" content="#FFFFFF" />
-        <meta name="msapplication-TileImage" content="{{ settings.favicon | img_url: '144x144' }}" />
-        <meta name="msapplication-square70x70logo" content="{{ settings.favicon | img_url: '70x70' }}" />
-        <meta name="msapplication-square150x150logo" content="{{ settings.favicon | img_url: '150x150' }}" />
-        <meta name="msapplication-wide310x150logo" content="{{ settings.favicon | img_url: '310x150' }}" />
-        <meta name="msapplication-square310x310logo" content="{{ settings.favicon | img_url: '310x310' }}" />
+        <meta name="msapplication-TileColor" content="#FFFFFF"/>
+        <meta name="msapplication-TileImage" content="{{ settings.favicon | img_url: '144x144' }}"/>
+        <meta name="msapplication-square70x70logo" content="{{ settings.favicon | img_url: '70x70' }}"/>
+        <meta name="msapplication-square150x150logo" content="{{ settings.favicon | img_url: '150x150' }}"/>
+        <meta name="msapplication-wide310x150logo" content="{{ settings.favicon | img_url: '310x150' }}"/>
+        <meta name="msapplication-square310x310logo" content="{{ settings.favicon | img_url: '310x310' }}"/>
     {%- endif -%}
     <script>
         const url = "https:{{ 'image-load.js' | asset_url }}"
-        const content = `importScripts( "${ url }" );`;
-        window.workerUrl = URL.createObjectURL( new Blob( [ content ], { type: "text/javascript" } ) );
+        const content = `importScripts( "${url}" );`;
+        window.workerUrl = URL.createObjectURL(new Blob([content], {type: "text/javascript"}));
     </script>
     {{ '_fonts.css' | asset_url | stylesheet_tag }}
     {{ '_init.css' | asset_url | stylesheet_tag }}
@@ -65,8 +65,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     <script>
-        $( document ).ready( function () {
-            $(".menu-icon").on("click", function(){
+        function hiddenMenu(selector) {
+            $(selector).on("click", () => {
+                $('html, body').css({
+                    overflow: 'auto',
+                    height: 'auto'
+                });
+                $("#mega-nav-mobile").removeClass("show");
+                $(".mobile-nav-backdrop1").removeClass("show");
+            });
+        }
+
+        $(document).ready(function () {
+            $(".menu-icon").on("click", function () {
                 $('html, body').css({
                     overflow: 'hidden',
                     height: '100%'
@@ -75,14 +86,10 @@
                 $(".mobile-nav-backdrop1").addClass("show");
 
             });
-            $(".mobile-nav-backdrop1").on("click",function(){
-                $('html, body').css({
-                    overflow: 'auto',
-                    height: 'auto'
-                });
-                $("#mega-nav-mobile").removeClass("show");
-                $(".mobile-nav-backdrop1").removeClass("show");
-            });
+
+            hiddenMenu(".mobile-nav-backdrop1");
+            hiddenMenu(".mega-nav-mobile1 a.text-m");
+            hiddenMenu(".mega-nav-mobile1 a.eyebrow");
         })
     </script>
 </head>
@@ -114,16 +121,20 @@
                                             <a href="{{ child_link.url }}" class="text-m">{{ child_link.title }}</a>
                                         {% endfor %}
                                     {% endif %}
-                                    <a class="read-more" href="{{ link.url }}">Shop All{% include 'icon-arrow-red' %}</a>
+                                    <a class="read-more" href="{{ link.url }}">Shop
+                                        All{% include 'icon-arrow-red' %}</a>
                                 </div>
                             {% endfor %}
                         </div>
 
                         <div class="right">
-                            <img class="bg preload-global" aria-hidden="true" data-preload-desktop="https:{{ settings.shop_nav_img | image_url }}" data-preload-mobile="https:{{ settings.shop_nav_img | image_url }}">
+                            <img class="bg preload-global" aria-hidden="true"
+                                 data-preload-desktop="https:{{ settings.shop_nav_img | image_url }}"
+                                 data-preload-mobile="https:{{ settings.shop_nav_img | image_url }}">
                             <div class="content">
                                 <p class="header-l">{{ settings.shop_menu_header }}</p>
-                                <a href="{{ settings.shop_menu_button_url }}" class="btn caps white">{{ settings.shop_menu_button_text }}</a>
+                                <a href="{{ settings.shop_menu_button_url }}"
+                                   class="btn caps white">{{ settings.shop_menu_button_text }}</a>
                             </div>
                         </div>
                     </div>
@@ -147,9 +158,13 @@
                                         {% assign collectionArr = link.url | split: "/" %}
                                         {% assign thisCollection = collections[collectionArr.last] %}
                                         {% assign productCount = thisCollection.products | size %}
-                                        <a class="brand-logo{% if productCount == 0 %} coming-soon{% endif %}" href="{{ link.url }}">
-                                            {% if productCount == 0 %}<span class="coming-soon-text">Coming<br>soon</span>{% endif %}
-                                            <img class="image preload-global" data-preload-desktop="https:{{ thisCollection.featured_image | image_url }}" data-preload-mobile="https:{{ thisCollection.featured_image | image_url }}">
+                                        <a class="brand-logo{% if productCount == 0 %} coming-soon{% endif %}"
+                                           href="{{ link.url }}">
+                                            {% if productCount == 0 %}<span
+                                                    class="coming-soon-text">Coming<br>soon</span>{% endif %}
+                                            <img class="image preload-global"
+                                                 data-preload-desktop="https:{{ thisCollection.featured_image | image_url }}"
+                                                 data-preload-mobile="https:{{ thisCollection.featured_image | image_url }}">
                                         </a>
                                     {% endif %}
                                 {% endfor %}
@@ -157,10 +172,13 @@
                         </div>
 
                         <div class="right">
-                            <img class="bg preload-global" aria-hidden="true" data-preload-desktop="https:{{ settings.brand_nav_img | image_url }}" data-preload-mobile="https:{{ settings.brand_nav_img | image_url }}">
+                            <img class="bg preload-global" aria-hidden="true"
+                                 data-preload-desktop="https:{{ settings.brand_nav_img | image_url }}"
+                                 data-preload-mobile="https:{{ settings.brand_nav_img | image_url }}">
                             <div class="content">
                                 <p class="header-l">{{ settings.brand_menu_header }}</p>
-                                <a href="{{ settings.brand_menu_button_url }}" class="btn caps white">{{ settings.brand_menu_button_text }}</a>
+                                <a href="{{ settings.brand_menu_button_url }}"
+                                   class="btn caps white">{{ settings.brand_menu_button_text }}</a>
                             </div>
                         </div>
                     </div>
@@ -205,10 +223,13 @@
                             </div>
                         </div>
                         <div class="right">
-                            <img class="bg preload-global" aria-hidden="true" data-preload-desktop="https:{{ settings.learn_nav_img | image_url }}" data-preload-mobile="https:{{ settings.learn_nav_img | image_url }}">
+                            <img class="bg preload-global" aria-hidden="true"
+                                 data-preload-desktop="https:{{ settings.learn_nav_img | image_url }}"
+                                 data-preload-mobile="https:{{ settings.learn_nav_img | image_url }}">
                             <div class="content">
                                 <p class="header-l">{{ settings.learn_menu_header }}</p>
-                                <a href="{{ settings.learn_menu_button_url }}" class="btn caps white">{{ settings.learn_menu_button_text }}</a>
+                                <a href="{{ settings.learn_menu_button_url }}"
+                                   class="btn caps white">{{ settings.learn_menu_button_text }}</a>
                             </div>
                         </div>
 
@@ -228,36 +249,41 @@
                             <div class="nav-tile drawer allow-click">
                                 <h6 class="text-m">Shop All{% include "icon-plus" %}</h6>
                                 <div class="drawer-items">
-                                    <p class="text-m">Health & Fitness{% include "icon-plus" %}</p>
-                                    <p class="text-m">Beauty & Skincare{% include "icon-plus" %}</p>
-                                    <p class="text-m">Apparel & Accessories{% include "icon-plus" %}</p>
-                                    <p class="text-m">Featured{% include "icon-plus" %}</p>
+                                    <a href="/collections/health-fitness" class="text-m">Health &
+                                        Fitness{% include "icon-plus" %}</a>
+                                    <a href="/collections/beauty-skincare" class="text-m">Beauty &
+                                        Skincare{% include "icon-plus" %}</a>
+                                    <a href="/collections/featured" class="text-m">Featured{% include "icon-plus" %}</a>
                                 </div>
                             </div>
                             <div class="nav-tile drawer allow-click">
                                 <h6 class="text-m">All Brands{% include "icon-plus" %}</h6>
                                 <div class="drawer-items">
-                                    <p class="text-m">Divatrim{% include "icon-plus" %}</p>
-                                    <p class="text-m">Truketo{% include "icon-plus" %}</p>
-                                    <p class="text-m">One Shot{% include "icon-plus" %}</p>
-                                    <p class="text-m">Glocose 1{% include "icon-plus" %}</p>
+                                    <a href="/collections/one-shot-keto"
+                                       class="text-m">Divatrim{% include "icon-plus" %}</a>
+                                    <a href="/collections/optimum-keto" class="text-m">Optimum
+                                        keto{% include "icon-plus" %}</a>
+                                    <a href="/collections/one-shot-keto" class="text-m">One
+                                        Shot{% include "icon-plus" %}</a>
+                                    <a href="/collections/glucose-1" class="text-m">Glocose
+                                        1{% include "icon-plus" %}</a>
                                 </div>
                             </div>
                             <div class="nav-tile drawer allow-click">
                                 <h6 class="text-m">Learn{% include "icon-plus" %}</h6>
                                 <div class="drawer-items">
-                                    <p class="text-m">About US{% include "icon-plus" %}</p>
-                                    <p class="text-m">FAQ{% include "icon-plus" %}</p>
-                                    <p class="text-m">Blog{% include "icon-plus" %}</p>
-                                    <p class="text-m">Contact US{% include "icon-plus" %}</p>
+                                    <a href="/pages/about-us" class="text-m">About US{% include "icon-plus" %}</a>
+                                    <a href="/pages/faqs" class="text-m">FAQ{% include "icon-plus" %}</a>
+                                    <a href="/blogs/beauty-skincare" class="text-m">Blog{% include "icon-plus" %}</a>
+                                    <a href="/pages/contact" class="text-m">Contact US{% include "icon-plus" %}</a>
                                 </div>
                             </div>
                         </div>
                         <div class="bottom">
-                            <a href="/" class="eyebrow">Accessibility Statement</a>
-                            <a href="/" class="eyebrow">Privacy Policy</a>
-                            <a href="/" class="eyebrow">Terms & Conditions</a>
-                            <a href="/" class="eyebrow">Returns Policy</a>
+                            <a href="/pages/terms-and-conditions" class="eyebrow">Accessibility Statement</a>
+                            <a href="/pages/privacy-policy" class="eyebrow">Privacy Policy</a>
+                            <a href="/pages/terms-and-conditions" class="eyebrow">Terms & Conditions</a>
+                            <a href="/pages/return-policy" class="eyebrow">Returns Policy</a>
 
                         </div>
                     </div>
@@ -330,21 +356,22 @@
                     </div>
                     {% for link in linklists.footer-columns.links %}
                         <div class="col drawer" data-at="767">
-                            <h6 class="caps">{{ link.title }}<span class="mobile-only">{% include "icon-plus" %}</span> </h6>
+                            <h6 class="caps">{{ link.title }}<span class="mobile-only">{% include "icon-plus" %}</span>
+                            </h6>
                             <div class="drawer-items">
-                            {% if link.links != empty %}
-                                {% for child_link in link.links %}
-                                    <a href="{{ child_link.url }}" class="copy">{{ child_link.title }}</a>
-                                {% endfor %}
-                            {% endif %}
+                                {% if link.links != empty %}
+                                    {% for child_link in link.links %}
+                                        <a href="{{ child_link.url }}" class="copy">{{ child_link.title }}</a>
+                                    {% endfor %}
+                                {% endif %}
                             </div>
                         </div>
                     {% endfor %}
                 </div>
                 <div class="right socials">
-                    <a href="/">{%  include 'icon-instagram' %}</a>
-                    <a href="/">{%  include 'icon-twitter' %}</a>
-                    <a href="/">{%  include 'icon-facebook' %}</a>
+                    <a href="/">{% include 'icon-instagram' %}</a>
+                    <a href="/">{% include 'icon-twitter' %}</a>
+                    <a href="/">{% include 'icon-facebook' %}</a>
                 </div>
             </div>
 
