@@ -10,7 +10,11 @@
         </div>
         <div id="mobile-filters-backdrop"></div>
         <div class="left">
-            <h2 class="subtitle">Filter By</h2>
+            {% if collection.products_count > 0 %}
+                <h2 class="subtitle">Filter By</h2>
+            {% else %}
+                <h2>Coming soon</h2>
+            {% endif %}
             {% render 'facets', results: collection, enable_filtering: true, enable_sorting: true, filter_type: "vertical" %}
         </div>
         <div class="right">
