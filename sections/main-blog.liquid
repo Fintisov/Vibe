@@ -28,7 +28,12 @@
       {% assign thisBlog = block.settings.blog %}
       {% for article in thisBlog.articles %}
         <a class="blog-tile{% if forloop.index0 > 2 %} mw{% endif %}" href="/blogs/{{ article.handle }}">
-          <img class="preload{% if forloop.index0 < 3 %}-critical{% endif %}" data-preload-desktop="{{ article.metafields.accentuate.tile_image[0].src }}" data-preload-mobile="{{ article.metafields.accentuate.tile_image[0].src }}">
+          {% if article.metafields.accentuate.tile_image[0].src != blank %}
+            <img class="preload{% if forloop.index0 < 3 %}-critical{% endif %}" data-preload-desktop="{{ article.metafields.accentuate.tile_image[0].src }}" data-preload-mobile="{{ article.metafields.accentuate.tile_image[0].src }}">
+          {% else %}
+            <img class="" src="{{ article.image | img_url: '864x488', crop: 'center' }}">
+          {% endif %}
+
           <div class="blog-info">
             <span class="caps">{% for tag in article.tags limit: 3 %}{{ tag }}{% if forloop.last %}{% else %} / {% endif %}{% endfor %}</span>
             <h5 class="header-m">{{ article.title }}</h5>

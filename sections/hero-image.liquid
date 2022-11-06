@@ -1,5 +1,9 @@
 <div>
-    <img class="preload-critical" data-preload-desktop="https:{{ section.settings.image | image_url }}" data-preload-mobile="https:{{ section.settings.image_mobile | image_url }}">
+    {% if collection.metafields.accentuate.hero_image[0].src != blank %}
+        <img src="{{ collection.metafields.accentuate.hero_image[0].src }}" alt="{{ collection.title }}">
+    {% else %}
+        <img class="preload-critical" data-preload-desktop="https:{{ section.settings.image | image_url }}" data-preload-mobile="https:{{ section.settings.image_mobile | image_url }}">
+    {% endif %}
 </div>
 
 
