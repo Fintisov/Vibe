@@ -16,7 +16,6 @@
     },
     "products-404": {
       "type": "products-404",
-      "disabled": true,
       "blocks": {
         "1469e337-5dad-4e19-ab3b-0bfd7523ab44": {
           "type": "block",
