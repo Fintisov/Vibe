@@ -25,7 +25,13 @@
                     {% if relatedArticle.title == article.title %}{% continue %}{% endif %}
 
                     <a class="blog-tile mw" href="/blogs/{{ relatedArticle.handle }}">
+
+                      {% if relatedArticle.metafields.accentuate.tile_image[0].src != blank %}
                         <img class="preload" data-preload-desktop="{{ relatedArticle.metafields.accentuate.tile_image[0].src }}" data-preload-mobile="{{ relatedArticle.metafields.accentuate.tile_image[0].src }}">
+                      {% else %}
+                        <img class="" src="{{ relatedArticle.image | img_url: '692x468', crop: 'center' }}">
+                      {% endif %}
+
                         <div class="blog-info">
                             <span class="caps">{% for tag in relatedArticle.tags limit: 3 %}{{ tag }}{% if forloop.last %}{% else %} / {% endif %}{% endfor %}</span>
                             <h5 class="header-m">{{ relatedArticle.title }}</h5>
