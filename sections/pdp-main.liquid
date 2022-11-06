@@ -15,7 +15,12 @@
 <div class="faq-section c-50">
     {% if product.metafields.accentuate.drawers_header and product.metafields.accentuate.drawers_header != empty %}
         <div class="top mw">
+
+            <img src="{{ product.metafields.accentuate.drawers_image[0].src }}" alt="">
+            <h1>{{ product.metafields.accentuate.drawers_image[0].src }}</h1>
+            {% comment %}
             <img class="preload" data-preload-desktop="{{ product.metafields.accentuate.drawers_image[0].src }}" data-preload-mobile="{{ product.metafields.accentuate.drawers_image[0].src }}">
+            {% endcomment %}
             <h3>{{ product.metafields.accentuate.drawers_header }}</h3>
             <p class="text-m">{{ product.metafields.accentuate.drawers_intro_text }}</p>
         </div>
