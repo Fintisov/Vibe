@@ -1356,22 +1356,22 @@ button {
     }
 }
 
-#header .header-left-mobile {
+#header .header-left-mobile1 {
     display: none
 }
 
-#header .header-left-mobile > a {
+#header .header-left-mobile1 > a {
     width: 83px
 }
 
 @media screen and (max-width: 959px) {
-    #header .header-left-mobile {
+    #header .header-left-mobile1 {
         display: -ms-flexbox;
         display: flex;
     }
 }
 
-#header .hammy {
+#header .hammy1 {
     margin-right: 16px;
     width: 22px;
 }
@@ -1492,7 +1492,7 @@ button {
     }
 }
 
-.mega-nav-backdrop, .mobile-nav-backdrop {
+.mega-nav-backdrop1, .mobile-nav-backdrop1 {
     background: rgba(0, 0, 0, .3);
     position: fixed;
     width: 100%;
@@ -1501,7 +1501,13 @@ button {
     left: 0;
     visibility: hidden;
     opacity: 0;
-    z-index: 998
+    z-index: 1001;
+    transition: 0.3s;
+}
+
+.mega-nav-backdrop1.show, .mobile-nav-backdrop1.show {
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .mega-nav {
@@ -1801,7 +1807,7 @@ button {
     }
 }
 
-.mega-nav-mobile {
+.mega-nav-mobile1 {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -1820,17 +1826,28 @@ button {
 }
 
 @media screen and (max-width: 960px) {
-    .mega-nav-mobile {
+    .mega-nav-mobile1 {
         height: 100vh;
+        transform: translate(0%, 100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+    }
+
+    .mega-nav-mobile1.show {
+        transform: translate(0%, 0%) !important;
+        opacity: 1;
+        visibility: visible;
+        transition: 0.3s;
     }
 }
 
-.mega-nav-mobile .top {
+.mega-nav-mobile1 .top {
     min-height: 56px;
     background: #121212
 }
 
-.mega-nav-mobile .drawer-items {
+.mega-nav-mobile1 .drawer-items {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -1839,13 +1856,13 @@ button {
     margin-left: 30px
 }
 
-.mega-nav-mobile .drawer-items .text-m {
+.mega-nav-mobile1 .drawer-items .text-m {
     margin-bottom: 32px;
     font-size: 14px;
     white-space: nowrap
 }
 
-.mega-nav-mobile .top {
+.mega-nav-mobile1 .top {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -1855,21 +1872,21 @@ button {
     padding: 0 32px
 }
 
-.mega-nav-mobile .top svg {
+.mega-nav-mobile1 .top svg {
     width: 24px;
     height: 24px
 }
 
-.mega-nav-mobile .inner-drawer {
+.mega-nav-mobile1 .inner-drawer {
     border-top: 1px solid #d9d9d9;
     padding-top: 16px
 }
 
-.mega-nav-mobile .inner-drawer .drawer-items {
+.mega-nav-mobile1 .inner-drawer .drawer-items {
     padding: 0
 }
 
-.mega-nav-mobile .account {
+.mega-nav-mobile1 .account {
     color: #fff;
     display: -ms-flexbox;
     display: flex;
@@ -1881,7 +1898,7 @@ button {
     text-transform: unset
 }
 
-.mega-nav-mobile .bottom {
+.mega-nav-mobile1 .bottom {
     bottom: 0;
     left: 0;
     background: #fcfcfc;
@@ -1896,18 +1913,18 @@ button {
     padding: 26px 30px 42px
 }
 
-.mega-nav-mobile .bottom .eyebrow {
+.mega-nav-mobile1 .bottom .eyebrow {
     padding: 0;
     text-transform: unset;
     font-size: 12px;
     margin-bottom: 28px
 }
 
-.mega-nav-mobile .bottom .eyebrow:last-child {
+.mega-nav-mobile1 .bottom .eyebrow:last-child {
     margin-bottom: 0
 }
 
-.mega-nav-mobile .nav-tile {
+.mega-nav-mobile1 .nav-tile {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -1920,35 +1937,35 @@ button {
     font-size: 16px
 }
 
-.mega-nav-mobile .nav-tile.open h6 {
+.mega-nav-mobile1 .nav-tile.open h6 {
     font-weight: 800
 }
 
-.mega-nav-mobile .nav-tile.open h6 svg {
+.mega-nav-mobile1 .nav-tile.open h6 svg {
     transition: all .25s cubic-bezier(.445, .05, .55, .95);
     transform: rotate(-135deg)
 }
 
-.mega-nav-mobile .nav-tile svg {
+.mega-nav-mobile1 .nav-tile svg {
     width: 20px;
     height: 20px;
     transition: all .25s cubic-bezier(.445, .05, .55, .95)
 }
 
-.mega-nav-mobile .nav-tile svg rect {
+.mega-nav-mobile1 .nav-tile svg rect {
     fill: #121212
 }
 
-.mega-nav-mobile .nav-tile .drawer-items svg {
+.mega-nav-mobile1 .nav-tile .drawer-items svg {
     width: 16px;
     height: 16px
 }
 
-.mega-nav-mobile .nav-tile h6 {
+.mega-nav-mobile1 .nav-tile h6 {
     margin-bottom: 22px
 }
 
-.mega-nav-mobile .nav-tile .text-m {
+.mega-nav-mobile1 .nav-tile .text-m {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -11560,3 +11577,4 @@ footer {
         display: none;
     }
 }
+

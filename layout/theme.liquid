@@ -62,7 +62,29 @@
     {{ '_fonts.css' | asset_url | stylesheet_tag }}
     {{ '_init.css' | asset_url | stylesheet_tag }}
     {{ content_for_header }} <!-- Header hook for plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
+    <script>
+        $( document ).ready( function () {
+            $(".menu-icon").on("click", function(){
+                $('html, body').css({
+                    overflow: 'hidden',
+                    height: '100%'
+                });
+                $("#mega-nav-mobile").addClass("show");
+                $(".mobile-nav-backdrop1").addClass("show");
+
+            });
+            $(".mobile-nav-backdrop1").on("click",function(){
+                $('html, body').css({
+                    overflow: 'auto',
+                    height: 'auto'
+                });
+                $("#mega-nav-mobile").removeClass("show");
+                $(".mobile-nav-backdrop1").removeClass("show");
+            });
+        })
+    </script>
 </head>
 <body>
 
@@ -196,13 +218,13 @@
 
             <a class="header-center" href="/">{% include "logo" %}</a>
 
-            <div class="header-left-mobile">
-                <button class="hammy mega-nav-trigger">{% include 'icon-hamburger' %}
-                    <div class="mega-nav-mobile" id="mega-nav-mobile">
+            <div class="header-left-mobile1">
+                <div class="hammy1">{% include 'icon-hamburger' %}
+                    <div class="mega-nav-mobile1" id="mega-nav-mobile">
                         <div class="top">
                             <a href="/account" class="eyebrow account">{% include "log-in" %}Log In / Sign up</a>
                         </div>
-                        <div class="middle content">
+                        <div class="middle content1">
                             <div class="nav-tile drawer allow-click">
                                 <h6 class="text-m">Shop All{% include "icon-plus" %}</h6>
                                 <div class="drawer-items">
@@ -239,7 +261,7 @@
 
                         </div>
                     </div>
-                </button>
+                </div>
 
                 <a href="/">{% include "logo" %}</a>
             </div>
@@ -256,12 +278,13 @@
                 <button class="mini-cart-trigger" id="mini-cart-trigger">{% include "icon-bag" %}</button>
             </div>
 
+            <div class="mega-nav-backdrop1 mobile-nav-backdrop1" id="mobile-nav-backdrop"></div>
+
         </div>
 
 
     </div>
 </header>
-<div class="mega-nav-backdrop mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
 
 <main role="main" data-router-wrapper>
     {% if template.name == "index" %}
