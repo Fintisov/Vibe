@@ -1,214 +1,53 @@
 {
   "sections": {
-    "hero-section": {
-      "type": "hero-section",
-      "settings": {
-        "banner_pattern": "shopify:\/\/shop_images\/pattern-bg_73a24b70-4f0e-4fec-b77d-e94af5ce8aaa.png",
-        "banner_pattern_mobile": "shopify:\/\/shop_images\/Mobile_Content_Vector__X.png",
-        "hero_image": "shopify:\/\/shop_images\/pattern-pic.png",
-        "hero_image_mobile": "shopify:\/\/shop_images\/Mobile_Group_Images_Banner.png",
-        "hero_eyebrow": "About Us",
-        "hero_header": "SAY HELLO TO YOUR BEST SELF.",
-        "hero_subtitle": "Everyone has the potential to look better, feel better, and do better.   It’s our mission to get you there. That’s why we built VYBE.",
-        "hero_button_text": "",
-        "hero_button_url": ""
-      }
-    },
-    "fifty-fifty-balance": {
-      "type": "fifty-fifty-balance",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Pilares_1.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/Pilares_1_mobile.jpg",
-        "header_one": "Finding Balance.",
-        "header_two": "Finding Vybe.",
-        "text": "<p><strong>VYBE<\/strong> is the best-in-class nutritional subsidiary of Limitless X. This is where the body, mind, and spirit come to VYBE with the support of proven ingredients, helping to maximize athletic and personal performance on all levels.<\/p><p>Join us on the journey toward a <strong>happier, healthier world.<\/strong><\/p>"
-      }
-    },
-    "full-bleed-text": {
-      "type": "full-bleed-text",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Subscribe_to_the_newsletter.jpg",
-        "text": "Our Values.",
-        "large_text": "BRAVE. SKILL. EXPERIENCE.",
-        "large_text_two": "FASTER. BETTER.  STRONGER."
-      }
-    },
-    "product-tile-trio": {
-      "type": "product-tile-trio",
+    "pdp-hero": {
+      "type": "pdp-hero",
       "blocks": {
-        "d1e89a57-0dce-427d-96ba-44712b3a6b12": {
-          "type": "tile",
+        "fbb965da-68dc-49b6-8df5-81529bc7491d": {
+          "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/star-rating\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
           "settings": {
-            "image": "shopify:\/\/shop_images\/tile-1.jpg",
-            "tile_header": "Beauty & Skincare",
-            "button_url": "\/collections\/beauty-skincare"
-          }
-        },
-        "b676b62d-1c9e-4bb0-a136-ea0ac20be964": {
-          "type": "tile",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/tile-2.jpg",
-            "tile_header": "Health & Wellness",
-            "button_url": "\/collections\/health-wellness"
-          }
-        },
-        "13201ecd-ba2a-4f86-83a5-63473690a13a": {
-          "type": "tile",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/tile-3.jpg",
-            "tile_header": "Apparel & Accesories",
-            "button_url": "\/collections\/apparel-accessories"
+            "product": "{{product}}"
           }
         }
       },
       "block_order": [
-        "d1e89a57-0dce-427d-96ba-44712b3a6b12",
-        "b676b62d-1c9e-4bb0-a136-ea0ac20be964",
-        "13201ecd-ba2a-4f86-83a5-63473690a13a"
+        "fbb965da-68dc-49b6-8df5-81529bc7491d"
       ],
       "settings": {
-        "header": "<p>A CURATED SELECTION OF THE BEST PRODUCTS<em> ONLY FOR YOU<\/em><\/p>",
-        "copy": "At any point, we believe we can change the direction of your life. We exist to make your life better, upscaling your body and mind to new horizons."
       }
     },
-    "reviews-slider": {
-      "type": "reviews-slider",
+    "pdp-main": {
+      "type": "pdp-main",
       "settings": {
       }
     },
-    "brand-logos": {
-      "type": "brand-logos",
+    "166386874117c1bf17": {
+      "type": "apps",
       "blocks": {
-        "16e13359-0256-460b-af7c-aa0f168cfc7a": {
-          "type": "logo",
+        "6fdf9672-3486-4bea-8ed3-01f3e8e7918e": {
+          "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
           "settings": {
-            "brand": "divatrim",
-            "button_url": "\/collections\/divatrim"
-          }
-        },
-        "98bfc083-be15-48e6-b538-fb68b87d244c": {
-          "type": "logo",
-          "settings": {
-            "brand": "xanquil",
-            "button_url": "\/collections\/xanquil"
-          }
-        },
-        "acdcf9b6-514b-477a-ae33-2d6f1e723c7b": {
-          "type": "logo",
-          "settings": {
-            "brand": "trim",
-            "button_url": "\/collections\/keto-trim"
-          }
-        },
-        "363b4490-920f-4d28-97ca-eb354e4fdcdf": {
-          "type": "logo",
-          "settings": {
-            "brand": "optimum",
-            "button_url": "\/collections\/keto-trim"
-          }
-        },
-        "48bc38fc-eb02-4632-ad3d-27f16151cccc": {
-          "type": "logo",
-          "settings": {
-            "brand": "amarose",
-            "button_url": "\/collections\/amarose"
-          }
-        },
-        "6e4ee60f-28ca-4442-a122-6ae0c828ffd7": {
-          "type": "logo",
-          "settings": {
-            "brand": "nzt",
-            "button_url": "\/collections\/nzt"
-          }
-        },
-        "dcf1f296-a697-49ac-8feb-adc790499c69": {
-          "type": "logo",
-          "settings": {
-            "brand": "regal",
-            "button_url": "\/collections\/regal"
-          }
-        },
-        "7ab5eca2-81f4-4c02-a127-1eae391edda1": {
-          "type": "logo",
-          "settings": {
-            "brand": "fps",
-            "button_url": "\/collections\/fps"
-          }
-        },
-        "1dcc0a59-d89b-40da-b86e-50d79af1331e": {
-          "type": "logo",
-          "settings": {
-            "brand": "glucose",
-            "button_url": "\/collections\/glucose"
-          }
-        },
-        "e90d4b2b-397a-4588-9b71-0fd8fefc4302": {
-          "type": "logo",
-          "settings": {
-            "brand": "oneshot",
-            "button_url": "\/collections\/oneshot"
-          }
-        },
-        "06f7768c-3f85-4866-90e3-88d0dcb02e53": {
-          "type": "logo",
-          "settings": {
-            "brand": "sexgod",
-            "button_url": "\/collections\/sexgod"
-          }
-        },
-        "ebe17f13-2ab7-423c-8d78-363f825b4f58": {
-          "type": "logo",
-          "settings": {
-            "brand": "bhb",
-            "button_url": "\/collections\/bhb"
-          }
-        },
-        "5d145344-0afd-43d3-abe5-8178abc34cfd": {
-          "type": "logo",
-          "settings": {
-            "brand": "pharm",
-            "button_url": "\/collections\/pharm"
+            "product": "{{product}}"
           }
         }
       },
       "block_order": [
-        "16e13359-0256-460b-af7c-aa0f168cfc7a",
-        "98bfc083-be15-48e6-b538-fb68b87d244c",
-        "acdcf9b6-514b-477a-ae33-2d6f1e723c7b",
-        "363b4490-920f-4d28-97ca-eb354e4fdcdf",
-        "48bc38fc-eb02-4632-ad3d-27f16151cccc",
-        "6e4ee60f-28ca-4442-a122-6ae0c828ffd7",
-        "dcf1f296-a697-49ac-8feb-adc790499c69",
-        "7ab5eca2-81f4-4c02-a127-1eae391edda1",
-        "1dcc0a59-d89b-40da-b86e-50d79af1331e",
-        "e90d4b2b-397a-4588-9b71-0fd8fefc4302",
-        "06f7768c-3f85-4866-90e3-88d0dcb02e53",
-        "ebe17f13-2ab7-423c-8d78-363f825b4f58",
-        "5d145344-0afd-43d3-abe5-8178abc34cfd"
+        "6fdf9672-3486-4bea-8ed3-01f3e8e7918e"
       ],
       "settings": {
-        "header": "<p>REACH YOUR GOALS WITH OUR SELECTION OF <em>THE BEST BRAND<\/em><\/p>"
       }
     },
-    "full-bleed-cta": {
-      "type": "full-bleed-cta",
+    "recirc-products": {
+      "type": "recirc-products",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Subscribe_to_the_newsletter.jpg",
-        "eyebrow": "JOIN VYBE",
-        "header": "<p>EXPERIENCE THE <em>POWER TODAY!<\/em><\/p>",
-        "text": "Life-Changing Products | Worldwide Community",
-        "button_text": "CREATE ACCOUNT",
-        "button_url": "\/account"
+        "header": "You may be interested in"
       }
     }
   },
   "order": [
-    "hero-section",
-    "fifty-fifty-balance",
-    "full-bleed-text",
-    "product-tile-trio",
-    "reviews-slider",
-    "brand-logos",
-    "full-bleed-cta"
+    "pdp-hero",
+    "pdp-main",
+    "166386874117c1bf17",
+    "recirc-products"
   ]
 }
