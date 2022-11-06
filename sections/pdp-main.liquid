@@ -16,8 +16,7 @@
     {% if product.metafields.accentuate.drawers_header and product.metafields.accentuate.drawers_header != empty %}
         <div class="top mw">
 
-            <img src="{{ product.metafields.accentuate.drawers_image[0].src }}" alt="">
-            <h1>{{ product.metafields.accentuate.drawers_image[0].src }}</h1>
+            <img src="{{ product.metafields.accentuate.drawers_image[0].src }}" alt="{{ product.title }}">
             {% comment %}
             <img class="preload" data-preload-desktop="{{ product.metafields.accentuate.drawers_image[0].src }}" data-preload-mobile="{{ product.metafields.accentuate.drawers_image[0].src }}">
             {% endcomment %}
