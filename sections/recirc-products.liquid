@@ -17,7 +17,7 @@
                             <p class="caps brand">{{ relatedProduct.vendor }}</p>
                             <h6 class="title product-name">{{ relatedProduct.title }}</h6>
                             {% comment %}<p class="text-m product-info">Beauty • 3 Sizes</p>{% endcomment %}
-                            <div class="reviews subtitle">{% include 'icon-reviews-temp' %}(234)</div>
+                            <div class="reviews subtitle">{% include 'icon-reviews-temp' %}</div>
                             <p class="text-m price">{{ relatedProduct.price | money }}</p>
                         </a>
                     {% endfor %}
@@ -36,7 +36,7 @@
                             <p class="caps brand">{{ relatedProduct.vendor }}</p>
                             <h6 class="title product-name">{{ relatedProduct.title }}</h6>
                             {% comment %}<p class="text-m product-info">Beauty • 3 Sizes</p>{% endcomment %}
-                            <div class="reviews subtitle">{% include 'icon-reviews-temp' %}(234)</div>
+                            <div class="reviews subtitle">{% include 'icon-reviews-temp' %}</div>
                             <p class="text-m price">{{ relatedProduct.price | money }}</p>
                         </a>
                         {% assign diff = diff | minus: 1 %}

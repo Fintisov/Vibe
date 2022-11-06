@@ -3,10 +3,6 @@
     "pdp-hero": {
       "type": "pdp-hero",
       "settings": {
-        "header": "",
-        "copy": "",
-        "button_text": "",
-        "button_url": ""
       }
     }
   },
