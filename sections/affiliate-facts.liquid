@@ -9,6 +9,9 @@
                 <div class="left">
                     <p class="header-l">{{ block.settings.title }}</p>
                     <p class="subtitle tile-copy">{{ block.settings.copy }}</p>
+                    {% if block.settings.cta_url %}
+                        <a class="btn red caps" href="{{ block.settings.cta_url }}">{{ block.settings.cta_copy }}</a>
+                    {% endif %}
                 </div>
                 <img class="preload"{% if block.settings.image.alt %} alt="{{ block.settings.image.alt }}"{% endif %} data-preload-desktop="https:{{ block.settings.image | image_url }}" data-preload-mobile="https:{{ block.settings.image | image_url }}">
             </div>
@@ -51,6 +54,16 @@
 "type": "text",
 "id": "copy",
 "label": "Copy"
+},
+{
+"type": "text",
+"id": "cta_url",
+"label": "CTA URL"
+},
+{
+"type": "text",
+"id": "cta_copy",
+"label": "CTA Copy"
 },
 {
 "type": "image_picker",

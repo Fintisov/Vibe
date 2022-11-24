@@ -1,44 +1,22 @@
-
 <img class="bg preload-critical" data-preload-desktop="https:{{ section.settings.image | image_url }}" data-preload-mobile="https:{{ section.settings.image_mobile | image_url }}">
-
-<style>
-    .tabs--section .tab-panel {
-        max-height: 0;
-        overflow: hidden;
-    }
-
-    .tabs--section .tab-panel.active {
-        max-height: 100vh;
-    }
-
-</style>
-
-<script src="{{ 'tabs.js' | asset_url }}" defer="defer"></script>
-
 <div class="c-245">
-    <div class="faq-inner tabs-inside tabs--section">
-        <tabs-component>
-            <div class="category-tabs tab-triggers tabs-list">
-                {% assign faqCats = "" %}
-                {% for block in section.blocks %}
-                    {%- case block.type -%}
-                        {%- when 'faq-group-titles' -%}
-                            {% assign faqCats = faqCats | append: block.settings.group_id | append: "|||"  %}
-                            <button data-href="#{{ block.settings.title | handleize }}" class="tabs-list__link title trigger faq-tab {% if forloop.first %} active{% endif %}">
-                                {{ block.settings.title }}
-                            </button>
-                    {% comment %}
-                        <button class="title trigger faq-tab{% if forloop.first %} active{% endif %}">{{ block.settings.title }}</button>
-                    {% endcomment %}
-                    {% endcase %}
-                {% endfor %}
-                {% assign faqCats = faqCats | split: "|||" %}
-            </div>
-            <div class="faq-content tab-wrapper">
+    <div class="faq-inner tabs-inside">
+        <div class="category-tabs tab-triggers">
+            {% assign faqCats = "" %}
             {% for block in section.blocks %}
                 {%- case block.type -%}
                     {%- when 'faq-group-titles' -%}
-                    <div class="faq tab-panel{% if forloop.first %} active{% endif %}"  id="{{ block.settings.title | handleize }}">
+                        {% assign faqCats = faqCats | append: block.settings.group_id | append: "|||"  %}
+                        <button class="title trigger faq-tab {% if forloop.first %} active{% endif %}">{{ block.settings.title }}</button>
+                {% endcase %}
+            {% endfor %}
+            {% assign faqCats = faqCats | split: "|||" %}
+        </div>
+        <div class="faq-content tab-wrapper">
+            {% for block in section.blocks %}
+                {%- case block.type -%}
+                    {%- when 'faq-group-titles' -%}
+                    <div class="faq tab{% if forloop.first %} active{% endif %}">
                         <h1 class="hero-header">{{ block.settings.title }}</h1>
                         {% for innerBlock in section.blocks %}
                             {%- case innerBlock.type -%}
@@ -58,7 +36,6 @@
             {% endfor %}
 
         </div>
-        </tabs-component>
     </div>
 </div>
 

@@ -3,13 +3,13 @@
     <h4 class="header-l">{{ section.settings.header }}</h4>
     <p class="subtitle">{{ section.settings.text }}</p>
     <div class="form-wrapper">
-        <form class="cta-content input-block bind-form" data-id="{{ section.settings.list_id }}">
+        <form class="cta-content input-block bind-form" data-id="{{ settings.list_id }}">
             <input class="password" type="password" name="password" id="password" placeholder="Password">
             <input class="non-account" type="email" name="email" id="email" placeholder="Your email">
             <div class="text email-disclaimer">{{ section.settings.disclaimer }}</div>
             <button class="btn caps white" type="submit">Subscribe</button>
         </form>
-        <p class="success-message">{{ section.settings.success_message }}</p>
+        <p class="success-message">{{ settings.success_message }}</p>
     </div>
 
     <div class="linear-bg mobile-only"></div>

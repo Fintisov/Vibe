@@ -6,12 +6,12 @@
         <div class="slides">
             <div class="inner">
                 {%- for block in section.blocks -%}
-                    <div class="block slide">
+                    <a class="block slide" href="{{ block.settings.tile_url }}">
                         <img class="image preload"{% if block.settings.image.alt %} alt="{{ block.settings.image.alt }}"{% endif %} data-preload-desktop="https:{{ block.settings.image | image_url }}" data-preload-mobile="https:{{ block.settings.image | image_url }}">
                         <p class="header-m tile-title">{{ block.settings.tile_title }}</p>
                         <p class="subtitle tile-copy">{{ block.settings.tile_copy }}</p>
-                        <a href="{{ block.settings.tile_url }}" class="read-more mobile-only">{{ block.settings.button_text }}{% include 'icon-arrow-red' %}</a>
-                    </div>
+                        <button href="{{ block.settings.tile_url }}" class="read-more mobile-only">{{ block.settings.button_text }}{% include 'icon-arrow-red' %}</button>
+                    </a>
                 {% endfor %}
             </div>
         </div>

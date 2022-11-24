@@ -11,7 +11,7 @@
         "hero_header": "JOIN OUR COMMUNITY BECOME AN AFFILIATE",
         "hero_subtitle": "Global brand of high-performance wellness products.",
         "hero_button_text": "Join Now",
-        "hero_button_url": "\/products"
+        "hero_button_url": "https:\/\/af.uppromote.com\/vybeonline\/register"
       }
     },
     "media-section": {
@@ -180,6 +180,8 @@
           "settings": {
             "title": "90-Day Cookie  Duration Window",
             "copy": "Become an affiliate Ut enim ad minima veniam quis nostrum exercitationem ullam  ad minima veniam.",
+            "cta_url": "https:\/\/af.uppromote.com\/vybeonline\/register",
+            "cta_copy": "Join Now",
             "image": "shopify:\/\/shop_images\/Frame_116046274_4e87dcc9-9db3-4936-89b1-2ce195d917c5.jpg"
           }
         },
@@ -188,6 +190,8 @@
           "settings": {
             "title": "Great Earnings Per Click Potential",
             "copy": "You also gain access to our images, creative banners and more. Everytime someone clicks on any of these images, you increase your earning potential.",
+            "cta_url": "https:\/\/af.uppromote.com\/vybeonline\/register",
+            "cta_copy": "Join Now",
             "image": "shopify:\/\/shop_images\/Frame_1160462741.jpg"
           }
         }
@@ -300,7 +304,7 @@
         "header": "<p>EXPERIENCE THE <em>POWER TODAY!<\/em><\/p>",
         "text": "Life-Changing Products | Worldwide Community",
         "button_text": "CREATE ACCOUNT",
-        "button_url": "\/account"
+        "button_url": "https:\/\/af.uppromote.com\/vybeonline\/register"
       }
     }
   },
