@@ -132,4 +132,8 @@
     margin: 0 5px 20px;
     width: calc(33.33% - 10px);
   }
+
+  .faq-section .faq-section__has-bg img {
+    opacity: 0;
+  }
 }

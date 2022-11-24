@@ -14,7 +14,7 @@
 
 <div class="faq-section c-50">
     {% if product.metafields.accentuate.drawers_header and product.metafields.accentuate.drawers_header != empty %}
-        <div class="top mw">
+        <div class="top mw {% if product.metafields.accentuate.drawers_mobile_bg %}faq-section__has-bg{% endif %}" {% if product.metafields.accentuate.drawers_mobile_bg %}style="background-color:{{ product.metafields.accentuate.drawers_mobile_bg }}"{% endif %}>
             <img src="{{ product.metafields.accentuate.drawers_image[0].src }}">
             <h3>{{ product.metafields.accentuate.drawers_header }}</h3>
             <p class="text-m">{{ product.metafields.accentuate.drawers_intro_text }}</p>
