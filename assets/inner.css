@@ -1,0 +1,135 @@
+.additional-product-info {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: 'Gilroy-Regular';
+  margin: -4px 0 21px;
+}
+
+
+.additional-product-info ul {
+  padding: 0;
+  margin: 10px 0;
+  list-style: none;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+
+.work-desc__section {
+  text-align: center;
+  display: block;
+  padding-bottom: 50px;
+}
+
+.work-desc__title {
+  max-width: 602px;
+  margin: 0 auto 49px;
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 400;
+  font-family: 'Gilroy-Medium';
+}
+
+.work-desc__holder {
+  display: flex;
+  justify-content: center;
+}
+
+.work-desc__item {
+  margin: 0 20px 20px;
+}
+
+.work-desc__item img{
+  max-width: 100%;
+  height: auto;
+  margin: 0 0 15px;
+}
+
+.work-desc__item h3 {
+  margin: 0;
+  color: #000;
+  font-size: 20px;
+  line-height: 1;
+  font-family: 'Gilroy-Semi';
+}
+
+.real-people__section {
+  display: block;
+  padding-bottom: 50px;
+}
+
+.real-people__text-wrap {
+  max-width: 625px;
+  font-size: 16px;
+  line-height: 26px;
+  font-family: 'Gilroy-Regular';
+  margin: 0 0 50px;
+}
+.real-people__text-wrap p {
+  letter-spacing: 0.4px;
+}
+
+.real-people__holder {
+  display: flex;
+  justify-content: center;
+  margin: 0 -15px;
+}
+
+.real-people__title {
+  margin: 0 0 29px;
+  font-size: 40px;
+  line-height: 1;
+  font-family: 'Gilroy-Medium';
+}
+
+.real-people__item {
+  margin: 0 15px;
+  width: calc(33.33% - 30px);
+}
+
+.real-people__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-section .image-wrapper {
+  max-width: 100% !important;
+  width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+  .work-desc__title {
+    font-size: 24px;
+  }
+
+  .work-desc__holder {
+    flex-wrap: wrap;
+  }
+
+  .work-desc__item {
+    margin: 0 10px 20px;
+    max-width: calc(33.33% - 20px);
+  }
+
+  .real-people__section {
+    padding-bottom: 20px;
+  }
+
+  .real-people__title {
+    font-size: 24px;
+  }
+
+  .real-people__text-wrap {
+    margin: 0 0 20px;
+  }
+
+  .real-people__holder {
+    margin: 0 -5px;
+  }
+
+  .real-people__item {
+    margin: 0 5px 20px;
+    width: calc(33.33% - 10px);
+  }
+}
