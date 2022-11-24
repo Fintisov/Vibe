@@ -66,7 +66,22 @@
     </div>
 </div>
 
-
+{% assign size_people = product.metafields.accentuate.image_before.size | minus: 1 %}
+{% if size_people > 0 %}
+    <div class="real-people__section  c-50">
+        <div class="real-people__text-wrap">
+            <h2 class="real-people__title">{{ product.metafields.accentuate.real_people_title }}</h2>
+            {{ product.metafields.accentuate.real_people__text }}
+        </div>
+        <div class="real-people__holder">
+            {% for i in (0..size_people) %}
+                <div class="real-people__item">
+                    <img src="{{ product.metafields.accentuate.image_before[i] }}" alt="before/after">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
 
 
 {% schema %}
