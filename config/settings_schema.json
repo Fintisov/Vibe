@@ -109,6 +109,86 @@
     ]
   },
   {
+    "name": "Email capture fields",
+    "settings": [
+      {
+        "type": "text",
+        "id": "list_id",
+        "label": "Klaviyo list ID"
+      },
+      {
+        "type": "text",
+        "id": "success_message",
+        "label": "Success message"
+      }
+    ]
+  },
+  {
+    "name": "Search no results",
+    "settings": [
+      {
+        "type": "text",
+        "id": "search_no_results_header",
+        "label": "No results header"
+      },
+      {
+        "type": "text",
+        "id": "search_no_results_subheader",
+        "label": "No results subheader"
+      },
+      {
+        "type": "text",
+        "id": "search_recommended_one",
+        "label": "Item one title"
+      },
+      {
+        "type": "text",
+        "id": "search_recommended_one_link",
+        "label": "Item one link"
+      },
+      {
+        "type": "text",
+        "id": "search_recommended_two",
+        "label": "Item two title"
+      },
+      {
+        "type": "text",
+        "id": "search_recommended_two_link",
+        "label": "Item two link"
+      },
+      {
+        "type": "text",
+        "id": "search_recommended_three",
+        "label": "Item three title"
+      },
+      {
+        "type": "text",
+        "id": "search_recommended_three_link",
+        "label": "Item three link"
+      },
+      {
+        "type": "text",
+        "id": "search_recommended_four",
+        "label": "Item four title"
+      },
+      {
+        "type": "text",
+        "id": "search_recommended_four_link",
+        "label": "Item four link"
+      },
+      {
+        "type": "text",
+        "id": "search_recommended_five",
+        "label": "Item five title"
+      },
+      {
+        "type": "text",
+        "id": "search_recommended_five_link",
+        "label": "Item five link"
+      }
+    ]
+  },
+  {
     "name": "Global reviews header",
     "settings": [
       {

@@ -28,7 +28,6 @@ class FacetFiltersForm extends HTMLElement {
         }, 300);
 
         const facetForm = this.querySelector('form');
-        console.log(facetForm)
         facetForm.addEventListener('input', this.debouncedOnSubmit.bind(this));
         facetForm.addEventListener('input', () => {
             document.getElementById('ProductGridContainer').parentElement.classList.add('loading');
@@ -67,7 +66,6 @@ class FacetFiltersForm extends HTMLElement {
         }
 
         sections.forEach((section) => {
-            console.log(section)
             const url = `${window.location.pathname}?section_id=${section.section}&${searchParams}`;
             const filterDataUrl = element => element.url === url;
 

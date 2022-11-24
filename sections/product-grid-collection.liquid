@@ -36,7 +36,14 @@
                             <p class="caps brand">{{ product.vendor }}</p>
                             <h6 class="title product-name">{{ product.title }}</h6>
                             {% comment %}<p class="text-m product-info">Beauty • 3 Sizes</p>{% endcomment %}
-                            <div class="reviews subtitle">{% include 'icon-reviews-temp' %}</div>
+                            <div class="review-overview" data-id="{{ product.id }}">
+                                {% render "icon-star" %}
+                                {% render "icon-star" %}
+                                {% render "icon-star" %}
+                                {% render "icon-star" %}
+                                {% render "icon-star" %}
+                                <p>(<span class="review-count"></span>) Reviews</p>
+                            </div>
                             <p class="price">{{ product.price | money_without_trailing_zeros }}</p>
                         </a>
                     {% endfor %}

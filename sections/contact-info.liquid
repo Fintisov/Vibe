@@ -13,31 +13,26 @@
     </div>
     <div class="right">
         <h2 class="subtitle form-header">{{ section.settings.form_header }}</h2>
-        <form>
-            <div class="input-block">
-                <label class="copy">Name</label>
-                <input class="subtitle non-account" type="text" id="name" name="name">
-            </div>
-            <div class="input-block">
-                <label class="copy">Email</label>
-                <input class="subtitle non-account" type="email" id="email" name="email">
-            </div>
-            <div class="input-block dropdown">
-                <div class="drawer">
-                    <p class="subtitle subject">Subject {% include "icon-arrow-down" %}</p>
-                    <div class="drawer-items">
-                        <p class="subtitle">Option 1</p>
-                        <p class="subtitle">Option 1</p>
-                        <p class="subtitle">Option 1</p>
-                    </div>
+        <form class="zendesk-form" method="POST" action="https://joshkirk.dev/server/vybe-zendesk-ticket.php">
+            <div class="form-content">
+                <div class="input-block">
+                    <label class="copy">Name</label>
+                    <input class="subtitle non-account" type="text" id="name" name="name">
                 </div>
+                <div class="input-block">
+                    <label class="copy">Email</label>
+                    <input class="subtitle non-account" type="email" id="email" name="email">
+                </div>
+                <div class="input-block text-area">
+                    <textarea placeholder="Message" id="textarea" name="message" type="text"></textarea>
+                </div>
+                <button class="btn black caps" type="submit">Send</button>
             </div>
-            <div class="input-block text-area">
-                <textarea placeholder="Label" id="textarea" name="textarea" type="text"></textarea>
+            <div class="success-content">
+                <p>Thank you</p>
+                <p>Your inquiry has been sent. A member of our team will get back to you as soon as possible.</p>
+                <a href="/" class="btn white caps">Back to homepage</a>
             </div>
-            <button class="btn black caps">
-                Send
-            </button>
         </form>
     </div>
 </div>

@@ -16,23 +16,24 @@
     },
     "products-404": {
       "type": "products-404",
+      "disabled": true,
       "blocks": {
         "1469e337-5dad-4e19-ab3b-0bfd7523ab44": {
           "type": "block",
           "settings": {
-            "product": "awakening-eye-gel"
+            "product": "amarose-awakening-eye-gel"
           }
         },
         "7ad58fc2-1de5-4f72-b6e7-4b2451aad773": {
           "type": "block",
           "settings": {
-            "product": "boosting-moisturizer"
+            "product": "amarose-boosting-moisturizer"
           }
         },
         "fee9110c-fe84-4ca1-a2e8-8b5fc7d35d69": {
           "type": "block",
           "settings": {
-            "product": "divatrim-keto-1-pack"
+            "product": "divatrim-keto-60-capsules"
           }
         },
         "61eee0cb-ffb0-4d87-b971-0f5ef6a5c137": {

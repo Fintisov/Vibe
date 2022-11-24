@@ -1,41 +1,23 @@
-{% comment %} {%- paginate blog.articles by 6 -%}
-
-  <div class="main-blog page-width">
-    <h1 class="title--primary ">{{ blog.title | escape }}</h1>
-
-    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
-      {%- for article in blog.articles -%}
-        <div class="blog-articles__article article">
-          {%- render 'article-card', article: article, image_height: section.settings.image_height, show_image: section.settings.show_image, show_date: section.settings.show_date, show_author: section.settings.show_author -%}
-        </div>
-      {%- endfor -%}
-    </div>
-
-    {%- if paginate.pages > 1 -%}
-      {%- render 'pagination', paginate: paginate -%}
-    {%- endif -%}
-  </div>
-{%- endpaginate -%} {% endcomment %}
-
 <div class="blog-grid c-50 tabs-inside">
   <div class="top tab-triggers">
     {% for block in section.blocks %}
       <button class="title trigger{% if forloop.first %} active{% endif %}">{{ block.settings.blog.title }}</button>
     {% endfor %}
   </div>
-  <div class="bottom">
+  <div class="tab-wrapper">
     {% for block in section.blocks %}
+     <div class="bottom tab{% if forloop.first %} active{% endif %}">
+      {% if block.settings.blog.title == block.settings.blog.title %}
       {% assign thisBlog = block.settings.blog %}
       {% for article in thisBlog.articles %}
         <a class="blog-tile{% if forloop.index0 > 2 %} mw{% endif %}" href="/blogs/{{ article.handle }}">
           {% if article.metafields.accentuate.tile_image[0].src != blank %}
             <img class="preload{% if forloop.index0 < 3 %}-critical{% endif %}" data-preload-desktop="{{ article.metafields.accentuate.tile_image[0].src }}" data-preload-mobile="{{ article.metafields.accentuate.tile_image[0].src }}">
           {% else %}
-            <img class="" src="{{ article.image | img_url: '864x488', crop: 'center' }}">
+            <img class="preload{% if forloop.index0 < 3 %}-critical{% endif %}" data-preload-desktop="https:{{ article.image | image_url }}" data-preload-mobile="https:{{ article.image | image_url }}">
           {% endif %}
-
           <div class="blog-info">
-            <span class="caps">{% for tag in article.tags limit: 3 %}{{ tag }}{% if forloop.last %}{% else %} / {% endif %}{% endfor %}</span>
+            <span class="caps">{{ block.settings.blog.title }}</span>
             <h5 class="header-m">{{ article.title }}</h5>
             <div class="inner">
               <span class="date eyebrow">
@@ -54,8 +36,10 @@
           </div>
         </a>
       {% endfor %}
+      {% endif %}
+      <div class="blog-tile filler"></div>
+      </div>
     {% endfor %}
-    <div class="blog-tile filler"></div>
   </div>
   {% comment %}<div class="pagination">{% endcomment %}
   {% comment %}<div class="arrows prev">{% endcomment %}

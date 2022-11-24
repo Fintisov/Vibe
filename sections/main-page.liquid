@@ -1,7 +1,7 @@
 {% if page.metafields.accentuate.hero_image[0].src != blank %}
-  <img src="{{ page.metafields.accentuate.hero_image[0].src }}" alt="{{ page.title | escape }}">
-  {% else %}
-    <img src="{{ section.settings.image | image_url }}" alt="{{ page.title | escape }}">
+  <img class="preload-critical" data-preload-desktop="{{ page.metafields.accentuate.hero_image[0].src }}" data-preload-mobile="{{ page.metafields.accentuate.hero_image[0].src }}" alt="{{ page.title | escape }}">
+{% else %}
+  <img class="preload-critical" data-preload-desktop="https:{{ section.settings.image | image_url }}" data-preload-mobile="https:{{ section.settings.image | image_url }}" alt="{{ page.title | escape }}">
 {% endif %}
 
 

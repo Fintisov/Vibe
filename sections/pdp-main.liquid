@@ -15,11 +15,7 @@
 <div class="faq-section c-50">
     {% if product.metafields.accentuate.drawers_header and product.metafields.accentuate.drawers_header != empty %}
         <div class="top mw">
-
-            <img src="{{ product.metafields.accentuate.drawers_image[0].src }}" alt="{{ product.title }}">
-            {% comment %}
-            <img class="preload" data-preload-desktop="{{ product.metafields.accentuate.drawers_image[0].src }}" data-preload-mobile="{{ product.metafields.accentuate.drawers_image[0].src }}">
-            {% endcomment %}
+            <img src="{{ product.metafields.accentuate.drawers_image[0].src }}">
             <h3>{{ product.metafields.accentuate.drawers_header }}</h3>
             <p class="text-m">{{ product.metafields.accentuate.drawers_intro_text }}</p>
         </div>
@@ -38,38 +34,37 @@
     {% endif %}
 </div>
 
-{% if product.metafields.accentuate.experts_header and product.metafields.accentuate.experts_header != empty %}
-    <div class="fifty-fifty-experts">
-        <div class="c-190">
-            <div class="left">
-                <h4 class="header-m">{{ product.metafields.accentuate.experts_header }}</h4>
-                <p class="text-m">{{ product.metafields.accentuate.experts_text }}</p>
-                <a href="{{ product.metafields.accentuate.experts_button_link }}" class="btn black caps">{% include 'icon-play' %} {{ product.metafields.accentuate.experts_button_text }}</a>
-            </div>
-            <div class="right mw">
-                {% if product.metafields.accentuate.expert_one_name %}
-                    <div class="content">
-                        <img class="image preload" data-preload-desktop="{{ product.metafields.accentuate.expert_one_image[0].src }}" data-preload-mobile="{{ product.metafields.accentuate.expert_one_image[0].src }}">
-                        <div class="inner-text">
-                            <p>{{ product.metafields.accentuate.expert_one_name }}</p>
-                            <p>{{ product.metafields.accentuate.expert_one_title }}</p>
-                        </div>
+<div class="fifty-fifty-experts">
+    <div class="c-190">
+        <div class="left">
+            <h4 class="header-m">{{ section.settings.experts_header }}</h4>
+            <p class="text-m">{{ section.settings.experts_text }}</p>
+            {% if section.settings.experts_button_link != blank %}
+                <a href="{{ section.settings.experts_button_link }}" class="btn black caps">{% include 'icon-play' %} {{ section.settings.experts_button_text }}</a>
+            {% endif %}
+        </div>
+        <div class="right mw">
+            {% if section.settings.expert_one_name != blank %}
+                <div class="content">
+                    <img class="image preload" data-preload-desktop="https:{{ section.settings.expert_one_image |  image_url }}" data-preload-mobile="https:{{ section.settings.expert_one_image | image_url }}">
+                    <div class="inner-text">
+                        <p>{{ section.settings.expert_one_name }}</p>
+                        <p>{{ section.settings.expert_one_title }}</p>
                     </div>
-                {% endif %}
-
-                {% if product.metafields.accentuate.expert_two_name %}
-                    <div class="content">
-                        <img class="image preload" data-preload-desktop="{{ product.metafields.accentuate.expert_two_image[0].src }}" data-preload-mobile="{{ product.metafields.accentuate.expert_two_image[0].src }}">
-                        <div class="inner-text">
-                            <p>{{ product.metafields.accentuate.expert_two_name }}</p>
-                            <p>{{ product.metafields.accentuate.expert_two_title }}</p>
-                        </div>
+                </div>
+            {% endif %}
+            {% if section.settings.expert_two_name != blank %}
+                <div class="content">
+                    <img class="image preload" data-preload-desktop="https:{{ section.settings.expert_two_image | image_url }}" data-preload-mobile="https:{{ section.settings.expert_two_image | image_url }}">
+                    <div class="inner-text">
+                        <p>{{ section.settings.expert_two_name }}</p>
+                        <p>{{ section.settings.expert_two_title }}</p>
                     </div>
-                {% endif %}
-            </div>
+                </div>
+            {% endif %}
         </div>
     </div>
-{% endif %}
+</div>
 
 
 
@@ -77,6 +72,58 @@
 {% schema %}
 {
     "name": "PDP Main",
-    "class": "pdp-main"
+    "class": "pdp-main",
+    "settings": [
+        {
+            "id": "experts_header",
+            "type": "text",
+            "label": "Experts Header"
+        },
+        {
+            "id": "experts_text",
+            "type": "text",
+            "label": "Experts Text"
+        },
+        {
+            "id": "experts_button_link",
+            "type": "text",
+            "label": "Experts button link"
+        },
+        {
+            "id": "experts_button_text",
+            "type": "text",
+            "label": "Experts button text"
+        },
+        {
+            "id": "expert_one_name",
+            "type": "text",
+            "label": "Expert one name"
+        },
+        {
+            "id": "expert_one_title",
+            "type": "text",
+            "label": "Expert one title"
+        },
+        {
+            "id": "expert_one_image",
+            "type": "image_picker",
+            "label": "Expert one image"
+        },
+        {
+            "id": "expert_two_name",
+            "type": "text",
+            "label": "Expert two name"
+        },
+        {
+            "id": "expert_two_title",
+            "type": "text",
+            "label": "Expert two title"
+        },
+        {
+            "id": "expert_two_image",
+            "type": "image_picker",
+            "label": "Expert two image"
+        }
+    ]
 }
 {% endschema %}

@@ -7,14 +7,102 @@
         "image_mobile": "shopify:\/\/shop_images\/base_7a118a5e-73f5-4676-aec6-5f0fe9dd480a.jpg"
       }
     },
-    "product-grid-collection": {
-      "type": "product-grid-collection",
+    "collection-brands": {
+      "type": "collection-brands",
+      "blocks": {
+        "1ba59cfe-39aa-4598-8a1a-28e4063b6711": {
+          "type": "collection_grid",
+          "settings": {
+            "collection": "amarose"
+          }
+        },
+        "88710a61-b20b-48fd-ac73-d54e33afd88f": {
+          "type": "collection_grid",
+          "settings": {
+            "collection": "atheletepharm"
+          }
+        },
+        "8d22ae44-bebc-4d5c-a88b-eabfa6f0579f": {
+          "type": "collection_grid",
+          "settings": {
+            "collection": "bodycor"
+          }
+        },
+        "983c71b3-71ad-4958-978e-02f9bc1521e3": {
+          "type": "collection_grid",
+          "settings": {
+            "collection": "divatrim"
+          }
+        },
+        "5afdd288-543e-46dd-84ac-8c1d87622302": {
+          "type": "collection_grid",
+          "settings": {
+            "collection": "fps"
+          }
+        },
+        "cde59513-6add-4d84-abb7-4769baf40081": {
+          "type": "collection_grid",
+          "settings": {
+            "collection": "glucose-1"
+          }
+        },
+        "9914cedd-c089-4b6f-94d9-fcc8ae0dd28e": {
+          "type": "collection_grid",
+          "settings": {
+            "collection": "icon-muscle"
+          }
+        },
+        "a85edf3d-dc7f-4d4f-8034-43eec939ed7e": {
+          "type": "collection_grid",
+          "settings": {
+            "collection": "keto-bhb"
+          }
+        },
+        "c8158ba0-606c-45ec-a49c-54f033f14ca4": {
+          "type": "collection_grid",
+          "settings": {
+            "collection": "keto-trim"
+          }
+        },
+        "4fa5f84f-c568-4528-a4c9-251fb745a3f9": {
+          "type": "collection_grid",
+          "settings": {
+            "collection": "nzt-48"
+          }
+        },
+        "145d1997-c969-4e5b-add4-9b908a2370b9": {
+          "type": "collection_grid",
+          "settings": {
+            "collection": "one-shot-keto"
+          }
+        },
+        "ebbda209-d9cb-4aeb-9bf1-3e19c3c2c7f6": {
+          "type": "collection_grid",
+          "settings": {
+            "collection": "optimum-keto"
+          }
+        }
+      },
+      "block_order": [
+        "1ba59cfe-39aa-4598-8a1a-28e4063b6711",
+        "88710a61-b20b-48fd-ac73-d54e33afd88f",
+        "8d22ae44-bebc-4d5c-a88b-eabfa6f0579f",
+        "983c71b3-71ad-4958-978e-02f9bc1521e3",
+        "5afdd288-543e-46dd-84ac-8c1d87622302",
+        "cde59513-6add-4d84-abb7-4769baf40081",
+        "9914cedd-c089-4b6f-94d9-fcc8ae0dd28e",
+        "a85edf3d-dc7f-4d4f-8034-43eec939ed7e",
+        "c8158ba0-606c-45ec-a49c-54f033f14ca4",
+        "4fa5f84f-c568-4528-a4c9-251fb745a3f9",
+        "145d1997-c969-4e5b-add4-9b908a2370b9",
+        "ebbda209-d9cb-4aeb-9bf1-3e19c3c2c7f6"
+      ],
       "settings": {
       }
     }
   },
   "order": [
     "hero-image",
-    "product-grid-collection"
+    "collection-brands"
   ]
 }

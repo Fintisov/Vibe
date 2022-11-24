@@ -16,10 +16,41 @@
     },
     "featured-collection": {
       "type": "featured-collection",
+      "blocks": {
+        "e5c20978-464e-4cc0-87fd-f4b1ba5cdfee": {
+          "type": "block",
+          "settings": {
+            "product": "divatrim-slimmer-90-capsules"
+          }
+        },
+        "002a8cba-a22b-4695-a617-4f4910a82950": {
+          "type": "block",
+          "settings": {
+            "product": "go-keto-gummies"
+          }
+        },
+        "d5ad4254-5b5c-4656-9505-971229d8129c": {
+          "type": "block",
+          "settings": {
+            "product": "icon-muscle-superfoods-reds-and-greens-gummies"
+          }
+        },
+        "a263c741-dcda-40e6-a0ca-58df1eb0309c": {
+          "type": "block",
+          "settings": {
+            "product": "nzt-48-limitless-pill"
+          }
+        }
+      },
+      "block_order": [
+        "e5c20978-464e-4cc0-87fd-f4b1ba5cdfee",
+        "002a8cba-a22b-4695-a617-4f4910a82950",
+        "d5ad4254-5b5c-4656-9505-971229d8129c",
+        "a263c741-dcda-40e6-a0ca-58df1eb0309c"
+      ],
       "settings": {
         "header": "New Arrivals",
-        "subheader": "<p>These products <em>just<\/em> hit the shelves.<\/p>",
-        "collection": "amarose"
+        "subheader": "<p>These products <em>just<\/em> hit the shelves.<\/p>"
       }
     },
     "reviews-slider": {
@@ -75,38 +106,38 @@
         "453c1ae8-21b8-4a94-beee-167ac340f5c6": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_116046266.jpg",
-            "tile_title": "Keto explained",
-            "tile_copy": "Ut enim ad minima veniam, quis nostrum exercitationem ullam ad minima veniam",
+            "image": "shopify:\/\/shop_images\/smiling-workout.jpg",
+            "tile_title": "Optimal Protein Intake for Building Muscles",
+            "tile_copy": "No doubt, protein and muscle development go hand in hand. Protein is a macronutrient, essential for muscle tissue repair. It is loaded with amino acids - the building blocks of the muscles.",
             "button_text": "Read more",
-            "tile_url": "\/blogs\/lifestyle\/keto-explained"
+            "tile_url": "\/blogs\/health-fitness\/optimal-protein-intake-for-building-muscles"
+          }
+        },
+        "23a5c888-e030-4448-913e-11e966e00dbe": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/a29f0c3e-018d-466c-b3f3-f039b776a6d7.jpg",
+            "tile_title": "Nutrition Like High-Performance Athletes",
+            "tile_copy": "The following four foods are of greater importance for athletes and their performance.",
+            "button_text": "Read more",
+            "tile_url": "\/blogs\/health-fitness\/nutrition-for-high-performance-athletes"
           }
         },
         "01378f20-f973-4397-a3f6-7509812303ef": {
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/food.jpg",
-            "tile_title": "Articles & Advice",
-            "tile_copy": "Ut enim ad minima veniam, quis nostrum exercitationem ullam ad minima veniam",
+            "tile_title": "The Best Plant Protein Sources",
+            "tile_copy": "A diet containing a good amount of protein is basic to maintaining good muscle health. Of course, those who want to gain muscle mass by exercising will also need to modify their protein intake so that muscle mass can form.",
             "button_text": "Read more",
-            "tile_url": "\/blogs\/lifestyle\/keto-explained"
-          }
-        },
-        "23a5c888-e030-4448-913e-11e966e00dbe": {
-          "type": "block",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/row.jpg",
-            "tile_title": "Top Rated & Reviewed",
-            "tile_copy": "Ut enim ad minima veniam, quis nostrum exercitationem ullam ad minima veniam",
-            "button_text": "Read more",
-            "tile_url": "\/blogs\/lifestyle\/keto-explained"
+            "tile_url": "\/blogs\/health-fitness\/h"
           }
         }
       },
       "block_order": [
         "453c1ae8-21b8-4a94-beee-167ac340f5c6",
-        "01378f20-f973-4397-a3f6-7509812303ef",
-        "23a5c888-e030-4448-913e-11e966e00dbe"
+        "23a5c888-e030-4448-913e-11e966e00dbe",
+        "01378f20-f973-4397-a3f6-7509812303ef"
       ],
       "settings": {
         "header": "THE VYBE LIFESTYLE"
