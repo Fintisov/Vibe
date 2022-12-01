@@ -7,22 +7,22 @@
     <meta name="description" content="{{ page_description }}">
     <link rel="canonical" href="{{ canonical_url }}">
 
-<meta name="google-site-verification" content="_hTy2d8VrtP-Y-pXm5mtF_0oAZZyKle1eJg2hBPTjNY" />
-  
-    <!--- Facebook --->
-    <meta property="og:description" content="{{ page_description }}" />
-    <meta property="og:image" content="{{ settings.share_image | img_url: '1200x600' }}" />
-    <meta property="og:site_name" content="Vybe" />
-    <meta property="og:title" content="{{ page_title }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ canonical_url }}" />
+    <meta name="google-site-verification" content="_hTy2d8VrtP-Y-pXm5mtF_0oAZZyKle1eJg2hBPTjNY"/>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="" />
-    <meta name="twitter:description" content="{{ page_description }}" />
-    <meta name="twitter:image" content="{{ settings.share_image | img_url: '1200x600' }}" />
-    <meta name="twitter:site" content="{{ canonical_url }}" />
-    <meta name="twitter:title" content="{{ page_title }}" />
+    <!--- Facebook --->
+    <meta property="og:description" content="{{ page_description }}"/>
+    <meta property="og:image" content="{{ settings.share_image | img_url: '1200x600' }}"/>
+    <meta property="og:site_name" content="Vybe"/>
+    <meta property="og:title" content="{{ page_title }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{ canonical_url }}"/>
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content=""/>
+    <meta name="twitter:description" content="{{ page_description }}"/>
+    <meta name="twitter:image" content="{{ settings.share_image | img_url: '1200x600' }}"/>
+    <meta name="twitter:site" content="{{ canonical_url }}"/>
+    <meta name="twitter:title" content="{{ page_title }}"/>
 
     {%- if request.page_type == 'product' -%}
         <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
@@ -31,72 +31,379 @@
 
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 
-    <link rel="dns-prefetch" href="https://cdn.shopify.com" />
+    <link rel="dns-prefetch" href="https://cdn.shopify.com"/>
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
     {%- if settings.favicon != blank -%}
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ settings.favicon | img_url: '32x32' }}" />
-        <link rel="icon" type="image/png" sizes="57x57" href="{{ settings.favicon | img_url: '57x57' }}" />
-        <link rel="icon" type="image/png" sizes="76x76" href="{{ settings.favicon | img_url: '76x76' }}" />
-        <link rel="icon" type="image/png" sizes="96x96" href="{{ settings.favicon | img_url: '96x96' }}" />
-        <link rel="icon" type="image/png" sizes="128x128" href="{{ settings.favicon | img_url: '128x128' }}" />
-        <link rel="icon" type="image/png" sizes="192x192" href="{{ settings.favicon | img_url: '192x192' }}" />
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ settings.favicon | img_url: '32x32' }}"/>
+        <link rel="icon" type="image/png" sizes="57x57" href="{{ settings.favicon | img_url: '57x57' }}"/>
+        <link rel="icon" type="image/png" sizes="76x76" href="{{ settings.favicon | img_url: '76x76' }}"/>
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ settings.favicon | img_url: '96x96' }}"/>
+        <link rel="icon" type="image/png" sizes="128x128" href="{{ settings.favicon | img_url: '128x128' }}"/>
+        <link rel="icon" type="image/png" sizes="192x192" href="{{ settings.favicon | img_url: '192x192' }}"/>
 
-        <link rel="icon" type="image/png" sizes="196x196" href="{{ settings.favicon | img_url: '196x196' }}" />
+        <link rel="icon" type="image/png" sizes="196x196" href="{{ settings.favicon | img_url: '196x196' }}"/>
 
-        <link rel="apple-touch-icon" sizes="120x120" href="{{ settings.favicon | img_url: '120x120' }}" />
-        <link rel="apple-touch-icon" sizes="152x152" href="{{ settings.favicon | img_url: '152x152' }}" />
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ settings.favicon | img_url: '180x180' }}" />
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ settings.favicon | img_url: '120x120' }}"/>
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ settings.favicon | img_url: '152x152' }}"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ settings.favicon | img_url: '180x180' }}"/>
 
         <meta name="application-name" content="&nbsp;"/>
-        <meta name="msapplication-TileColor" content="#FFFFFF" />
-        <meta name="msapplication-TileImage" content="{{ settings.favicon | img_url: '144x144' }}" />
-        <meta name="msapplication-square70x70logo" content="{{ settings.favicon | img_url: '70x70' }}" />
-        <meta name="msapplication-square150x150logo" content="{{ settings.favicon | img_url: '150x150' }}" />
-        <meta name="msapplication-wide310x150logo" content="{{ settings.favicon | img_url: '310x150' }}" />
-        <meta name="msapplication-square310x310logo" content="{{ settings.favicon | img_url: '310x310' }}" />
+        <meta name="msapplication-TileColor" content="#FFFFFF"/>
+        <meta name="msapplication-TileImage" content="{{ settings.favicon | img_url: '144x144' }}"/>
+        <meta name="msapplication-square70x70logo" content="{{ settings.favicon | img_url: '70x70' }}"/>
+        <meta name="msapplication-square150x150logo" content="{{ settings.favicon | img_url: '150x150' }}"/>
+        <meta name="msapplication-wide310x150logo" content="{{ settings.favicon | img_url: '310x150' }}"/>
+        <meta name="msapplication-square310x310logo" content="{{ settings.favicon | img_url: '310x310' }}"/>
     {%- endif -%}
     <script>
         const url = "https:{{ 'image-load.js' | asset_url }}"
-        const content = `importScripts( "${ url }" );`;
-        window.workerUrl = URL.createObjectURL( new Blob( [ content ], { type: "text/javascript" } ) );
+        const content = `importScripts( "${url}" );`;
+        window.workerUrl = URL.createObjectURL(new Blob([content], {type: "text/javascript"}));
     </script>
 
     <style>
-        html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}ul{margin:0}input[type=submit]{padding:0}a{text-decoration:none;color:inherit}a:active,a:focus{outline:0 none}h1,h2,h3,h4,h5,h6,p{font-weight:400;margin:0;padding:0}input,select{-webkit-appearance:none;appearance:none;border-radius:0;box-shadow:none;padding:0}input:focus,select:focus{outline:none}::selection{background:#121212;text-shadow:none;color:#fff}::selection a{color:#fff}::-moz-selection a{color:#fff}::-webkit-input-placeholder{color:#121212;opacity:1}:-moz-placeholder,::-moz-placeholder{color:#121212;opacity:1}:-ms-input-placeholder{color:#121212;opacity:1}.flex{display:-ms-flexbox;display:flex}.hidden{display:none!important;visibility:hidden}#skip-to-content{position:fixed;top:127px;left:0;transform:translateX(-100%)}img,svg,video{width:100%;object-fit:cover}button{background:none;border:none;padding:0;cursor:pointer}*{box-sizing:border-box}html,html a{-webkit-font-smoothing:antialiased!important;-moz-osx-font-smoothing:grayscale}html,html a{overscroll-behavior:none}html{width:100%}html.touch{overflow-y:auto}body,html.touch{overflow-x:hidden}body{font-size:16px;width:100%;overscroll-behavior:none}main{padding-top:102px}@media screen and (max-width:959px){main{padding-top:92px}}#global-mask{background-color:#fafafa;z-index:1001}#click-mask,#global-mask{position:fixed;top:0;left:0;width:100%;height:100%}#click-mask{pointer-events:all;cursor:wait;z-index:101}.slider{width:100%}.slider .inner{display:-ms-flexbox;display:flex;width:100%}.slider .slides{width:100%;overflow:hidden}.slider .slide{position:relative}.product-slider .slider{width:calc(100% + 36px)}.product-slider .slides{padding:18px}html.touch .product-slider .slider{width:100%}html.touch .product-slider .slides{padding:0}.sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}.tab-wrapper{position:relative}.tab-wrapper .tab{color:#121212;position:absolute;visibility:hidden;opacity:0;top:0;transition:opacity .3s cubic-bezier(.445,.05,.55,.95),visibility 0s .3s}.tab-wrapper .tab.active{transition:opacity .4s cubic-bezier(.445,.05,.55,.95) .15s,visibility 0s .15s;visibility:visible;opacity:1;position:relative}.tab-wrapper.no-fade .tab,.tab-wrapper.no-fade .tab.active{transition:none}@media screen and (max-width:767px){.pdp-hero .thumbnail-wrapper .ar-wrapper{width:100vw;min-width:100vw}}#header{opacity:0;visibility:hidden}.gradient-ref{position:absolute;pointer-events:none}
+        html {
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%
+        }
 
-        @font-face{font-family:Gilroy-Light;src:url({{ "Gilroy-Light.woff2" | asset_url }}) format("woff2");font-weight:400;font-style:normal}@font-face{font-family:Gilroy-Regular;src:url({{ "Gilroy-Regular.woff2" | asset_url }}) format("woff2");font-weight:400;font-style:normal}@font-face{font-family:Gilroy-Medium;src:url({{ "Gilroy-Medium.woff2" | asset_url }}) format("woff2");font-weight:400;font-style:normal}@font-face{font-family:Gilroy-Semi;src:url({{ "Gilroy-SemiBold.woff2" | asset_url }}) format("woff2");font-weight:400;font-style:normal}@font-face{font-family:Gilroy-Bold;src:url({{ "Gilroy-Bold.woff2" | asset_url }}) format("woff2");font-weight:400;font-style:normal}@font-face{font-family:Gilroy-Black;src:url({{ "Gilroy-Black.woff2" | asset_url }}) format("woff2");font-weight:400;font-style:normal}@font-face{font-family:NeuzeitGroExt-Bla;src:url({{ "NeuzeitGroExt-Bla.woff2" | asset_url }}) format("woff2");font-weight:400;font-style:normal}
+        body {
+            margin: 0
+        }
+
+        [type=button], [type=reset], [type=submit], button {
+            -webkit-appearance: button
+        }
+
+        ul {
+            margin: 0
+        }
+
+        input[type=submit] {
+            padding: 0
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        a:active, a:focus {
+            outline: 0 none
+        }
+
+        h1, h2, h3, h4, h5, h6, p {
+            font-weight: 400;
+            margin: 0;
+            padding: 0
+        }
+
+        input, select {
+            -webkit-appearance: none;
+            appearance: none;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 0
+        }
+
+        input:focus, select:focus {
+            outline: none
+        }
+
+        ::selection {
+            background: #121212;
+            text-shadow: none;
+            color: #fff
+        }
+
+        ::selection a {
+            color: #fff
+        }
+
+        ::-moz-selection a {
+            color: #fff
+        }
+
+        ::-webkit-input-placeholder {
+            color: #121212;
+            opacity: 1
+        }
+
+        :-moz-placeholder, ::-moz-placeholder {
+            color: #121212;
+            opacity: 1
+        }
+
+        :-ms-input-placeholder {
+            color: #121212;
+            opacity: 1
+        }
+
+        .flex {
+            display: -ms-flexbox;
+            display: flex
+        }
+
+        .hidden {
+            display: none !important;
+            visibility: hidden
+        }
+
+        #skip-to-content {
+            position: fixed;
+            top: 127px;
+            left: 0;
+            transform: translateX(-100%)
+        }
+
+        img, svg, video {
+            width: 100%;
+            object-fit: cover
+        }
+
+        button {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html, html a {
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale
+        }
+
+        html, html a {
+            overscroll-behavior: none
+        }
+
+        html {
+            width: 100%
+        }
+
+        html.touch {
+            overflow-y: auto
+        }
+
+        body, html.touch {
+            overflow-x: hidden
+        }
+
+        body {
+            font-size: 16px;
+            width: 100%;
+            overscroll-behavior: none
+        }
+
+        main {
+            padding-top: 102px
+        }
+
+        @media screen and (max-width: 959px) {
+            main {
+                padding-top: 92px
+            }
+        }
+
+        #global-mask {
+            background-color: #fafafa;
+            z-index: 1001
+        }
+
+        #click-mask, #global-mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        #click-mask {
+            pointer-events: all;
+            cursor: wait;
+            z-index: 101
+        }
+
+        .slider {
+            width: 100%
+        }
+
+        .slider .inner {
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%
+        }
+
+        .slider .slides {
+            width: 100%;
+            overflow: hidden
+        }
+
+        .slider .slide {
+            position: relative
+        }
+
+        .product-slider .slider {
+            width: calc(100% + 36px)
+        }
+
+        .product-slider .slides {
+            padding: 18px
+        }
+
+        html.touch .product-slider .slider {
+            width: 100%
+        }
+
+        html.touch .product-slider .slides {
+            padding: 0
+        }
+
+        .sr-only {
+            position: absolute;
+            left: -10000px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden
+        }
+
+        .tab-wrapper {
+            position: relative
+        }
+
+        .tab-wrapper .tab {
+            color: #121212;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            top: 0;
+            transition: opacity .3s cubic-bezier(.445, .05, .55, .95), visibility 0s .3s
+        }
+
+        .tab-wrapper .tab.active {
+            transition: opacity .4s cubic-bezier(.445, .05, .55, .95) .15s, visibility 0s .15s;
+            visibility: visible;
+            opacity: 1;
+            position: relative
+        }
+
+        .tab-wrapper.no-fade .tab, .tab-wrapper.no-fade .tab.active {
+            transition: none
+        }
+
+        @media screen and (max-width: 767px) {
+            .pdp-hero .thumbnail-wrapper .ar-wrapper {
+                width: 100vw;
+                min-width: 100vw
+            }
+        }
+
+        #header {
+            opacity: 0;
+            visibility: hidden
+        }
+
+        .gradient-ref {
+            position: absolute;
+            pointer-events: none
+        }
+
+        @font-face {
+            font-family: Gilroy-Light;
+            src: url({{ "Gilroy-Light.woff2" | asset_url }}) format("woff2");
+            font-weight: 400;
+            font-style: normal
+        }
+
+        @font-face {
+            font-family: Gilroy-Regular;
+            src: url({{ "Gilroy-Regular.woff2" | asset_url }}) format("woff2");
+            font-weight: 400;
+            font-style: normal
+        }
+
+        @font-face {
+            font-family: Gilroy-Medium;
+            src: url({{ "Gilroy-Medium.woff2" | asset_url }}) format("woff2");
+            font-weight: 400;
+            font-style: normal
+        }
+
+        @font-face {
+            font-family: Gilroy-Semi;
+            src: url({{ "Gilroy-SemiBold.woff2" | asset_url }}) format("woff2");
+            font-weight: 400;
+            font-style: normal
+        }
+
+        @font-face {
+            font-family: Gilroy-Bold;
+            src: url({{ "Gilroy-Bold.woff2" | asset_url }}) format("woff2");
+            font-weight: 400;
+            font-style: normal
+        }
+
+        @font-face {
+            font-family: Gilroy-Black;
+            src: url({{ "Gilroy-Black.woff2" | asset_url }}) format("woff2");
+            font-weight: 400;
+            font-style: normal
+        }
+
+        @font-face {
+            font-family: NeuzeitGroExt-Bla;
+            src: url({{ "NeuzeitGroExt-Bla.woff2" | asset_url }}) format("woff2");
+            font-weight: 400;
+            font-style: normal
+        }
     </style>
-    <meta name="facebook-domain-verification" content="r2s7lnr3ii3tl63tlpxhm36g4xxhpx" />
+    <meta name="facebook-domain-verification" content="r2s7lnr3ii3tl63tlpxhm36g4xxhpx"/>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-MF9TFP2');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MF9TFP2');</script>
     <!-- End Google Tag Manager -->
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MF9TFP2"
-                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MF9TFP2"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
 
-{% comment %} Please do not edit this section. It is automatically generated by Videowise{% endcomment %}
-	<link rel="stylesheet" href="https://doui4jqs03un3.cloudfront.net/style.css.gz">
-	<script src="https://doui4jqs03un3.cloudfront.net/vendors.js.gz"></script>
-	<script src="https://doui4jqs03un3.cloudfront.net/client.js.gz" defer="defer"></script>
-{% comment %} End Videowise section.{% endcomment %}
+    {% comment %} Please do not edit this section. It is automatically generated by Videowise{% endcomment %}
+    <link rel="stylesheet" href="https://doui4jqs03un3.cloudfront.net/style.css.gz">
+    <script src="https://doui4jqs03un3.cloudfront.net/vendors.js.gz"></script>
+    <script src="https://doui4jqs03un3.cloudfront.net/client.js.gz" defer="defer"></script>
+    {% comment %} End Videowise section.{% endcomment %}
 </head>
 <body>
 <svg class="gradient-ref" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
         <linearGradient spreadMethod="pad" id="halfgrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style="stop-color:rgb(55, 68, 207); stop-opacity:1;" />
-            <stop offset="50%" style="stop-color:rgb(55, 68, 207); stop-opacity:1;" />
-            <stop offset="50%" style="stop-color:rgb(255,255,255);stop-opacity:1;" />
+            <stop offset="0%" style="stop-color:rgb(55, 68, 207); stop-opacity:1;"/>
+            <stop offset="50%" style="stop-color:rgb(55, 68, 207); stop-opacity:1;"/>
+            <stop offset="50%" style="stop-color:rgb(255,255,255);stop-opacity:1;"/>
         </linearGradient>
     </defs>
 </svg>
+
 <header class="section-header" id="header">
 
     <div class="shift-wrapper">
@@ -120,19 +427,24 @@
                                     <p class="col-header caps">{{ link.title }}</p>
                                     {% if link.links != empty %}
                                         {% for child_link in link.links %}
-                                            <a class="text-m shift-word black" href="{{ child_link.url }}"><span data-replace="{{ child_link.title }}"><span>{{ child_link.title }}</span></span></a>
+                                            <a class="text-m shift-word black" href="{{ child_link.url }}"><span
+                                                        data-replace="{{ child_link.title }}"><span>{{ child_link.title }}</span></span></a>
                                         {% endfor %}
                                     {% endif %}
-                                    <a class="read-more" href="{{ link.url }}">Shop All{% include 'icon-arrow-red' %}</a>
+                                    <a class="read-more" href="{{ link.url }}">Shop
+                                        All{% include 'icon-arrow-red' %}</a>
                                 </div>
                             {% endfor %}
                         </div>
 
                         <div class="right">
-                            <img class="bg preload-global" aria-hidden="true" data-preload-desktop="https:{{ settings.shop_nav_img | image_url }}" data-preload-mobile="https:{{ settings.shop_nav_img | image_url }}">
+                            <img class="bg preload-global" aria-hidden="true"
+                                 data-preload-desktop="https:{{ settings.shop_nav_img | image_url }}"
+                                 data-preload-mobile="https:{{ settings.shop_nav_img | image_url }}">
                             <div class="content">
                                 <p class="header-l">{{ settings.shop_menu_header }}</p>
-                                <a href="{{ settings.shop_menu_button_url }}" class="btn caps white">{{ settings.shop_menu_button_text }}</a>
+                                <a href="{{ settings.shop_menu_button_url }}"
+                                   class="btn caps white">{{ settings.shop_menu_button_text }}</a>
                             </div>
                         </div>
                     </div>
@@ -146,9 +458,11 @@
                                     {% if link.title contains "|-| " %}
                                         {% continue %}
                                     {% endif %}
-                                    <a class="text-m shift-word black" href="{{ link.url }}"><span data-replace="{{ link.title }}"><span>{{ link.title }}</span></span></a>
+                                    <a class="text-m shift-word black" href="{{ link.url }}"><span
+                                                data-replace="{{ link.title }}"><span>{{ link.title }}</span></span></a>
                                 {% endfor %}
-                                <a class="read-more" href="/collections/brands">See All{% include 'icon-arrow-red' %}</a>
+                                <a class="read-more" href="/collections/brands">See
+                                    All{% include 'icon-arrow-red' %}</a>
                             </div>
                             <div class="brands-grid">
                                 {% for link in linklists.brands-menu.links %}
@@ -157,14 +471,19 @@
                                         {% assign thisCollection = collections[collectionArr.last] %}
                                         {% assign productCount = thisCollection.products | size %}
                                         <div class="brand-logo{% if productCount == 0 %} coming-soon{% endif %}">
-                                            {% if productCount == 0 %}<span class="coming-soon-text">Coming<br>soon</span>
-                                            <div>
-                                                <img class="image preload-global" data-preload-desktop="https:{{ thisCollection.featured_image | image_url }}" data-preload-mobile="https:{{ thisCollection.featured_image | image_url }}">
-                                            </div>
+                                            {% if productCount == 0 %}<span
+                                                    class="coming-soon-text">Coming<br>soon</span>
+                                                <div>
+                                                    <img class="image preload-global"
+                                                         data-preload-desktop="https:{{ thisCollection.featured_image | image_url }}"
+                                                         data-preload-mobile="https:{{ thisCollection.featured_image | image_url }}">
+                                                </div>
                                             {% else %}
-                                            <a href="{{ link.url }}">
-                                                <img class="image preload-global" data-preload-desktop="https:{{ thisCollection.featured_image | image_url }}" data-preload-mobile="https:{{ thisCollection.featured_image | image_url }}">
-                                            </a>
+                                                <a href="{{ link.url }}">
+                                                    <img class="image preload-global"
+                                                         data-preload-desktop="https:{{ thisCollection.featured_image | image_url }}"
+                                                         data-preload-mobile="https:{{ thisCollection.featured_image | image_url }}">
+                                                </a>
                                             {% endif %}
                                         </div>
                                     {% endif %}
@@ -174,10 +493,13 @@
 
 
                         <div class="right">
-                            <img class="bg preload-global" aria-hidden="true" data-preload-desktop="https:{{ settings.brand_nav_img | image_url }}" data-preload-mobile="https:{{ settings.brand_nav_img | image_url }}">
+                            <img class="bg preload-global" aria-hidden="true"
+                                 data-preload-desktop="https:{{ settings.brand_nav_img | image_url }}"
+                                 data-preload-mobile="https:{{ settings.brand_nav_img | image_url }}">
                             <div class="content">
                                 <p class="header-l">{{ settings.brand_menu_header }}</p>
-                                <a href="{{ settings.brand_menu_button_url }}" class="btn caps white">{{ settings.brand_menu_button_text }}</a>
+                                <a href="{{ settings.brand_menu_button_url }}"
+                                   class="btn caps white">{{ settings.brand_menu_button_text }}</a>
                             </div>
                         </div>
                     </div>
@@ -189,15 +511,19 @@
                                 <div class="column">
                                     <p class="col-header caps">{{ link.title }}</p>
                                     {% comment %}<p class="copy">At Vybe, We inspire people. We help them choose wisely to become who they are for what they will become.</p>{% endcomment %}
-                                    <a href="{{ link.url }}" class="read-more">Read More{% include 'icon-arrow-red' %}</a>
+                                    <a href="{{ link.url }}" class="read-more">Read
+                                        More{% include 'icon-arrow-red' %}</a>
                                 </div>
                             {% endfor %}
                         </div>
                         <div class="right">
-                            <img class="bg preload-global" aria-hidden="true" data-preload-desktop="https:{{ settings.learn_nav_img | image_url }}" data-preload-mobile="https:{{ settings.learn_nav_img | image_url }}">
+                            <img class="bg preload-global" aria-hidden="true"
+                                 data-preload-desktop="https:{{ settings.learn_nav_img | image_url }}"
+                                 data-preload-mobile="https:{{ settings.learn_nav_img | image_url }}">
                             <div class="content">
                                 <p class="header-l">{{ settings.learn_menu_header }}</p>
-                                <a href="{{ settings.learn_menu_button_url }}" class="btn caps white">{{ settings.learn_menu_button_text }}</a>
+                                <a href="{{ settings.learn_menu_button_url }}"
+                                   class="btn caps white">{{ settings.learn_menu_button_text }}</a>
                             </div>
                         </div>
 
@@ -219,53 +545,159 @@
                     <input type="text" name="q" id="search" placeholder="Search" value="{{ search.terms | escape }}">
                 </form>
                 <button id="mobile-search-trigger" class="mobile-only">{% include 'icon-search' %}</button>
-                <a href="/account" class="account{% if customer.id != null %} logged{% endif %}">{% include "icon-account" %}</a>
-                <button class="mini-cart-trigger" id="mini-cart-trigger">{% include "icon-bag" %}<span id="cart-count" class="cart-count">{{ cart.item_count }}</span></button>
+                <a href="/account"
+                   class="account{% if customer.id != null %} logged{% endif %}">{% include "icon-account" %}</a>
+                <button class="mini-cart-trigger" id="mini-cart-trigger">{% include "icon-bag" %}<span id="cart-count"
+                                                                                                       class="cart-count">{{ cart.item_count }}</span>
+                </button>
             </div>
 
         </div>
-
-
     </div>
 </header>
+
 <div class="mega-nav-backdrop mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+
 <div class="mega-nav-mobile" id="mega-nav-mobile">
     <div class="top">
         <a href="/account" class="eyebrow account">{% include "log-in" %}Log In / Sign up</a>
     </div>
+
     <div class="middle content">
+        <div class="nav-tile open">
+            <a class="text-m shift-word black" href="/collections/all">Shop</a>
+        </div>
+
         <div class="nav-tile drawer has-subdrawers allow-click">
-            <h6 class="text-m">Shop All{% include "icon-plus" %}</h6>
+            <h6 class="text-m">Health & Fitness{% include "icon-plus" %}</h6>
             <div class="drawer-items">
-                {% for link in linklists.shop-menu.links %}
+                {% for link in linklists.health-fitness-menu.links %}
                     <p class="text-m subdrawer"><span class="label">{{ link.title }}{% include "icon-plus" %}</span>
                         <span class="subdrawer-items">
-                            {% if link.links != empty %}
-                                {% for child_link in link.links %}
-                                    <a class="text-m black" href="{{ child_link.url }}"><span data-replace="{{ child_link.title }}"><span>{{ child_link.title }}</span></span></a>
-                                {% endfor %}
-                            {% endif %}
-                            <a href="{{ link.url }}" class="read-more">Shop All{% include 'icon-arrow-red' %}</a>
-                        </span>
+                                             {% if link.links != empty %}
+                                                 {% for child_link in link.links %}
+                                                     <a class="text-m black" href="{{ child_link.url }}"><span
+                                                                 data-replace="{{ child_link.title }}"><span>{{ child_link.title }}</span></span></a>
+                                                 {% endfor %}
+                                             {% endif %}
+                                             <a href="{{ link.url }}"
+                                                class="read-more">Shop All{% include 'icon-arrow-red' %}</a>
+                                         </span>
                     </p>
                 {% endfor %}
-
             </div>
         </div>
+
         <div class="nav-tile drawer allow-click">
-            <h6 class="text-m">All Brands{% include "icon-plus" %}</h6>
+            <h6 class="text-m">Skincare & Beauty{% include "icon-plus" %}</h6>
             <div class="drawer-items">
-                {% for link in linklists.brands-menu.links limit: 8 %}
+                {% for link in linklists.skincare-beauty-menu.links limit: 8 %}
                     {% assign linkTitle = link.title %}
                     {% if linkTitle contains "|-| " %}
                         {% assign linkTitle = link.title | split: "|-| " %}
                         {% assign linkTitle = linkTitle[1] %}
                     {% endif %}
-                    <a class="text-m shift-word black" href="{{ link.url }}"><span data-replace="{{ link.title }}"><span>{{ linkTitle }}</span></span></a>
+                    <a class="text-m shift-word black" href="{{ link.url }}"><span
+                                data-replace="{{ link.title }}"><span>{{ linkTitle }}</span></span></a>
                 {% endfor %}
                 <a href="/collections/brands" class="read-more">See All{% include 'icon-arrow-red' %}</a>
             </div>
         </div>
+
+        <div class="nav-tile drawer allow-click">
+            <h6 class="text-m">Featured{% include "icon-plus" %}</h6>
+            <div class="drawer-items">
+                {% for link in linklists.featured.links %}
+                    <a href="{{ link.url }}" class="text-m">{{ link.title }}</a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="nav-tile drawer allow-click">
+            <h6 class="text-m">Brands{% include "icon-plus" %}</h6>
+            <div class="drawer-items">
+                {% for link in linklists.brand-menu.links %}
+                    <a href="{{ link.url }}" class="text-m">{{ link.title }}
+                        {% if link.title == 'Amarose' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0656/6946/4277/files/amarose.svg?v=1669906339"
+                                 alt="amarose">
+                        {% endif %}
+
+                        {% if link.title == 'Divatrim' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0656/6946/4277/files/divatrim.svg?v=1669906329"
+                                 alt="Divatrim">
+                        {% endif %}
+
+                        {% if link.title == 'Bodycor' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0656/6946/4277/files/Bodycor.png?v=1669906329"
+                                 alt="Bodycor">
+                        {% endif %}
+
+                        {% if link.title == 'FPS' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0656/6946/4277/files/FSP.png?v=1669906329"
+                                 alt="FPS">
+                        {% endif %}
+
+                        {% if link.title == 'KetoTrim' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0656/6946/4277/files/ketotrim.svg?v=1669906329"
+                                 alt="KetoTrim">
+                        {% endif %}
+
+                        {% if link.title == 'Glucose 1' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0656/6946/4277/files/Glucose1.svg?v=1669906329"
+                                 alt="Glucose 1">
+                        {% endif %}
+
+                        {% if link.title == 'Iconmuscle' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0656/6946/4277/files/Iconmuscle.png?v=1669906329"
+                                 alt="Iconmuscle">
+                        {% endif %}
+
+                        {% if link.title == 'Keto BHB' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0656/6946/4277/files/Ketobhb.svg?v=1669906329"
+                                 alt="Keto BHB">
+                        {% endif %}
+
+                        {% if link.title == 'NZT - 48' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0656/6946/4277/files/NZT48.svg?v=1669906329"
+                                 alt="NZT - 48">
+                        {% endif %}
+
+                        {% if link.title == 'Athletepharm' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0656/6946/4277/files/Athletepharm.svg?v=1669906329"
+                                 alt="Athletepharm">
+                        {% endif %}
+
+                        {% if link.title == 'Oneshot' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0656/6946/4277/files/Oneshot.svg?v=1669906329"
+                                 alt="Oneshot">
+                        {% endif %}
+
+                        {% if link.title == 'Regal' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0656/6946/4277/files/Regal.png?v=1669906329"
+                                 alt="Regal">
+                        {% endif %}
+
+                        {% if link.title == 'Sexgod' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0656/6946/4277/files/Sexgod.svg?v=1669906329"
+                                 alt="Sexgod">
+                        {% endif %}
+
+                        {% if link.title == 'Truketo' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0656/6946/4277/files/Truketo.png?v=1669906329"
+                                 alt="Truketo">
+                        {% endif %}
+
+                        {% if link.title == 'Xanquil' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0656/6946/4277/files/Xanquil.svg?v=1669907316"
+                                 alt="Xanquil">
+                        {% endif %}
+
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+
         <div class="nav-tile drawer allow-click">
             <h6 class="text-m">Learn{% include "icon-plus" %}</h6>
             <div class="drawer-items">
@@ -275,14 +707,16 @@
             </div>
         </div>
     </div>
+
     <div class="bottom">
-        {% comment %}<a href="/pages/" class="eyebrow">Accessibility Statement</a>{% endcomment %}
+        <a href="/pages/" class="eyebrow">Accessibility Statement</a>
         <a href="/pages/privacy-policy" class="eyebrow">Privacy Policy</a>
         <a href="/pages/terms-and-conditions" class="eyebrow">Terms & Conditions</a>
         <a href="/pages/return-policy" class="eyebrow">Returns Policy</a>
 
     </div>
 </div>
+
 <main role="main" data-router-wrapper>
     {% if template.name == "index" %}
         {% assign namespace = "home" %}
@@ -322,18 +756,21 @@
                 <div class="left">
                     <div class="col">
                         {% for link in linklists.footer-bold-menu.links %}
-                            <a class="caps shift-word red" href="{{ link.url }}"><span data-replace="{{ link.title }}"><span>{{ link.title }}</span></span></a>
+                            <a class="caps shift-word red" href="{{ link.url }}"><span
+                                        data-replace="{{ link.title }}"><span>{{ link.title }}</span></span></a>
                         {% endfor %}
                     </div>
                     {% for link in linklists.footer-columns.links %}
                         <div class="col drawer" data-at="767">
-                            <h6 class="caps">{{ link.title }}<span class="mobile-only">{% include "icon-plus" %}</span> </h6>
+                            <h6 class="caps">{{ link.title }}<span class="mobile-only">{% include "icon-plus" %}</span>
+                            </h6>
                             <div class="drawer-items">
-                            {% if link.links != empty %}
-                                {% for child_link in link.links %}
-                                    <a class="copy shift-word" href="{{ child_link.url }}"><span data-replace="{{ child_link.title }}"><span>{{ child_link.title }}</span></span></a>
-                                {% endfor %}
-                            {% endif %}
+                                {% if link.links != empty %}
+                                    {% for child_link in link.links %}
+                                        <a class="copy shift-word" href="{{ child_link.url }}"><span
+                                                    data-replace="{{ child_link.title }}"><span>{{ child_link.title }}</span></span></a>
+                                    {% endfor %}
+                                {% endif %}
                             </div>
                         </div>
                     {% endfor %}
@@ -344,14 +781,24 @@
                         <form class="input-wrapper bind-form" data-id="{{ settings.list_id }}">
                             <div class="input-block">
                                 <input type="email" name="email" id="email" placeholder="Email address">
-                                <button class="submit" type="submit"><svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="0.312012" width="28" height="28" rx="14" fill="#EAEAEA"/><path d="M14 18.312L13.2875 17.612L16.0875 14.812H10V13.812H16.0875L13.2875 11.012L14 10.312L18 14.312L14 18.312Z" fill="#1C1B1F"/></svg></button>
+                                <button class="submit" type="submit">
+                                    <svg width="28" height="29" viewBox="0 0 28 29" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="0.312012" width="28" height="28" rx="14" fill="#EAEAEA"/>
+                                        <path d="M14 18.312L13.2875 17.612L16.0875 14.812H10V13.812H16.0875L13.2875 11.012L14 10.312L18 14.312L14 18.312Z"
+                                              fill="#1C1B1F"/>
+                                    </svg>
+                                </button>
                             </div>
-                            <p class="form-text">By signing up for email, you agree to VYBE’s <a href="/pages/terms-and-conditions">Terms of Service</a> and <a href="/pages/privacy-policy">Privacy Policy</a>.</p>
+                            <p class="form-text">By signing up for email, you agree to VYBE’s <a
+                                        href="/pages/terms-and-conditions">Terms of Service</a> and <a
+                                        href="/pages/privacy-policy">Privacy Policy</a>.</p>
                         </form>
                         <p class="success-message">{{ settings.success_message }}</p>
                     </div>
                     <div class="socials">
-                        <a target="_blank" href="{{ settings.instagram_url }}">@vybeshop{%  include 'icon-instagram' %}</a>
+                        <a target="_blank"
+                           href="{{ settings.instagram_url }}">@vybeshop{% include 'icon-instagram' %}</a>
                         {% comment %}<a target="_blank" href="{{ settings.twitter_url }}">{%  include 'icon-twitter' %}</a>{% endcomment %}
                         {% comment %}<a target="_blank" href="{{ settings.facebook_url }}">{%  include 'icon-facebook' %}</a>{% endcomment %}
                     </div>
@@ -374,8 +821,10 @@
                 </div>
 
                 <div class="right utility-pages">
-                    <a class="utility shift-word" href="/pages/privacy-policy"><span data-replace="PRIVACY POLICY"><span>PRIVACY POLICY</span></span></a>
-                    <a class="utility shift-word" href="/pages/terms-and-conditions"><span data-replace="TERMS & CONDITIONS"><span>TERMS & CONDITIONS</span></span></a>
+                    <a class="utility shift-word" href="/pages/privacy-policy"><span
+                                data-replace="PRIVACY POLICY"><span>PRIVACY POLICY</span></span></a>
+                    <a class="utility shift-word" href="/pages/terms-and-conditions"><span
+                                data-replace="TERMS & CONDITIONS"><span>TERMS & CONDITIONS</span></span></a>
                     <a class="utility shift-word" href="/pages/return-policy"><span data-replace="RETURN POLICY"><span>RETURN POLICY</span></span></a>
                     <div class="credit-cards mobile-only">
                         {% include 'icon-visa' %}
