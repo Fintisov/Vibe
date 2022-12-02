@@ -416,120 +416,544 @@
             {% endif %}
         </div>
 
-        <div class="navigation">
+        <nav class="navigation">
+            {% comment %}
+                <div class="header-left desktop-only">
+                    <button class="mega-nav-trigger eyebrow">SHOP
+                        <div class="mega-nav shop">
+                            <div class="left">
+                                {% for link in linklists.shop-menu.links %}
+                                    <div class="column">
+                                        <p class="col-header caps">{{ link.title }}</p>
+                                        {% if link.links != empty %}
+                                            {% for child_link in link.links %}
+                                                <a class="text-m shift-word black" href="{{ child_link.url }}"><span
+                                                            data-replace="{{ child_link.title }}"><span>{{ child_link.title }}</span></span></a>
+                                            {% endfor %}
+                                        {% endif %}
+                                        <a class="read-more" href="{{ link.url }}">Shop
+                                            All{% include 'icon-arrow-red' %}</a>
+                                    </div>
+                                {% endfor %}
+                            </div>
 
-            <div class="header-left desktop-only">
-                <button class="mega-nav-trigger eyebrow">SHOP
-                    <div class="mega-nav shop">
-                        <div class="left">
-                            {% for link in linklists.shop-menu.links %}
+                            <div class="right">
+                                <img class="bg preload-global" aria-hidden="true"
+                                     data-preload-desktop="https:{{ settings.shop_nav_img | image_url }}"
+                                     data-preload-mobile="https:{{ settings.shop_nav_img | image_url }}">
+                                <div class="content">
+                                    <p class="header-l">{{ settings.shop_menu_header }}</p>
+                                    <a href="{{ settings.shop_menu_button_url }}"
+                                       class="btn caps white">{{ settings.shop_menu_button_text }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="mega-nav-trigger eyebrow">BRANDS
+                        <div class="mega-nav brand">
+                            <div class="left">
                                 <div class="column">
-                                    <p class="col-header caps">{{ link.title }}</p>
-                                    {% if link.links != empty %}
-                                        {% for child_link in link.links %}
-                                            <a class="text-m shift-word black" href="{{ child_link.url }}"><span
-                                                        data-replace="{{ child_link.title }}"><span>{{ child_link.title }}</span></span></a>
-                                        {% endfor %}
-                                    {% endif %}
-                                    <a class="read-more" href="{{ link.url }}">Shop
+                                    <p class="col-header caps">Popular Brands</p>
+                                    {% for link in linklists.brands-menu.links %}
+                                        {% if link.title contains "|-| " %}
+                                            {% continue %}
+                                        {% endif %}
+                                        <a class="text-m shift-word black" href="{{ link.url }}"><span
+                                                    data-replace="{{ link.title }}"><span>{{ link.title }}</span></span></a>
+                                    {% endfor %}
+                                    <a class="read-more" href="/collections/brands">See
                                         All{% include 'icon-arrow-red' %}</a>
                                 </div>
-                            {% endfor %}
-                        </div>
-
-                        <div class="right">
-                            <img class="bg preload-global" aria-hidden="true"
-                                 data-preload-desktop="https:{{ settings.shop_nav_img | image_url }}"
-                                 data-preload-mobile="https:{{ settings.shop_nav_img | image_url }}">
-                            <div class="content">
-                                <p class="header-l">{{ settings.shop_menu_header }}</p>
-                                <a href="{{ settings.shop_menu_button_url }}"
-                                   class="btn caps white">{{ settings.shop_menu_button_text }}</a>
-                            </div>
-                        </div>
-                    </div>
-                </button>
-                <button class="mega-nav-trigger eyebrow">BRANDS
-                    <div class="mega-nav brand">
-                        <div class="left">
-                            <div class="column">
-                                <p class="col-header caps">Popular Brands</p>
-                                {% for link in linklists.brands-menu.links %}
-                                    {% if link.title contains "|-| " %}
-                                        {% continue %}
-                                    {% endif %}
-                                    <a class="text-m shift-word black" href="{{ link.url }}"><span
-                                                data-replace="{{ link.title }}"><span>{{ link.title }}</span></span></a>
-                                {% endfor %}
-                                <a class="read-more" href="/collections/brands">See
-                                    All{% include 'icon-arrow-red' %}</a>
-                            </div>
-                            <div class="brands-grid">
-                                {% for link in linklists.brands-menu.links %}
-                                    {% if link.title contains "|-|" %}
-                                        {% assign collectionArr = link.url | split: "/" %}
-                                        {% assign thisCollection = collections[collectionArr.last] %}
-                                        {% assign productCount = thisCollection.products | size %}
-                                        <div class="brand-logo{% if productCount == 0 %} coming-soon{% endif %}">
-                                            {% if productCount == 0 %}<span
-                                                    class="coming-soon-text">Coming<br>soon</span>
-                                                <div>
-                                                    <img class="image preload-global"
-                                                         data-preload-desktop="https:{{ thisCollection.featured_image | image_url }}"
-                                                         data-preload-mobile="https:{{ thisCollection.featured_image | image_url }}">
-                                                </div>
-                                            {% else %}
-                                                <a href="{{ link.url }}">
-                                                    <img class="image preload-global"
-                                                         data-preload-desktop="https:{{ thisCollection.featured_image | image_url }}"
-                                                         data-preload-mobile="https:{{ thisCollection.featured_image | image_url }}">
-                                                </a>
-                                            {% endif %}
-                                        </div>
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
-                        </div>
-
-
-                        <div class="right">
-                            <img class="bg preload-global" aria-hidden="true"
-                                 data-preload-desktop="https:{{ settings.brand_nav_img | image_url }}"
-                                 data-preload-mobile="https:{{ settings.brand_nav_img | image_url }}">
-                            <div class="content">
-                                <p class="header-l">{{ settings.brand_menu_header }}</p>
-                                <a href="{{ settings.brand_menu_button_url }}"
-                                   class="btn caps white">{{ settings.brand_menu_button_text }}</a>
-                            </div>
-                        </div>
-                    </div>
-                </button>
-                <button class="mega-nav-trigger eyebrow">LEARN
-                    <div class="mega-nav learn">
-                        <div class="left">
-                            {% for link in linklists.learn-menu.links %}
-                                <div class="column">
-                                    <p class="col-header caps">{{ link.title }}</p>
-                                    {% comment %}<p class="copy">At Vybe, We inspire people. We help them choose wisely to become who they are for what they will become.</p>{% endcomment %}
-                                    <a href="{{ link.url }}" class="read-more">Read
-                                        More{% include 'icon-arrow-red' %}</a>
+                                <div class="brands-grid">
+                                    {% for link in linklists.brands-menu.links %}
+                                        {% if link.title contains "|-|" %}
+                                            {% assign collectionArr = link.url | split: "/" %}
+                                            {% assign thisCollection = collections[collectionArr.last] %}
+                                            {% assign productCount = thisCollection.products | size %}
+                                            <div class="brand-logo{% if productCount == 0 %} coming-soon{% endif %}">
+                                                {% if productCount == 0 %}<span
+                                                        class="coming-soon-text">Coming<br>soon</span>
+                                                    <div>
+                                                        <img class="image preload-global"
+                                                             data-preload-desktop="https:{{ thisCollection.featured_image | image_url }}"
+                                                             data-preload-mobile="https:{{ thisCollection.featured_image | image_url }}">
+                                                    </div>
+                                                {% else %}
+                                                    <a href="{{ link.url }}">
+                                                        <img class="image preload-global"
+                                                             data-preload-desktop="https:{{ thisCollection.featured_image | image_url }}"
+                                                             data-preload-mobile="https:{{ thisCollection.featured_image | image_url }}">
+                                                    </a>
+                                                {% endif %}
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
                                 </div>
-                            {% endfor %}
-                        </div>
-                        <div class="right">
-                            <img class="bg preload-global" aria-hidden="true"
-                                 data-preload-desktop="https:{{ settings.learn_nav_img | image_url }}"
-                                 data-preload-mobile="https:{{ settings.learn_nav_img | image_url }}">
-                            <div class="content">
-                                <p class="header-l">{{ settings.learn_menu_header }}</p>
-                                <a href="{{ settings.learn_menu_button_url }}"
-                                   class="btn caps white">{{ settings.learn_menu_button_text }}</a>
+                            </div>
+
+
+                            <div class="right">
+                                <img class="bg preload-global" aria-hidden="true"
+                                     data-preload-desktop="https:{{ settings.brand_nav_img | image_url }}"
+                                     data-preload-mobile="https:{{ settings.brand_nav_img | image_url }}">
+                                <div class="content">
+                                    <p class="header-l">{{ settings.brand_menu_header }}</p>
+                                    <a href="{{ settings.brand_menu_button_url }}"
+                                       class="btn caps white">{{ settings.brand_menu_button_text }}</a>
+                                </div>
                             </div>
                         </div>
+                    </button>
+                    <button class="mega-nav-trigger eyebrow">LEARN
+                        <div class="mega-nav learn">
+                            <div class="left">
+                                {% for link in linklists.learn-menu.links %}
+                                    <div class="column">
+                                        <p class="col-header caps">{{ link.title }}</p>
+                                        {% comment %}<p class="copy">At Vybe, We inspire people. We help them choose wisely to become who they are for what they will become.</p>{% endcomment %}
+                                        <a href="{{ link.url }}" class="read-more">Read
+                                            More{% include 'icon-arrow-red' %}</a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="right">
+                                <img class="bg preload-global" aria-hidden="true"
+                                     data-preload-desktop="https:{{ settings.learn_nav_img | image_url }}"
+                                     data-preload-mobile="https:{{ settings.learn_nav_img | image_url }}">
+                                <div class="content">
+                                    <p class="header-l">{{ settings.learn_menu_header }}</p>
+                                    <a href="{{ settings.learn_menu_button_url }}"
+                                       class="btn caps white">{{ settings.learn_menu_button_text }}</a>
+                                </div>
+                            </div>
 
-                    </div>
-                </button>
-            </div>
+                        </div>
+                    </button>
+                </div>
+    {% endcomment %}
+
+            <ul class="nav-menu header-left desktop-only">
+                <li class="nav-menu__item">
+                    <a class="nav-menu__link mega-nav-trigger eyebrow" href="#">title-1</a>
+                    <ul class="sub-menu">
+                        <li class="sub-menu__item">
+                            <a class="sub-menu__link" href="#">первый уровень</a>
+                            <ul class="sub-menu">
+                                <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="#">второй уровень</a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">третий уровень</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="#">второй уровень</a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">третий уровень</a>
+                                            <ul class="sub-menu">
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="#">второй уровень</a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">третий уровень</a>
+                                            <ul class="sub-menu">
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="#">второй уровень</a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">третий уровень</a>
+                                            <ul class="sub-menu">
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="#">второй уровень</a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">третий уровень</a>
+                                            <ul class="sub-menu">
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu__item">
+                            <a class="sub-menu__link" href="#">первый уровень</a>
+                            <ul class="sub-menu">
+                                <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="#">второй уровень</a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">третий уровень</a>
+                                            <ul class="sub-menu">
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="#">второй уровень</a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">третий уровень</a>
+                                            <ul class="sub-menu">
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="#">второй уровень</a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">третий уровень</a>
+                                            <ul class="sub-menu">
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="#">второй уровень</a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">третий уровень</a>
+                                            <ul class="sub-menu">
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="#">второй уровень</a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">третий уровень</a>
+                                            <ul class="sub-menu">
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu__item">
+                            <a class="sub-menu__link" href="#">первый уровень</a>
+                            <ul class="sub-menu">
+                                <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="#">второй уровень</a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">третий уровень</a>
+                                            <ul class="sub-menu">
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="#">второй уровень</a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">третий уровень</a>
+                                            <ul class="sub-menu">
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="#">второй уровень</a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">третий уровень</a>
+                                            <ul class="sub-menu">
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="#">второй уровень</a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">третий уровень</a>
+                                            <ul class="sub-menu">
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="#">второй уровень</a>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu__item">
+                                            <a class="sub-menu__link" href="#">третий уровень</a>
+                                            <ul class="sub-menu">
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="#">четвертый уровень</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
 
             <a class="header-center" href="/">{% include "logo" %}</a>
 
@@ -551,8 +975,7 @@
                                                                                                        class="cart-count">{{ cart.item_count }}</span>
                 </button>
             </div>
-
-        </div>
+        </nav>
     </div>
 </header>
 
@@ -840,7 +1263,7 @@
         </div>
     </div>
 </footer>
-{{ '_main.css' | asset_url | stylesheet_tag }}
+{{ 'main.css' | asset_url | stylesheet_tag }}
 {{ 'inner.css' | asset_url | stylesheet_tag }}
 {{ 'main.js' | asset_url | script_tag }}
 {{ content_for_header }} <!-- Header hook for plugins -->
