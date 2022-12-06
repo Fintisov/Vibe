@@ -12101,6 +12101,20 @@ ul {
 .nav-menu .nav-menu__item > .sub-menu > .sub-menu__item:not(:last-of-type) {
   margin-bottom: 20px;
 }
+.nav-menu .nav-menu__item-brand .sub-menu {
+  padding-bottom: 70px;
+  overflow-y: auto;
+}
+.nav-menu .nav-menu__item-brand .sub-menu .sub-menu__item:not(:last-of-type) {
+  margin-bottom: 0;
+}
+.nav-menu .nav-menu__item-brand .sub-menu .sub-menu__item:last-of-type {
+  margin-top: 20px;
+}
+.nav-menu .nav-menu__item-brand .sub-menu .sub-menu__item .icon {
+  width: 117px;
+  height: 47px;
+}
 .nav-menu .nav-menu__link {
   display: flex;
   align-items: center;
@@ -12126,7 +12140,7 @@ ul {
   top: 0;
   left: calc(100% + 1px);
   min-height: 500px;
-  max-height: 100vh;
+  max-height: calc(100vh - 60px);
   min-width: 422px;
   background: #ffffff;
   visibility: hidden;
@@ -12163,9 +12177,14 @@ ul {
   line-height: 1.25;
   padding: 6px 10px;
   background-color: transparent;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   min-width: max-content;
   transition: 150ms linear background-color;
+}
+.sub-menu .sub-menu__link > img {
+  width: auto;
 }
 .sub-menu .sub-menu__link:hover {
   background-color: #F1F3F4;

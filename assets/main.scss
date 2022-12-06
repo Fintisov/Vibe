@@ -12951,6 +12951,29 @@ ul {
         margin-bottom: 20px;
       }
     }
+
+    // nav-menu__item-brand
+    &-brand {
+      .sub-menu {
+        padding-bottom: 70px;
+        overflow-y: auto;
+
+        .sub-menu__item {
+          &:not(:last-of-type) {
+            margin-bottom: 0;
+          }
+
+          &:last-of-type {
+            margin-top: 20px;
+          }
+
+          .icon {
+            width: 117px;
+            height: 47px;
+          }
+        }
+      }
+    }
   }
 
   .nav-menu__link {
@@ -12983,7 +13006,7 @@ ul {
   top: 0;
   left: calc(100% + 1px);
   min-height: 500px;
-  max-height: 100vh;
+  max-height: calc(100vh - 60px);
   min-width: 422px;
   background: #ffffff;
   visibility: hidden;
@@ -13031,9 +13054,15 @@ ul {
     line-height: 1.25;
     padding: 6px 10px;
     background-color: transparent;
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     min-width: max-content;
     transition: 150ms linear background-color;
+
+    > img {
+      width: auto;
+    }
 
     &:hover {
       background-color: #F1F3F4;
