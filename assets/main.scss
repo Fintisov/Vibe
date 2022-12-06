@@ -12952,6 +12952,11 @@ ul {
       }
     }
 
+    // nav-menu__item-shop
+    &-shop {
+
+    }
+
     // nav-menu__item-brand
     &-brand {
       .sub-menu {
@@ -12974,6 +12979,17 @@ ul {
         }
       }
     }
+
+    //nav-menu__item-learn
+    &-learn {
+      .sub-menu {
+        min-height: max-content;
+        .sub-menu__item:not(:last-of-type) {
+          margin-bottom: 40px;
+        }
+      }
+    }
+
   }
 
   .nav-menu__link {
@@ -13005,7 +13021,7 @@ ul {
   padding: 30px;
   top: 0;
   left: calc(100% + 1px);
-  min-height: 500px;
+  min-height: 450px;
   max-height: calc(100vh - 60px);
   min-width: 422px;
   background: #ffffff;

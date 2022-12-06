@@ -12115,6 +12115,12 @@ ul {
   width: 117px;
   height: 47px;
 }
+.nav-menu .nav-menu__item-learn .sub-menu {
+  min-height: max-content;
+}
+.nav-menu .nav-menu__item-learn .sub-menu .sub-menu__item:not(:last-of-type) {
+  margin-bottom: 40px;
+}
 .nav-menu .nav-menu__link {
   display: flex;
   align-items: center;
@@ -12139,7 +12145,7 @@ ul {
   padding: 30px;
   top: 0;
   left: calc(100% + 1px);
-  min-height: 500px;
+  min-height: 450px;
   max-height: calc(100vh - 60px);
   min-width: 422px;
   background: #ffffff;
