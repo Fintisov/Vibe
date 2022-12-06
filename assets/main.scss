@@ -12946,6 +12946,10 @@ ul {
       top: calc(100% - 2px);
       left: 0;
       padding: 30px;
+
+      > .sub-menu__item:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -12963,11 +12967,11 @@ ul {
         left: 15px;
         height: 4px;
         z-index: 100;
-
       }
 
       + .sub-menu {
-        display: block;
+        visibility: visible;
+        opacity: 1;
       }
     }
   }
@@ -12975,51 +12979,69 @@ ul {
 
 .sub-menu {
   position: absolute;
-  padding: 30px 30px 30px 60px;
+  padding: 30px;
   top: 0;
-  left: 100%;
-  min-height: inherit;
-  height: max-content;
+  left: calc(100% + 1px);
+  min-height: 500px;
   max-height: 100vh;
   min-width: 422px;
   background: #ffffff;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: 150ms;
+  border-right: 1px solid #F0EEEE;
+
+  .sub-menu__title {
+    padding-left: 10px;
+    margin-bottom: 15px;
+
+    .title {
+      font-family: "NeuzeitGroExt-Bla", sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 1.25;
+      color: #000000;
+    }
+  }
 
   .sub-menu__item {
     &:not(:last-of-type) {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     &.active {
       > .sub-menu {
-        display: block;
+        visibility: visible;
+        opacity: 1;
       }
     }
 
-    .sub-menu__link {
-      font-family: "Gilroy-Black", sans-serif;
-      font-size: 14px;
-      line-height: 1.25;
-      padding: 6px 10px;
-      background-color: #0697ff;
-      display: block;
-      min-width: max-content;
-
-      &:hover {
-        background-color: #F1F3F4;
+    &.arr {
+      > .sub-menu__link {
+        background-image: url("./arrow_forward_ios.svg");
+        background-repeat: no-repeat;
+        background-position: calc(100% - 10px) center;
       }
     }
   }
-}
 
-.sub-menu__item {
-  &:not(:last-of-type) {
-    margin-bottom: 20px;
-  }
+  .sub-menu__link {
+    font-family: "Gilroy-Black", sans-serif;
+    font-size: 14px;
+    line-height: 1.25;
+    padding: 6px 10px;
+    background-color: transparent;
+    display: block;
+    min-width: max-content;
+    transition: 150ms linear background-color;
 
-  &.active {
-    > .sub-menu {
-      display: block;
+    &:hover {
+      background-color: #F1F3F4;
+    }
+
+    // sub-menu__link--grey
+    &--grey {
+      color: #8f8f8f;
     }
   }
 }

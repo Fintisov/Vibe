@@ -17,6 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         }
 
+        subItem.forEach(el => {
+            el.childNodes.forEach(item => {
+                if (item.nodeName !== "#text" && item.classList.contains("sub-menu")) {
+                        el.classList.add("arr")
+                }
+            })
+        })
+
         header.addEventListener("mouseover", (event) => {
             const target = event.target;
 

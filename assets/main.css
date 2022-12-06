@@ -12098,6 +12098,9 @@ ul {
   left: 0;
   padding: 30px;
 }
+.nav-menu .nav-menu__item > .sub-menu > .sub-menu__item:not(:last-of-type) {
+  margin-bottom: 20px;
+}
 .nav-menu .nav-menu__link {
   display: flex;
   align-items: center;
@@ -12113,45 +12116,62 @@ ul {
   z-index: 100;
 }
 .nav-menu .nav-menu__link.active + .sub-menu {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .sub-menu {
   position: absolute;
-  padding: 30px 30px 30px 60px;
+  padding: 30px;
   top: 0;
-  left: 100%;
-  min-height: inherit;
-  height: max-content;
+  left: calc(100% + 1px);
+  min-height: 500px;
   max-height: 100vh;
   min-width: 422px;
   background: #ffffff;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: 150ms;
+  border-right: 1px solid #F0EEEE;
+}
+.sub-menu .sub-menu__title {
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+.sub-menu .sub-menu__title .title {
+  font-family: "NeuzeitGroExt-Bla", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #000000;
 }
 .sub-menu .sub-menu__item:not(:last-of-type) {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .sub-menu .sub-menu__item.active > .sub-menu {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
-.sub-menu .sub-menu__item .sub-menu__link {
+.sub-menu .sub-menu__item.arr > .sub-menu__link {
+  background-image: url("./arrow_forward_ios.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+}
+.sub-menu .sub-menu__link {
   font-family: "Gilroy-Black", sans-serif;
   font-size: 14px;
   line-height: 1.25;
   padding: 6px 10px;
-  background-color: #0697ff;
+  background-color: transparent;
   display: block;
   min-width: max-content;
+  transition: 150ms linear background-color;
 }
-.sub-menu .sub-menu__item .sub-menu__link:hover {
+.sub-menu .sub-menu__link:hover {
   background-color: #F1F3F4;
 }
-
-.sub-menu__item:not(:last-of-type) {
-  margin-bottom: 20px;
-}
-.sub-menu__item.active > .sub-menu {
-  display: block;
+.sub-menu .sub-menu__link--grey {
+  color: #8f8f8f;
 }
 
 .nav-mask {
