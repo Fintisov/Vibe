@@ -1,4 +1,4 @@
-# amarose-dev
+# Vibe
 
 shopify login --store  https://vybeonline.myshopify.com/admin
 

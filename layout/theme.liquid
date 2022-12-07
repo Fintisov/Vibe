@@ -438,7 +438,7 @@
                                             <a class="sub-menu__link" href="#">Multi vitamins</a>
                                         </li>
                                         <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Fish oil and omegas</a>
+                                            <a class="sub-menu__link" href="#">Fish oil & omegas</a>
                                         </li>
                                         <li class="sub-menu__item">
                                             <a class="sub-menu__link" href="#">Vitamins A-Z</a>
@@ -465,7 +465,7 @@
                                             <h3 class="title">PROTEIN</h3>
                                         </li>
                                         <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Protien Powder</a>
+                                            <a class="sub-menu__link" href="#">Protein Powder</a>
                                         </li>
                                         <li class="sub-menu__item">
                                             <a class="sub-menu__link" href="#">WHEY protein</a>
@@ -477,10 +477,10 @@
                                             <a class="sub-menu__link" href="#">Plant based</a>
                                         </li>
                                         <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Casien Protien</a>
+                                            <a class="sub-menu__link" href="#">Casien Protein</a>
                                         </li>
                                         <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Protien blends</a>
+                                            <a class="sub-menu__link" href="#">Protein blends</a>
                                         </li>
                                         <li class="sub-menu__item">
                                             <a class="sub-menu__link sub-menu__link--grey" href="#">Shop All</a>
@@ -507,7 +507,7 @@
                                             <a class="sub-menu__link" href="#">Intra Workouts Supplements</a>
                                         </li>
                                         <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Post Work and Recovery</a>
+                                            <a class="sub-menu__link" href="#">Post Work & Recovery</a>
                                         </li>
                                         <li class="sub-menu__item">
                                             <a class="sub-menu__link" href="#">Testosterone Support</a>
@@ -531,7 +531,7 @@
                                             <a class="sub-menu__link" href="#">Cleansing & Detox</a>
                                         </li>
                                         <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Enzimes</a>
+                                            <a class="sub-menu__link" href="#">Enzymes</a>
                                         </li>
                                         <li class="sub-menu__item">
                                             <a class="sub-menu__link" href="#">Fiber Supplements</a>
@@ -670,8 +670,6 @@
                                 <a class="sub-menu__link" href="{{ link.url }}">
                                     {{ link.title | escape }}
 
-                                    {% assign imgNameTitle = link.title | handleize %}
-                                    {% assign imgName = "logo-" | append: imgNameTitle | append: ".png" %}
                                     <img class="icon" src="{{ link.object.image | img_url: 'master' }}" alt="{{ link.object.title }}">
                                 </a>
                             </li>

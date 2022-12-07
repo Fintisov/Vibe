@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function navMenu() {
         const header = document.querySelector(".section-header"),
             subItem = header.querySelectorAll(".sub-menu__item"),
+            subLink = header.querySelectorAll(".sub-menu__link"),
             navLink = header.querySelectorAll(".nav-menu__link"),
             body = document.querySelector("body");
 
@@ -20,7 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
         subItem.forEach(el => {
             el.childNodes.forEach(item => {
                 if (item.nodeName !== "#text" && item.classList.contains("sub-menu")) {
-                        el.classList.add("arr")
+                    el.classList.add("arr")
+                }
+            })
+        })
+
+        subLink.forEach(el => {
+            el.addEventListener("click", () => {
+                navLink.forEach(elem => elem.classList.remove("active"));
+                if (document.querySelector(".nav-mask")) {
+                    document.querySelector(".nav-mask").remove();
                 }
             })
         })
@@ -38,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             navLink.forEach(elem => {
                 if (!target.closest(".nav-menu") && elem.classList.contains("active")) {
-                    subItem.forEach(elem => elem.classList.remove("active"));
+                    subItem.forEach(item => item.classList.remove("active"));
                     elem.classList.remove("active");
                     document.querySelector(".nav-mask").remove();
                 }
