@@ -421,244 +421,53 @@
                 <li class="nav-menu__item nav-menu__item-shop">
                     <a class="nav-menu__link mega-nav-trigger eyebrow" href="#">SHOP</a>
                     <ul class="sub-menu">
-                        <li class="sub-menu__item">
-                            <a class="sub-menu__link" href="#">Health & Fitness</a>
-                            <ul class="sub-menu">
-                                <li class="sub-menu__title">
-                                    <h3 class="title">HEALTH & FITNESS</h3>
-                                </li>
-
+                        {%- for link in linklists.new-shop-menu.links -%}
+                            {% if link.title contains '--shopAll' %}
                                 <li class="sub-menu__item">
-                                    <a class="sub-menu__link" href="#">Vitamins & Supplements</a>
+                                    <a class="sub-menu__link sub-menu__link--grey" href="{{ link.url }}">Shop All</a>
+                                </li>
+                            {% else %}
+                                <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="{{ link.url }}">{{ link.title }}</a>
                                     <ul class="sub-menu">
-                                        <li class="sub-menu__title">
-                                            <h3 class="title">VITAMINS & SUPPLEMENTS</h3>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Multi vitamins</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Fish oil & omegas</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Vitamins A-Z</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Minerals</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Sexual health</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Antioxidants</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link sub-menu__link--grey" href="#">Shop All</a>
-                                        </li>
+                                        {%- for childlink in link.links -%}
+                                            {% if childlink.title contains '--shopAll' %}
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link sub-menu__link--grey" href="{{ childlink.url }}">Shop All</a>
+                                                </li>
+                                            {% elsif childlink.title contains '--title' %}
+                                                <li class="sub-menu__title">
+                                                    <h3 class="title">{{ childlink.title | remove: '--title' }}</h3>
+                                                </li>
+                                            {% else %}
+                                                <li class="sub-menu__item">
+                                                    <a class="sub-menu__link" href="{{ childlink.url }}">{{ childlink.title }}</a>
+                                                    {%- if childlink.links != blank -%}
+                                                        <ul class="sub-menu">
+                                                            {%- for grandchildlink in childlink.links -%}
+                                                                {% if grandchildlink.title contains '--shopAll' %}
+                                                                    <li class="sub-menu__item">
+                                                                        <a class="sub-menu__link sub-menu__link--grey" href="{{ grandchildlink.url }}">Shop All</a>
+                                                                    </li>
+                                                                {% elsif grandchildlink.title contains '--title' %}
+                                                                    <li class="sub-menu__title">
+                                                                        <h3 class="title">{{ grandchildlink.title | remove: '--title'  }}</h3>
+                                                                    </li>
+                                                                {% else %}
+                                                                    <li class="sub-menu__item">
+                                                                        <a class="sub-menu__link" href="{{ grandchildlink.url }}">{{ grandchildlink.title }}</a>
+                                                                    </li>
+                                                                {% endif %}
+                                                            {%- endfor -%}
+                                                        </ul>
+                                                    {% endif %}
+                                                </li>
+                                            {% endif %}
+                                        {%- endfor  -%}
                                     </ul>
                                 </li>
-
-                                <li class="sub-menu__item">
-                                    <a class="sub-menu__link" href="#">Protein</a>
-                                    <ul class="sub-menu">
-                                        <li class="sub-menu__title">
-                                            <h3 class="title">PROTEIN</h3>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Protein Powder</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">WHEY protein</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Mass Gainers</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Plant based</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Casien Protein</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Protein blends</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link sub-menu__link--grey" href="#">Shop All</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="sub-menu__item">
-                                    <a class="sub-menu__link" href="#">Performance</a>
-                                    <ul class="sub-menu">
-                                        <li class="sub-menu__title">
-                                            <h3 class="title">Performance</h3>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Pre-Workouts</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Muscle Builders</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Energy & Endurance</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Intra Workouts Supplements</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Post Work & Recovery</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Testosterone Support</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link sub-menu__link--grey" href="#">Shop All</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="sub-menu__item">
-                                    <a class="sub-menu__link" href="#">Digestion</a>
-                                    <ul class="sub-menu">
-                                        <li class="sub-menu__title">
-                                            <h3 class="title">DIGESTION</h3>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Pro-Biotics</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Cleansing & Detox</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Enzymes</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Fiber Supplements</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link sub-menu__link--grey" href="#">Shop All</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="sub-menu__item">
-                                    <a class="sub-menu__link" href="#">Superfood & Greens</a>
-                                    <ul class="sub-menu">
-                                        <li class="sub-menu__title">
-                                            <h3 class="title">SUPERFOOD & GREENS</h3>
-                                        </li>
-
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Green Foods</a>
-                                        </li>
-
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Superfood</a>
-                                        </li>
-
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link sub-menu__link--grey" href="#">Shop All</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="sub-menu__item">
-                                    <a class="sub-menu__link" href="#">Weight Management </a>
-                                    <ul class="sub-menu">
-                                        <li class="sub-menu__title">
-                                            <h3 class="title">WEIGHT MANAGEMENT</h3>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Fat Burner & Dermagenics</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Aperture Control & Diet Support</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Keto Friendly</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link sub-menu__link--grey" href="#">Shop All</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="sub-menu__item">
-                                    <a class="sub-menu__link" href="#">Equipment & Accessories </a>
-                                    <ul class="sub-menu">
-                                        <li class="sub-menu__title">
-                                            <h3 class="title">EQUIPMENT & ACCESSORIES</h3>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Shaker cups</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Funnels & Pill Cases</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Yoga Mats</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link" href="#">Apparel & Accessories</a>
-                                        </li>
-                                        <li class="sub-menu__item">
-                                            <a class="sub-menu__link sub-menu__link--grey" href="#">Shop All</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="sub-menu__item">
-                                    <a class="sub-menu__link sub-menu__link--grey" href="#">Shop All</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="sub-menu__item">
-                            <a class="sub-menu__link" href="#">Beauty & Skincare</a>
-                            <ul class="sub-menu">
-                                <li class="sub-menu__title">
-                                    <h3 class="title">BEAUTY & SKINCARE</h3>
-                                </li>
-                                <li class="sub-menu__item">
-                                    <a class="sub-menu__link" href="#">Serum</a>
-                                </li>
-                                <li class="sub-menu__item">
-                                    <a class="sub-menu__link" href="#">Creams</a>
-                                </li>
-                                <li class="sub-menu__item">
-                                    <a class="sub-menu__link" href="#">Eye Gel</a>
-                                </li>
-                                <li class="sub-menu__item">
-                                    <a class="sub-menu__link" href="#">Toner</a>
-                                </li>
-                                <li class="sub-menu__item">
-                                    <a class="sub-menu__link sub-menu__link--grey" href="#">Shop All</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="sub-menu__item">
-                            <a class="sub-menu__link" href="#">Featured</a>
-                            <ul class="sub-menu">
-                                <li class="sub-menu__title">
-                                    <h3 class="title">FEATURED</h3>
-                                </li>
-                                <li class="sub-menu__item">
-                                    <a class="sub-menu__link" href="#">On Sale</a>
-                                </li>
-                                <li class="sub-menu__item">
-                                    <a class="sub-menu__link" href="#">New Arrivals</a>
-                                </li>
-                                <li class="sub-menu__item">
-                                    <a class="sub-menu__link sub-menu__link--grey" href="#">Shop All</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="sub-menu__item">
-                            <a class="sub-menu__link sub-menu__link--grey" href="#">Shop All</a>
-                        </li>
+                            {% endif %}
+                        {%- endfor  -%}
                     </ul>
                 </li>
 
