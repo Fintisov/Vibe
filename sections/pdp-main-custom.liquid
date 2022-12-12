@@ -59,6 +59,37 @@
 {% endif %}
 
 
+{% assign desc_ingredient_size = product.metafields.desc_ingredient.item_text.size | minus: 1 %}
+{% if desc_ingredient_size > -1 %}
+    <div class="advantages-composition">
+        <div class="container">
+            <div class="advantages-composition__content">
+                <div class="advantages-composition__title-wrapper">
+                    <h2 class="advantages-composition__title">{{ product.metafields.desc_ingredient.title }}</h2>
+                    <p class="advantages-composition__text">{{ product.metafields.desc_ingredient.text }}</p>
+                </div>
+
+                <div class="advantages-composition__icon-group">
+                    {% for i in (0..desc_ingredient_size) %}
+                        <div class="advantages-composition__icon-elem">
+                            <div class="icon">
+                                <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.34198 11.5L9.72465 13.8863L15.4828 8.12455M21.1001 11.5C21.1001 17.0228 16.6229 21.5 11.1001 21.5C5.57725 21.5 1.1001 17.0228 1.1001 11.5C1.1001 5.97715 5.57725 1.5 11.1001 1.5C16.6229 1.5 21.1001 5.97715 21.1001 11.5Z"
+                                          stroke="#FCFCFC" stroke-width="2" stroke-miterlimit="10"/>
+                                </svg>
+                            </div>
+                            <span class="icon-text">{{ product.metafields.desc_ingredient.item_text[i] }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+
+
 
 {% comment %}
 {% if product.metafields.accentuate.square_icon_image and product.metafields.accentuate.square_icon_image != empty %}
