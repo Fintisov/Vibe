@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "pdp-hero": {
+      "type": "pdp-hero",
+      "settings": {
+      }
+    },
+    "pdp-main": {
+      "type": "pdp-main-custom",
+      "settings": {
+        "experts_header": "Meet our experts",
+        "experts_text": "We work with a lot of exceptional and thoughtful people - like scientists, nutritionists, and athletes who guide our product innovation and research.",
+        "experts_button_link": "",
+        "experts_button_text": "",
+        "expert_one_name": "Mike Mancias",
+        "expert_one_title": "Professional Trainer",
+        "expert_one_image": "shopify:\/\/shop_images\/expert-1.jpg",
+        "expert_two_name": "Dr. Abbie Smith-Ryan",
+        "expert_two_title": "Nutrition Expert",
+        "expert_two_image": "shopify:\/\/shop_images\/expert-2.jpg"
+      }
+    },
+    "166386874117c1bf17": {
+      "type": "apps",
+      "blocks": {
+        "39bcdbc5-fd87-45b8-bfc5-ae58f064eeae": {
+          "type": "shopify:\/\/apps\/junip-product-reviews-ugc\/blocks\/junip-product-review\/dc14f5a8-ed15-41b1-ad08-cfba23f9789b",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "39bcdbc5-fd87-45b8-bfc5-ae58f064eeae"
+      ],
+      "settings": {
+      }
+    },
+    "recirc-products": {
+      "type": "recirc-products",
+      "settings": {
+        "header": "You may be interested in"
+      }
+    }
+  },
+  "order": [
+    "pdp-hero",
+    "pdp-main",
+    "166386874117c1bf17",
+    "recirc-products"
+  ]
+}
