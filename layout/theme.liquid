@@ -441,35 +441,33 @@
                                                 </li>
                                             {% else %}
                                                 <li class="sub-menu__item">
-                                                <a class="sub-menu__link" href="{{ childlink.url }}">{{ childlink.title }}</a>
-                                                {%- if childlink.links != blank -%}
-                                                <ul class="sub-menu">
-                                                    {%- for grandchildlink in childlink.links -%}
-                                                        {% if grandchildlink.title contains '--shopAll' %}
-                                                            <li class="sub-menu__item">
-                                                                <a class="sub-menu__link sub-menu__link--grey" href="{{ grandchildlink.url }}">{{ grandchildlink.title }}</a>
-                                                            </li>
-                                                        {% elsif grandchildlink.title contains '--title' %}
-                                                            <li class="sub-menu__title">
-                                                                <h3 class="title">{{ grandchildlink.title | remove: '--title'  }}</h3>
-                                                            </li>
-                                                        {% else %}
-                                                            <li class="sub-menu__item">
-                                                                <a class="sub-menu__link" href="{{ grandchildlink.url }}">{{ grandchildlink.title }}</a>
-                                                            </li>
-                                                        {% endif %}
-                                                    {%- endfor -%}
-                                                </ul>
+                                                    <a class="sub-menu__link" href="{{ childlink.url }}">{{ childlink.title }}</a>
+                                                    {%- if childlink.links != blank -%}
+                                                        <ul class="sub-menu">
+                                                            {%- for grandchildlink in childlink.links -%}
+                                                                {% if grandchildlink.title contains '--shopAll' %}
+                                                                    <li class="sub-menu__item">
+                                                                        <a class="sub-menu__link sub-menu__link--grey" href="{{ grandchildlink.url }}">Shop All</a>
+                                                                    </li>
+                                                                {% elsif grandchildlink.title contains '--title' %}
+                                                                    <li class="sub-menu__title">
+                                                                        <h3 class="title">{{ grandchildlink.title | remove: '--title'  }}</h3>
+                                                                    </li>
+                                                                {% else %}
+                                                                    <li class="sub-menu__item">
+                                                                        <a class="sub-menu__link" href="{{ grandchildlink.url }}">{{ grandchildlink.title }}</a>
+                                                                    </li>
+                                                                {% endif %}
+                                                            {%- endfor -%}
+                                                        </ul>
                                                     {% endif %}
-                                            </li>
+                                                </li>
                                             {% endif %}
                                         {%- endfor  -%}
                                     </ul>
                                 </li>
                             {% endif %}
                         {%- endfor  -%}
-
-
                     </ul>
                 </li>
 
