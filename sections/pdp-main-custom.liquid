@@ -1,6 +1,39 @@
 <link rel="stylesheet" href="{{ 'custom-pdp-page.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'custom-pdp-page.css' | asset_url | stylesheet_tag }}</noscript>
 
+
+<section class="product-terms">
+    <div class="container">
+        <div class="product-terms__content-wrapper">
+            <div class="product-terms__content">
+                <div class="content-icon">
+                </div>
+                <p class="content-text">
+
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="product-ingredients">
+    <div class="container">
+        <div class="product-ingredients__content-wrapper">
+            {% assign size = product.metafields.accentuate.text.size | minus: 1 %}
+            {% for i in (0..size) %}
+                <div class="product-ingredients__content">
+                    <div class="product-ingredients__icon">
+                        {{ product.metafields.accentuate.svg_icon[i] }}
+                    </div>
+                    <p class="product-ingredients__text">{{ product.metafields.accentuate.text[i] }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+{% comment %}
 {% if product.metafields.accentuate.square_icon_image and product.metafields.accentuate.square_icon_image != empty %}
     <div class="svg-wrapper c-112 mw">
         <div class="inner">
@@ -12,9 +45,9 @@
             {% endfor %}
         </div>
     </div>
-{% endif %}
+{% endif %}{% endcomment %}
 
-
+{% comment %}
 <div class="faq-section c-50">
     {% if product.metafields.accentuate.drawers_header and product.metafields.accentuate.drawers_header != empty %}
         <div class="top mw {% if product.metafields.accentuate.drawers_mobile_bg %}faq-section__has-bg{% endif %}" {% if product.metafields.accentuate.drawers_mobile_bg %}style="background-color:{{ product.metafields.accentuate.drawers_mobile_bg }}"{% endif %}>
@@ -85,63 +118,63 @@
         </div>
     </div>
 {% endif %}
-
+{% endcomment %}
 
 {% schema %}
 {
-    "name": "PDP Main",
-    "class": "pdp-main",
-    "settings": [
-        {
-            "id": "experts_header",
-            "type": "text",
-            "label": "Experts Header"
-        },
-        {
-            "id": "experts_text",
-            "type": "text",
-            "label": "Experts Text"
-        },
-        {
-            "id": "experts_button_link",
-            "type": "text",
-            "label": "Experts button link"
-        },
-        {
-            "id": "experts_button_text",
-            "type": "text",
-            "label": "Experts button text"
-        },
-        {
-            "id": "expert_one_name",
-            "type": "text",
-            "label": "Expert one name"
-        },
-        {
-            "id": "expert_one_title",
-            "type": "text",
-            "label": "Expert one title"
-        },
-        {
-            "id": "expert_one_image",
-            "type": "image_picker",
-            "label": "Expert one image"
-        },
-        {
-            "id": "expert_two_name",
-            "type": "text",
-            "label": "Expert two name"
-        },
-        {
-            "id": "expert_two_title",
-            "type": "text",
-            "label": "Expert two title"
-        },
-        {
-            "id": "expert_two_image",
-            "type": "image_picker",
-            "label": "Expert two image"
-        }
-    ]
+  "name": "PDP Main",
+  "class": "pdp-main",
+  "settings": [
+    {
+      "id": "experts_header",
+      "type": "text",
+      "label": "Experts Header"
+    },
+    {
+      "id": "experts_text",
+      "type": "text",
+      "label": "Experts Text"
+    },
+    {
+      "id": "experts_button_link",
+      "type": "text",
+      "label": "Experts button link"
+    },
+    {
+      "id": "experts_button_text",
+      "type": "text",
+      "label": "Experts button text"
+    },
+    {
+      "id": "expert_one_name",
+      "type": "text",
+      "label": "Expert one name"
+    },
+    {
+      "id": "expert_one_title",
+      "type": "text",
+      "label": "Expert one title"
+    },
+    {
+      "id": "expert_one_image",
+      "type": "image_picker",
+      "label": "Expert one image"
+    },
+    {
+      "id": "expert_two_name",
+      "type": "text",
+      "label": "Expert two name"
+    },
+    {
+      "id": "expert_two_title",
+      "type": "text",
+      "label": "Expert two title"
+    },
+    {
+      "id": "expert_two_image",
+      "type": "image_picker",
+      "label": "Expert two image"
+    }
+  ]
 }
 {% endschema %}
