@@ -3,7 +3,7 @@
   padding: 0 50px;
   margin: 0 auto;
 
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 767px) {
     padding: 0 16px;
   }
 }
@@ -38,7 +38,6 @@
   }
 }
 
-
 .product-ingredients {
   padding: 40px 0;
   margin-bottom: 24px;
@@ -61,7 +60,7 @@
     width: calc(100% / 6);
     padding: 0 10px;
 
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 767px) {
       width: 50%;
       row-gap: 20px;
     }
@@ -72,7 +71,7 @@
     width: 60px;
     height: 60px;
 
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 767px) {
       width: 40px;
       height: 40px;
     }
@@ -89,6 +88,76 @@
     font-size: 18px;
     line-height: 1.25;
     text-align: center;
-    color: #000000;
+    color: #383838;
   }
 }
+
+
+.product-info {
+
+  // .product-info__content-card
+  &__content-card {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 40px 0;
+
+    // .product-info__content-card--revers
+    &--revers {
+      flex-direction: row-reverse;
+    }
+  }
+
+  // .product-info__img
+  &__img {
+    width: calc(50% - 5px);
+    display: flex;
+    align-self: stretch;
+  }
+
+  // .product-info__content-wrapper
+  &__content-wrapper {
+    width: calc(50% - 5px);
+    padding: 44px 70px;
+
+    .title {
+      margin-bottom: 30px;
+
+      font-family: "Gilroy-Bold", sans-serif;
+      font-weight: 700;
+      font-size: 44px;
+      line-height: 1.25;
+      color: #383838;
+    }
+  }
+
+  // .product-info__content
+  &__content-item {
+    margin-bottom: 30px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  // .product-info__content-title
+  &__content-title {
+    margin-bottom: 20px;
+
+    font-family: "Gilroy-Bold", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #383838;
+  }
+
+  // .product-info__content-text
+  &__content-text {
+    font-family: "Gilroy-Regular", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #383838;
+  }
+}
+
