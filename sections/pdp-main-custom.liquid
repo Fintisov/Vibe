@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ 'custom-pdp-page.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'custom-pdp-page.css' | asset_url | stylesheet_tag }}</noscript>
 
-<div class="faq-product faq-product--mob">
+<section class="faq-product faq-product--mob">
     <div class="container">
         <div class="faq-product__content-wrapper">
             {% assign info_block_size = product.metafields.info_block.title.size | minus: 1 %}
@@ -17,7 +17,7 @@
             {% endfor %}
         </div>
     </div>
-</div>
+</section>
 
 <section class="product-terms">
     <div class="container">
@@ -104,7 +104,7 @@
     </div>
 {% endif %}
 
-<div class="faq-product">
+<section class="faq-product">
     <div class="container">
         <div class="faq-product__content-wrapper">
             {% assign info_block_size = product.metafields.info_block.title.size | minus: 1 %}
@@ -120,9 +120,45 @@
             {% endfor %}
         </div>
     </div>
-</div>
+</section>
 
 {% comment %}
+{% if product.metafields.accentuate.square_icon_image and product.metafields.accentuate.square_icon_image != empty %}
+    <div class="svg-wrapper c-112 mw">
+        <div class="inner">
+            {% for group in product.metafields.accentuate.square_icon_image %}
+                <div class="group">
+                    <img class="preload" data-preload-desktop='{{ group[0].src }}' data-preload-mobile="{{ group[0].src }}">
+                    <p>{{ product.metafields.accentuate.iconTitle[forloop.index0] }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}{% endcomment %}
+
+
+{% comment %}
+<div class="faq-section c-50">
+    {% if product.metafields.accentuate.drawers_header and product.metafields.accentuate.drawers_header != empty %}
+        <div class="top mw {% if product.metafields.accentuate.drawers_mobile_bg %}faq-section__has-bg{% endif %}" {% if product.metafields.accentuate.drawers_mobile_bg %}style="background-color:{{ product.metafields.accentuate.drawers_mobile_bg }}"{% endif %}>
+            <img src="{{ product.metafields.accentuate.drawers_image[0].src }}">
+            <h3>{{ product.metafields.accentuate.drawers_header }}</h3>
+            <p class="text-m">{{ product.metafields.accentuate.drawers_intro_text }}</p>
+        </div>
+    {% endif %}
+    {% if product.metafields.accentuate.drawer_header and product.metafields.accentuate.drawer_header != empty %}
+    <div class="faq-block">
+        {% for drawer in product.metafields.accentuate.drawer_header %}
+            <div class="detail-btn drawer allow-click">
+                <div class="question">{{ drawer }}<span class="trigger-plus">{% include"plus" %}</span></div>
+                <div class="drawer-items answer text-m">
+                    {{ product.metafields.accentuate.drawer_rich_text[forloop.index0] }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
 
 <div class="fifty-fifty-experts">
     <div class="c-190">
@@ -191,6 +227,7 @@
         </div>
     </div>
 {% endif %}{% endcomment %}
+
 
 {% schema %}
 {

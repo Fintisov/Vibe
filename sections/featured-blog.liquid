@@ -1,25 +1,19 @@
-<div class="">
-
-  <h3 class="header-l">{{ section.settings.header }}</h3>
-
-  <div class="slider blocks mw" data-at="767" data-align="start">
-    <div class="slides">
-      <div class="inner">
-        {%- for article in section.settings.blog.articles limit: 3-%}
-          <a class="block slide" href="{{ article.url }}">
-            <img class="image preload" alt="{{ article.title }}"
-                 data-preload-desktop="https:{{ article.image | image_url }}"
-                 data-preload-mobile="https:{{ article.image | image_url }}">
-            <p class="header-m tile-title">{{ article.title }}</p>
-            <p class="subtitle tile-copy">{{ article.content | strip_html  | truncatewords: 15 }}</p>
-          </a>
-        {% endfor %}
-      </div>
+<section class="blog">
+    <div class="container">
+        <h3 class="blog__title">{{ section.settings.header }}</h3>
+        <div class="blog__content">
+            {%- for article in section.settings.blog.articles limit: 3 -%}
+                <a class="blog__card" href="{{ article.url }}">
+                    <div class="card-img">
+                        <img src="{{ article.image | image_url }}" alt="{{ article.title }}">
+                    </div>
+                    <h3 class="card-title">{{ article.title }}</h3>
+                    <p class="card-text">{{ article.content | strip_html | truncatewords: 15 }}</p>
+                </a>
+            {% endfor %}
+        </div>
     </div>
-  </div>
-</div>
-
-
+</section>
 
 {% schema %}
 {
@@ -27,24 +21,24 @@
   "tag": "section",
   "class": "section",
   "settings": [
-  {
-    "id": "header",
-    "type": "text",
-    "label": "Header"
-  },
-  {
-    "type": "blog",
-    "id": "blog",
-    "label": "t:sections.featured-blog.settings.blog.label"
-  }
-],
-  "presets": [
-  {
-    "name": "t:sections.featured-blog.presets.name",
-    "settings": {
-      "blog": "News"
+    {
+      "id": "header",
+      "type": "text",
+      "label": "Header"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "t:sections.featured-blog.settings.blog.label"
     }
-  }
-]
+  ],
+  "presets": [
+    {
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "News"
+      }
+    }
+  ]
 }
 {% endschema %}

@@ -161,11 +161,6 @@
     </div>
 </div>
 
-{% comment %}
-TODO_fin: Узнать, что делать с этой секцией ?
-{% endcomment %}
-
-{% comment %}
 {% unless product.metafields.accentuate.hide_iconrow %}
     {% if template.suffix == 'custom' %}
         <div class="c-120 icon-row">
@@ -329,7 +324,7 @@ TODO_fin: Узнать, что делать с этой секцией ?
          </div>
     {% endif %}
 {% endunless %}
-{% endcomment %}
+
 {% assign size = product.metafields.accentuate.title.size | minus: 1 %}
 {% if size > 0 %}
     <div class="work-desc__section c-50">
