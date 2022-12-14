@@ -77,7 +77,7 @@
 
 {% assign desc_ingredient_size = product.metafields.desc_ingredient.item_text.size | minus: 1 %}
 {% if desc_ingredient_size > -1 %}
-    <div class="advantages-composition">
+    <section class="advantages-composition">
         <div class="container">
             <div class="advantages-composition__content">
                 <div class="advantages-composition__title-wrapper">
@@ -101,7 +101,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 {% endif %}
 
 <section class="faq-product">
@@ -135,7 +135,6 @@
         </div>
     </div>
 {% endif %}{% endcomment %}
-
 
 {% comment %}
 <div class="faq-section c-50">
@@ -227,7 +226,6 @@
         </div>
     </div>
 {% endif %}{% endcomment %}
-
 
 {% schema %}
 {

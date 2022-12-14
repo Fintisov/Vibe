@@ -64,6 +64,9 @@
             <p class="price">{{ product.first_available_variant.price | money }}</p>
             <p class="compare-at-price with-strike{% if product.first_available_variant.compare_at_price %} visible{% endif %}">{% if product.first_available_variant.compare_at_price %}{{ product.first_available_variant.compare_at_price | money }}{% else %}$0.00{% endif %}</p>
         </div>
+        {% if product.metafields.accentuate.product_description != blank %}
+            <p class="product-description-text">{{ product.metafields.accentuate.product_description }}</p>
+        {% endif %}
 
         {% if product.metafields.accentuate.additional_product_info != blank %}
             <div class="additional-product-info"> {{ product.metafields.accentuate.additional_product_info }}</div>

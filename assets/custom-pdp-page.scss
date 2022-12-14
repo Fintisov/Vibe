@@ -553,7 +553,6 @@
   }
 }
 
-
 .c-120-wrapper {
 
   scrollbar-color: #39c039 transparent;
@@ -651,5 +650,15 @@
 
 }
 
+.product-description-text {
+  font-family: "Gilroy-Regular", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.25;
+  color: #383838;
+  margin-bottom: 10px;
 
-
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}

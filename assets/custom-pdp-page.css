@@ -547,4 +547,18 @@
   background-color: #F1F3F4;
 }
 
+.product-description-text {
+  font-family: "Gilroy-Regular", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.25;
+  color: #383838;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 767px) {
+  .product-description-text {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=custom-pdp-page.css.map */
