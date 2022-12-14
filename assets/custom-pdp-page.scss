@@ -470,6 +470,32 @@
           margin-bottom: 30px;
         }
       }
+
+      table {
+        +hr {
+          margin: 5px 0;
+        }
+
+        tbody {
+          h3 {
+            margin: 0;
+
+            font-family: "Popins", sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.25;
+            color: #383838;
+          }
+
+          td {
+            font-family: "Popins", sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.25;
+            color: #383838;
+          }
+        }
+      }
     }
   }
 
@@ -584,70 +610,69 @@
   ::-webkit-scrollbar-button:horizontal:end:increment {
     display: none;
   }
-.c-120 {
-  padding-top: 40px;
-  padding-bottom: 40px;
+
+  .c-120 {
+    padding-top: 40px;
+    padding-bottom: 40px;
 
 
-  &.icon-row {
-    flex-wrap: nowrap;
-    gap: 0 10px;
-    overflow-x: auto;
+    &.icon-row {
+      flex-wrap: nowrap;
+      gap: 0 10px;
+      overflow-x: auto;
 
 
+      @media screen and (max-width: 1200px) {
+        gap: 0 30px;
+      }
 
-    @media screen and (max-width: 1200px) {
-      gap: 0 30px;
+
+      svg {
+        width: auto;
+        min-height: auto;
+        max-height: 50px;
+        max-width: 50px;
+      }
     }
 
+    .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0 20px;
+      width: calc((100% / 4));
+      min-width: 250px;
+      padding: 0 40px;
 
-    svg {
-      width: auto;
-      min-height: auto;
-      max-height: 50px;
-      max-width: 50px;
+      @media screen and (max-width: 1200px) {
+        padding: 0;
+      }
+
+
+      span {
+        display: inline-block;
+        max-width: 140px;
+
+        font-family: "Gilroy-Bold", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.25;
+        color: #121212;
+      }
+    }
+
+    .icon-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 0 0 auto;
+      width: 60px;
+      height: 60px;
+
+      border-radius: 50%;
+      background-color: #F1F3F4;
     }
   }
-
-  .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0 20px;
-    width: calc((100% / 4));
-    min-width: 250px;
-    padding: 0 40px;
-
-    @media screen and (max-width: 1200px) {
-      padding: 0;
-    }
-
-
-    span {
-      display: inline-block;
-      max-width: 140px;
-
-      font-family: "Gilroy-Bold", sans-serif;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 1.25;
-      color: #121212;
-    }
-  }
-
-  .icon-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 0 0 auto;
-    width: 60px;
-    height: 60px;
-
-    border-radius: 50%;
-    background-color: #F1F3F4;
-  }
-}
-
 }
 
 .product-description-text {

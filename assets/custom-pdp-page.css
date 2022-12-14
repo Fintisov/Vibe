@@ -400,6 +400,24 @@
     margin-bottom: 30px;
   }
 }
+.faq-product__content-wrapper .drawer-items table + hr {
+  margin: 5px 0;
+}
+.faq-product__content-wrapper .drawer-items table tbody h3 {
+  margin: 0;
+  font-family: "Popins", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.25;
+  color: #383838;
+}
+.faq-product__content-wrapper .drawer-items table tbody td {
+  font-family: "Popins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.25;
+  color: #383838;
+}
 .faq-product--mob {
   display: none;
 }
