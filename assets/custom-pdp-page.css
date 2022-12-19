@@ -28,6 +28,7 @@
 }
 .product-ingredients__content-wrapper {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
   row-gap: 30px;
@@ -276,6 +277,7 @@
 }
 .advantages-composition__icon-group {
   display: flex;
+  justify-content: space-between;
   flex: 1 1 auto;
   flex-wrap: wrap;
   gap: 30px 10px;
@@ -284,7 +286,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 160px;
+  width: calc(20% - 8px);
 }
 @media screen and (max-width: 992px) {
   .advantages-composition__icon-elem {
@@ -302,6 +304,7 @@
   font-size: 16px;
   line-height: 1.25;
   color: #F9F9F9;
+  text-align: center;
 }
 
 .faq-product {
