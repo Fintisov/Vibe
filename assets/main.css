@@ -12199,7 +12199,7 @@ ul {
 }
 .sub-menu .sub-menu__item--not-active:hover > .sub-menu__link:before {
   visibility: visible;
-  background-color: #2f2f2f;
+  background-color: rgba(47, 47, 47, 0.7019607843);
 }
 .sub-menu .sub-menu__item--not-active .sub-menu__link {
   position: relative;
