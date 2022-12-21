@@ -475,8 +475,8 @@
                     <a class="nav-menu__link mega-nav-trigger eyebrow" href="#">BRANDS</a>
                     <ul class="sub-menu">
                         {%- for link in linklists.brand-menu.links -%}
-                            <li class="sub-menu__item">
-                                <a class="sub-menu__link {% if link.object.products_count == 0 %}sub-menu__link--not-active{% endif %}" href="{{ link.url }}">
+                            <li class="sub-menu__item {% if link.object.products_count == 0 %}sub-menu__item--not-active{% endif %}">
+                                <a class="sub-menu__link" href="{{ link.url }}">
                                     {{ link.title | escape }}
                                     <img class="icon" src="{{ link.object.image | img_url: 'master' }}" alt="{{ link.object.title }}">
                                 </a>

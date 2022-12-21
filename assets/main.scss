@@ -227,14 +227,14 @@ button {
 
 .utility-rich-text {
   li {
-    font-family: Gilroy-Light,sans-serif;
+    font-family: Gilroy-Light, sans-serif;
     font-size: 14px;
     line-height: 1.7;
     color: #121212;
   }
 
   h3 {
-    font-family: Gilroy-Light,sans-serif;
+    font-family: Gilroy-Light, sans-serif;
   }
 }
 
@@ -13089,9 +13089,52 @@ ul {
         background-position: calc(100% - 10px) center;
       }
     }
+
+    //sub-menu__item--not-active
+    &--not-active {
+      position: relative;
+
+      &:before {
+        content: "Coming soon";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        font-family: "Gilroy-Bold", sans-serif;
+        font-size: 16px;
+        line-height: 1;
+        color: #f2f2f2;
+        text-transform: uppercase;
+
+        visibility: hidden;
+        background-color: transparent;
+        transition: 100ms;
+      }
+
+      &:hover {
+        &:before {
+          visibility: visible;
+          background-color: #2f2f2f;
+        }
+      }
+
+
+      .sub-menu__link {
+        pointer-events: none;
+      }
+
+    }
   }
 
   .sub-menu__link {
+    position: relative;
     font-family: "Gilroy-Bold", sans-serif;
     font-size: 14px;
     line-height: 1.25;
@@ -13103,17 +13146,12 @@ ul {
     min-width: max-content;
     transition: 150ms linear background-color;
 
-    > img {
-      width: auto;
-    }
-
     &:hover {
       background-color: #F1F3F4;
     }
 
-    // sub-menu__link--not-active
-    &--not-active {
-      pointer-events: none;
+    > img {
+      width: auto;
     }
 
     // sub-menu__link--grey
