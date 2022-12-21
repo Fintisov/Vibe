@@ -1,3 +1,9 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 ul {
   margin: 0;
 }
@@ -1980,6 +1986,10 @@ html:not(.touch) .mega-nav .right .btn:hover {
 .mega-nav-mobile .nav-tile > .text-m {
   padding: 22px 14px 23px 30px;
   cursor: pointer;
+}
+
+#footer {
+  margin-top: auto;
 }
 
 #footer .pre-footer {
