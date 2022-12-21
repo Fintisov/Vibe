@@ -12195,6 +12195,9 @@ ul {
 .sub-menu .sub-menu__link:hover {
   background-color: #F1F3F4;
 }
+.sub-menu .sub-menu__link--not-active {
+  pointer-events: none;
+}
 .sub-menu .sub-menu__link--grey {
   color: #8f8f8f;
 }

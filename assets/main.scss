@@ -12987,6 +12987,7 @@ ul {
     &-learn {
       .sub-menu {
         min-height: max-content;
+
         .sub-menu__item:not(:last-of-type) {
           margin-bottom: 40px;
         }
@@ -13085,6 +13086,11 @@ ul {
 
     &:hover {
       background-color: #F1F3F4;
+    }
+
+    // sub-menu__link--not-active
+    &--not-active {
+      pointer-events: none;
     }
 
     // sub-menu__link--grey

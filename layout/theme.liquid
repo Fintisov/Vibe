@@ -476,9 +476,8 @@
                     <ul class="sub-menu">
                         {%- for link in linklists.brand-menu.links -%}
                             <li class="sub-menu__item">
-                                <a class="sub-menu__link" href="{{ link.url }}">
+                                <a class="sub-menu__link {% if link.object.products_count == 0 %}sub-menu__link--not-active{% endif %}" href="{{ link.url }}">
                                     {{ link.title | escape }}
-
                                     <img class="icon" src="{{ link.object.image | img_url: 'master' }}" alt="{{ link.object.title }}">
                                 </a>
                             </li>
