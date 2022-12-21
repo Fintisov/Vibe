@@ -217,6 +217,13 @@ button {
   letter-spacing: 0.01em;
 }
 
+.utility-rich-text li {
+  font-family: Gilroy-Light, sans-serif;
+}
+.utility-rich-text h3 {
+  font-family: Gilroy-Light, sans-serif;
+}
+
 .utility-rich-text h1 {
   font-size: 48px;
   font-family: Gilroy-Black, sans-serif;

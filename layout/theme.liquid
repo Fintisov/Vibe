@@ -736,8 +736,11 @@
                             <div class="drawer-items">
                                 {% if link.links != empty %}
                                     {% for child_link in link.links %}
-                                        <a class="copy shift-word" href="{{ child_link.url }}"><span
-                                                    data-replace="{{ child_link.title }}"><span>{{ child_link.title }}</span></span></a>
+                                        <a class="copy shift-word" href="{{ child_link.url }}">
+                                            <span data-replace="{{ child_link.title }}">
+                                                <span>{{ child_link.title }}</span>
+                                            </span>
+                                        </a>
                                     {% endfor %}
                                 {% endif %}
                             </div>
