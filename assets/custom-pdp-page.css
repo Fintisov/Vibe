@@ -1,7 +1,6 @@
 @charset "UTF-8";
 .container {
   max-width: 1400px;
-  padding: 0 50px;
   margin: 0 auto;
 }
 @media screen and (max-width: 767px) {
@@ -73,7 +72,7 @@
 .product-info__content-card {
   display: flex;
   justify-content: space-between;
-  padding: 40px 0;
+  padding: 50px 0;
 }
 @media screen and (max-width: 992px) {
   .product-info__content-card {
@@ -202,7 +201,7 @@
 .product-info__content p {
   font-family: "Gilroy-Regular", sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.5;
   color: #383838;
 }
@@ -316,6 +315,10 @@
     display: none;
   }
 }
+.faq-product__content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
 .faq-product__content-wrapper .detail-btn {
   cursor: pointer;
   margin-bottom: 40px;
@@ -334,7 +337,7 @@
   padding-right: 40px;
   font-family: "Gilroy-Black", sans-serif;
   font-weight: 800;
-  font-size: 36px;
+  font-size: 20px;
   line-height: 1.25;
   color: #000000;
 }
@@ -379,8 +382,8 @@
   margin-bottom: 20px;
   font-family: "Gilroy-Regular", sans-serif;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 1.25;
+  font-size: 18px;
+  line-height: 1.6;
   color: #383838;
 }
 @media screen and (max-width: 767px) {
@@ -572,7 +575,7 @@
   font-family: "Gilroy-Regular", sans-serif;
   font-weight: 500;
   font-size: 14px;
-  line-height: 1.25;
+  line-height: 1.7;
   color: #383838;
   margin-bottom: 10px;
 }
