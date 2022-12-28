@@ -3405,6 +3405,16 @@ input.error {
   width: auto;
   margin-right: 4px;
 }
+@media screen and (max-width: 414px) {
+  .review-overview svg {
+    margin-right: 1px;
+    width: 12px;
+    height: 12px;
+  }
+  .review-overview svg p {
+    margin-left: 5px;
+  }
+}
 
 .review-overview svg:last-of-type {
   margin-right: 0;

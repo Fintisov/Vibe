@@ -433,7 +433,8 @@
                                         {%- for childlink in link.links -%}
                                             {% if childlink.title contains '--shopAll' %}
                                                 <li class="sub-menu__item">
-                                                    <a class="sub-menu__link sub-menu__link--grey" href="{{ childlink.url }}">Shop All</a>
+                                                    <a class="sub-menu__link sub-menu__link--grey"
+                                                       href="{{ childlink.url }}">Shop All</a>
                                                 </li>
                                             {% elsif childlink.title contains '--title' %}
                                                 <li class="sub-menu__title">
@@ -441,21 +442,24 @@
                                                 </li>
                                             {% else %}
                                                 <li class="sub-menu__item">
-                                                    <a class="sub-menu__link" href="{{ childlink.url }}">{{ childlink.title }}</a>
+                                                    <a class="sub-menu__link"
+                                                       href="{{ childlink.url }}">{{ childlink.title }}</a>
                                                     {%- if childlink.links != blank -%}
                                                         <ul class="sub-menu">
                                                             {%- for grandchildlink in childlink.links -%}
                                                                 {% if grandchildlink.title contains '--shopAll' %}
                                                                     <li class="sub-menu__item">
-                                                                        <a class="sub-menu__link sub-menu__link--grey" href="{{ grandchildlink.url }}">Shop All</a>
+                                                                        <a class="sub-menu__link sub-menu__link--grey"
+                                                                           href="{{ grandchildlink.url }}">Shop All</a>
                                                                     </li>
                                                                 {% elsif grandchildlink.title contains '--title' %}
                                                                     <li class="sub-menu__title">
-                                                                        <h3 class="title">{{ grandchildlink.title | remove: '--title'  }}</h3>
+                                                                        <h3 class="title">{{ grandchildlink.title | remove: '--title' }}</h3>
                                                                     </li>
                                                                 {% else %}
                                                                     <li class="sub-menu__item">
-                                                                        <a class="sub-menu__link" href="{{ grandchildlink.url }}">{{ grandchildlink.title }}</a>
+                                                                        <a class="sub-menu__link"
+                                                                           href="{{ grandchildlink.url }}">{{ grandchildlink.title }}</a>
                                                                     </li>
                                                                 {% endif %}
                                                             {%- endfor -%}
@@ -463,11 +467,11 @@
                                                     {% endif %}
                                                 </li>
                                             {% endif %}
-                                        {%- endfor  -%}
+                                        {%- endfor -%}
                                     </ul>
                                 </li>
                             {% endif %}
-                        {%- endfor  -%}
+                        {%- endfor -%}
                     </ul>
                 </li>
 
@@ -478,7 +482,8 @@
                             <li class="sub-menu__item {% if link.object.products_count == 0 %}sub-menu__item--not-active{% endif %}">
                                 <a class="sub-menu__link" href="{{ link.url }}">
                                     {{ link.title | escape }}
-                                    <img class="icon" src="{{ link.object.image | img_url: 'master' }}" alt="{{ link.object.title }}">
+                                    <img class="icon" src="{{ link.object.image | img_url: 'master' }}"
+                                         alt="{{ link.object.title }}">
                                 </a>
                             </li>
                         {%- endfor -%}
@@ -537,23 +542,17 @@
             <a class="text-m shift-word black" href="/collections/all">Shop</a>
         </div>
 
-        <div class="nav-tile drawer has-subdrawers allow-click">
+        <div class="nav-tile drawer allow-click">
             <h6 class="text-m">Health & Fitness{% include "icon-plus" %}</h6>
             <div class="drawer-items">
                 {% for link in linklists.health-fitness-menu.links %}
-                    <p class="text-m subdrawer"><span class="label">{{ link.title }}{% include "icon-plus" %}</span>
-                        <span class="subdrawer-items">
-                                             {% if link.links != empty %}
-                                                 {% for child_link in link.links %}
-                                                     <a class="text-m black" href="{{ child_link.url }}"><span
-                                                                 data-replace="{{ child_link.title }}"><span>{{ child_link.title }}</span></span></a>
-                                                 {% endfor %}
-                                             {% endif %}
-                                             <a href="{{ link.url }}"
-                                                class="read-more">Shop All{% include 'icon-arrow-red' %}</a>
-                                         </span>
-                    </p>
+                    <a class="text-m shift-word black" href="{{ link.url }}">
+                         <span data-replace="{{ link.title }}">
+                             <span>{{ link.title }}</span>
+                         </span>
+                    </a>
                 {% endfor %}
+                <a href="/collections/brands" class="read-more">See All{% include 'icon-arrow-red' %}</a>
             </div>
         </div>
 
@@ -677,13 +676,14 @@
         </div>
     </div>
 
-    <div class="bottom">
-        <a href="/pages/" class="eyebrow">Accessibility Statement</a>
-        <a href="/pages/privacy-policy" class="eyebrow">Privacy Policy</a>
-        <a href="/pages/terms-and-conditions" class="eyebrow">Terms & Conditions</a>
-        <a href="/pages/return-policy" class="eyebrow">Returns Policy</a>
-
-    </div>
+    {% comment %}
+        <div class="bottom">
+            <a href="/pages/" class="eyebrow">Accessibility Statement</a>
+            <a href="/pages/privacy-policy" class="eyebrow">Privacy Policy</a>
+            <a href="/pages/terms-and-conditions" class="eyebrow">Terms & Conditions</a>
+            <a href="/pages/return-policy" class="eyebrow">Returns Policy</a>
+        </div>
+        {% endcomment %}
 </div>
 
 <main role="main" data-router-wrapper>
