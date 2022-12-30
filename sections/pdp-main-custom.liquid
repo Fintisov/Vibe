@@ -33,21 +33,23 @@
     </div>
 </section>
 
-<section class="product-ingredients">
-    <div class="container">
-        <div class="product-ingredients__content-wrapper">
-            {% assign size = product.metafields.accentuate.text.size | minus: 1 %}
-            {% for i in (0..size) %}
-                <div class="product-ingredients__content">
-                    <div class="product-ingredients__icon">
-                        {{ product.metafields.accentuate.svg_icon[i] }}
+{% assign size = product.metafields.accentuate.text.size | minus: 1 %}
+{% if size > 0 %}
+    <section class="product-ingredients">
+        <div class="container">
+            <div class="product-ingredients__content-wrapper">
+                {% for i in (0..size) %}
+                    <div class="product-ingredients__content">
+                        <div class="product-ingredients__icon">
+                            {{ product.metafields.accentuate.svg_icon[i] }}
+                        </div>
+                        <p class="product-ingredients__text">{{ product.metafields.accentuate.text[i] }}</p>
                     </div>
-                    <p class="product-ingredients__text">{{ product.metafields.accentuate.text[i] }}</p>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+{% endif %}
 
 {% assign add_decription_size = product.metafields.add_decription.title.size | minus: 1 %}
 {% if add_decription_size > -1 %}
