@@ -428,6 +428,7 @@
 }
 .faq-product--mob {
   display: none;
+  padding: 30px 0;
 }
 @media screen and (max-width: 767px) {
   .faq-product--mob {
