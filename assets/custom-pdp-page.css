@@ -1,4 +1,8 @@
 @charset "UTF-8";
+body.product-custom #dummy-chat-button-iframe {
+  display: none;
+}
+
 .container {
   max-width: 1400px;
   margin: 0 auto;
