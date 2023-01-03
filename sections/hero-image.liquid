@@ -1,6 +1,6 @@
 <div>
     {% if collection.metafields.accentuate.hero_image[0].src != blank %}
-        <img class="preload-critical" data-preload-desktop="{{ collection.metafields.accentuate.hero_image[0].src }}" data-preload-mobile="https:{{ section.settings.image_mobile | image_url }}" alt="{{ collection.title }}">
+        <img class="preload-critical" data-preload-desktop="{{ collection.metafields.accentuate.hero_image[0].src }}" data-preload-mobile="{{ collection.metafields.accentuate.hero_image[0].src }}" alt="{{ collection.title }}">
     {% else %}
         <img class="preload-critical" data-preload-desktop="https:{{ section.settings.image | image_url }}" data-preload-mobile="https:{{ section.settings.image_mobile | image_url }}">
     {% endif %}
